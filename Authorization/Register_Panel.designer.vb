@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Kullanıcı_Kayıt
+Partial Class Register_Panel
     Inherits System.Windows.Forms.Form
 
     'Form, bileşen listesini temizlemeyi bırakmayı geçersiz kılar.
@@ -23,7 +23,7 @@ Partial Class Kullanıcı_Kayıt
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Kullanıcı_Kayıt))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Register_Panel))
         Me.GunaElipse1 = New Guna.UI.WinForms.GunaElipse(Me.components)
         Me.GunaElipse2 = New Guna.UI.WinForms.GunaElipse(Me.components)
         Me.gb_verify = New Guna.UI.WinForms.GunaGroupBox()

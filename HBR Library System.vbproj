@@ -106,22 +106,22 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Add_Book.Designer.vb">
+    <Compile Include="Modules\Add_Book.Designer.vb">
       <DependentUpon>Add_Book.vb</DependentUpon>
     </Compile>
-    <Compile Include="Add_Book.vb">
+    <Compile Include="Modules\Add_Book.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="BookTracker.Designer.vb">
+    <Compile Include="Modules\BookTracker.Designer.vb">
       <DependentUpon>BookTracker.vb</DependentUpon>
     </Compile>
-    <Compile Include="BookTracker.vb">
+    <Compile Include="Modules\BookTracker.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Book_List.designer.vb">
+    <Compile Include="Modules\Book_List.designer.vb">
       <DependentUpon>Book_List.vb</DependentUpon>
     </Compile>
-    <Compile Include="Book_List.vb">
+    <Compile Include="Modules\Book_List.vb">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Components\FlatUI_Tema.vb">
@@ -133,22 +133,22 @@
     <Compile Include="dashboard.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DevDEMO.Designer.vb">
+    <Compile Include="Dev\DevDEMO.Designer.vb">
       <DependentUpon>DevDEMO.vb</DependentUpon>
     </Compile>
-    <Compile Include="DevDEMO.vb">
+    <Compile Include="Dev\DevDEMO.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DevTool.Designer.vb">
+    <Compile Include="Dev\DevTool.Designer.vb">
       <DependentUpon>DevTool.vb</DependentUpon>
     </Compile>
-    <Compile Include="DevTool.vb">
+    <Compile Include="Dev\DevTool.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="dialog_box.Designer.vb">
+    <Compile Include="Modules\dialog_box.Designer.vb">
       <DependentUpon>dialog_box.vb</DependentUpon>
     </Compile>
-    <Compile Include="dialog_box.vb">
+    <Compile Include="Modules\dialog_box.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="dialog_getBook.Designer.vb">
@@ -157,30 +157,23 @@
     <Compile Include="dialog_getBook.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Kullanıcı_Kayıt.designer.vb">
-      <DependentUpon>Kullanıcı_Kayıt.vb</DependentUpon>
+    <Compile Include="Authorization\Register_Panel.designer.vb">
+      <DependentUpon>Register_Panel.vb</DependentUpon>
     </Compile>
-    <Compile Include="Kullanıcı_Kayıt.vb">
+    <Compile Include="Authorization\Register_Panel.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login_Panel.designer.vb">
+    <Compile Include="Authorization\Login_Panel.designer.vb">
       <DependentUpon>Login_Panel.vb</DependentUpon>
     </Compile>
-    <Compile Include="Login_Panel.vb">
+    <Compile Include="Authorization\Login_Panel.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ListMembers.Designer.vb">
+    <Compile Include="Modules\ListMembers.Designer.vb">
       <DependentUpon>ListMembers.vb</DependentUpon>
     </Compile>
-    <Compile Include="ListMembers.vb">
+    <Compile Include="Modules\ListMembers.vb">
       <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="main.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="main.Designer.vb">
-      <DependentUpon>main.vb</DependentUpon>
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -198,49 +191,46 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="NewMember.Designer.vb">
+    <Compile Include="Modules\NewMember.Designer.vb">
       <DependentUpon>NewMember.vb</DependentUpon>
     </Compile>
-    <Compile Include="NewMember.vb">
+    <Compile Include="Modules\NewMember.vb">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Add_Book.resx">
+    <EmbeddedResource Include="Modules\Add_Book.resx">
       <DependentUpon>Add_Book.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BookTracker.resx">
+    <EmbeddedResource Include="Modules\BookTracker.resx">
       <DependentUpon>BookTracker.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Book_List.resx">
+    <EmbeddedResource Include="Modules\Book_List.resx">
       <DependentUpon>Book_List.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="dashboard.resx">
       <DependentUpon>dashboard.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DevDEMO.resx">
+    <EmbeddedResource Include="Dev\DevDEMO.resx">
       <DependentUpon>DevDEMO.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DevTool.resx">
+    <EmbeddedResource Include="Dev\DevTool.resx">
       <DependentUpon>DevTool.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="dialog_box.resx">
+    <EmbeddedResource Include="Modules\dialog_box.resx">
       <DependentUpon>dialog_box.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="dialog_getBook.resx">
       <DependentUpon>dialog_getBook.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Kullanıcı_Kayıt.resx">
-      <DependentUpon>Kullanıcı_Kayıt.vb</DependentUpon>
+    <EmbeddedResource Include="Authorization\Register_Panel.resx">
+      <DependentUpon>Register_Panel.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login_Panel.resx">
+    <EmbeddedResource Include="Authorization\Login_Panel.resx">
       <DependentUpon>Login_Panel.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ListMembers.resx">
+    <EmbeddedResource Include="Modules\ListMembers.resx">
       <DependentUpon>ListMembers.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="main.resx">
-      <DependentUpon>main.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -248,7 +238,7 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewMember.resx">
+    <EmbeddedResource Include="Modules\NewMember.resx">
       <DependentUpon>NewMember.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
@@ -282,5 +272,6 @@
     <Content Include="icons8_book.ico" />
     <Content Include="WebAPI__getImage.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
