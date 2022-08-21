@@ -1,0 +1,42 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="sqlhost" Type="System.String" Scope="User">
+      <Value Profile="(Default)">127.0.0.1</Value>
+    </Setting>
+    <Setting Name="sqluser" Type="System.String" Scope="User">
+      <Value Profile="(Default)">root</Value>
+    </Setting>
+    <Setting Name="sqlpwd" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="sqldb" Type="System.String" Scope="User">
+      <Value Profile="(Default)">library</Value>
+    </Setting>
+    <Setting Name="sqlport" Type="System.String" Scope="User">
+      <Value Profile="(Default)">3306</Value>
+    </Setting>
+    <Setting Name="sqlcharset" Type="System.String" Scope="User">
+      <Value Profile="(Default)">utf8</Value>
+    </Setting>
+    <Setting Name="sqlssl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">None</Value>
+    </Setting>
+    <Setting Name="xpath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">//*[@id="search_results"]/table</Value>
+    </Setting>
+    <Setting Name="api_url" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://hbacker.dev/api/</Value>
+    </Setting>
+    <Setting Name="code" Type="System.String" Scope="User">
+      <Value Profile="(Default)">878217809048</Value>
+    </Setting>
+    <Setting Name="dialog" Type="System.String" Scope="User">
+      <Value Profile="(Default)">default</Value>
+    </Setting>
+    <Setting Name="session" Type="System.String" Scope="User">
+      <Value Profile="(Default)">user</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
