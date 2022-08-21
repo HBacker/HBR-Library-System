@@ -61,7 +61,7 @@ Public Class Add_Book
              libbo_emptydata()
             Else
            x = x.ToString().ToLower()
-            subjectLog.Text = subjectLog.Text + vbNewLine + "Main;" + vbNewLine + x.ToString
+            'subjectLog.Text = subjectLog.Text + vbNewLine + "Main;" + vbNewLine + x.ToString
      If x.Contains("ingilizce hikaye") Then
             combo_Subject.SelectedItem = "Polisiye"
         ElseIf x.Contains("çocuk edebiyatı") Then
@@ -80,7 +80,7 @@ Public Class Add_Book
             combo_Subject.SelectedItem = "Edebiyat"
 
         Else
-            subjectLog.text   = subjectLog.text + vbNewLine + "BULUNAMADI"
+            'subjectLog.text   = subjectLog.text + vbNewLine + "BULUNAMADI"
             Try
                 Dim document = New HtmlWeb().Load("http://www.toplukatalog.gov.tr/?_f=1&the_page=1&cwid=2&keyword=" & text_ISBN.Text & "&tokat_search_field=1&order=0&command=Tara#alt")        
                 Dim veri = document.DocumentNode.SelectSingleNode("//*[@id='search_results']/table[2]")
@@ -92,7 +92,7 @@ Public Class Add_Book
                 
                 sleep(1)
                 x = backup.ToString().ToLower()
-                subjectLog.Text = subjectLog.Text + vbNewLine + "BACKUP;" + vbNewLine + x.ToString
+                'subjectLog.Text = subjectLog.Text + vbNewLine + "BACKUP;" + vbNewLine + x.ToString
                 If x.Contains("ingilizce hikaye") Then
                     combo_Subject.SelectedText = ""
                 ElseIf x.Contains("çocuk edebiyatı") Then

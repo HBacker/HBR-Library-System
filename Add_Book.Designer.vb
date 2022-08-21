@@ -29,6 +29,7 @@ Partial Class Add_Book
         Me.text_Author = New Guna.UI.WinForms.GunaLineTextBox()
         Me.GunaLabel1 = New Guna.UI.WinForms.GunaLabel()
         Me.group_information = New Guna.UI.WinForms.GunaGroupBox()
+        Me.btn_Clear = New Guna.UI.WinForms.GunaAdvenceButton()
         Me.text_Publisher = New Guna.UI.WinForms.GunaLineTextBox()
         Me.GunaLabel4 = New Guna.UI.WinForms.GunaLabel()
         Me.GunaLabel3 = New Guna.UI.WinForms.GunaLabel()
@@ -50,13 +51,17 @@ Partial Class Add_Book
         Me.group_bot = New Guna.UI.WinForms.GunaGroupBox()
         Me.GunaLabel8 = New Guna.UI.WinForms.GunaLabel()
         Me.libbo_advanced = New Guna.UI.WinForms.GunaRadioButton()
+        Me.GunaAdvenceButton1 = New Guna.UI.WinForms.GunaAdvenceButton()
         Me.libbo_basic = New Guna.UI.WinForms.GunaRadioButton()
         Me.LibBo_empty = New Guna.UI.WinForms.GunaLabel()
+        Me.button_bot = New Guna.UI.WinForms.GunaAdvenceButton()
         Me.GunaLabel9 = New Guna.UI.WinForms.GunaLabel()
         Me.libbo_isbn = New Guna.UI.WinForms.GunaLineTextBox()
         Me.LibBoEmpty_timer = New System.Windows.Forms.Timer(Me.components)
         Me.elipse_isbn = New Guna.UI.WinForms.GunaElipse(Me.components)
         Me.GunaGroupBox1 = New Guna.UI.WinForms.GunaGroupBox()
+        Me.btn_pbType = New Guna.UI.WinForms.GunaAdvenceButton()
+        Me.book_poster = New Guna.UI.WinForms.GunaPictureBox()
         Me.dataUpdater = New System.Windows.Forms.Timer(Me.components)
         Me.GunaAnimateWindow1 = New Guna.UI.WinForms.GunaAnimateWindow(Me.components)
         Me.addedTimer = New System.Windows.Forms.Timer(Me.components)
@@ -66,16 +71,10 @@ Partial Class Add_Book
         Me.GunaElipse1 = New Guna.UI.WinForms.GunaElipse(Me.components)
         Me.libbo_reset = New System.Windows.Forms.Timer(Me.components)
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
-        Me.subjectLog = New System.Windows.Forms.RichTextBox()
         Me.welcomeSESSION = New Guna.UI.WinForms.GunaLabel()
         Me.GunaButton2 = New Guna.UI.WinForms.GunaButton()
         Me.GunaButton1 = New Guna.UI.WinForms.GunaButton()
         Me.btnINSERT = New Guna.UI.WinForms.GunaAdvenceButton()
-        Me.btn_pbType = New Guna.UI.WinForms.GunaAdvenceButton()
-        Me.book_poster = New Guna.UI.WinForms.GunaPictureBox()
-        Me.GunaAdvenceButton1 = New Guna.UI.WinForms.GunaAdvenceButton()
-        Me.button_bot = New Guna.UI.WinForms.GunaAdvenceButton()
-        Me.btn_Clear = New Guna.UI.WinForms.GunaAdvenceButton()
         Me.group_information.SuspendLayout
         Me.group_extra.SuspendLayout
         Me.group_bot.SuspendLayout
@@ -150,6 +149,38 @@ Partial Class Add_Book
         Me.group_information.TabIndex = 2
         Me.group_information.Text = "Kitap Bilgileri [Zorunlu]"
         Me.group_information.TextLocation = New System.Drawing.Point(10, 8)
+        '
+        'btn_Clear
+        '
+        Me.btn_Clear.Animated = true
+        Me.btn_Clear.AnimationHoverSpeed = 3!
+        Me.btn_Clear.AnimationSpeed = 3!
+        Me.btn_Clear.BackColor = System.Drawing.Color.Transparent
+        Me.btn_Clear.BaseColor = System.Drawing.Color.FromArgb(CType(CType(37,Byte),Integer), CType(CType(18,Byte),Integer), CType(CType(70,Byte),Integer))
+        Me.btn_Clear.BorderColor = System.Drawing.Color.Black
+        Me.btn_Clear.CheckedBaseColor = System.Drawing.Color.Gray
+        Me.btn_Clear.CheckedBorderColor = System.Drawing.Color.Black
+        Me.btn_Clear.CheckedForeColor = System.Drawing.Color.White
+        Me.btn_Clear.CheckedImage = CType(resources.GetObject("btn_Clear.CheckedImage"),System.Drawing.Image)
+        Me.btn_Clear.CheckedLineColor = System.Drawing.Color.DimGray
+        Me.btn_Clear.FocusedColor = System.Drawing.Color.Empty
+        Me.btn_Clear.Font = New System.Drawing.Font("Segoe UI", 9!)
+        Me.btn_Clear.ForeColor = System.Drawing.Color.Aqua
+        Me.btn_Clear.Image = Global.HBR_Library_System.My.Resources.Resources.available_updates_64px
+        Me.btn_Clear.ImageSize = New System.Drawing.Size(24, 24)
+        Me.btn_Clear.LineColor = System.Drawing.Color.FromArgb(CType(CType(66,Byte),Integer), CType(CType(58,Byte),Integer), CType(CType(170,Byte),Integer))
+        Me.btn_Clear.Location = New System.Drawing.Point(402, 3)
+        Me.btn_Clear.Name = "btn_Clear"
+        Me.btn_Clear.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(224,Byte),Integer), CType(CType(224,Byte),Integer), CType(CType(224,Byte),Integer))
+        Me.btn_Clear.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.btn_Clear.OnHoverForeColor = System.Drawing.Color.Indigo
+        Me.btn_Clear.OnHoverImage = Nothing
+        Me.btn_Clear.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66,Byte),Integer), CType(CType(58,Byte),Integer), CType(CType(170,Byte),Integer))
+        Me.btn_Clear.OnPressedColor = System.Drawing.Color.Black
+        Me.btn_Clear.Radius = 3
+        Me.btn_Clear.Size = New System.Drawing.Size(87, 23)
+        Me.btn_Clear.TabIndex = 81
+        Me.btn_Clear.Text = "Sıfırla"
         '
         'text_Publisher
         '
@@ -400,6 +431,38 @@ Partial Class Add_Book
         Me.libbo_advanced.TabIndex = 88
         Me.libbo_advanced.Text = "Detaylı Bilgiler"
         '
+        'GunaAdvenceButton1
+        '
+        Me.GunaAdvenceButton1.Animated = true
+        Me.GunaAdvenceButton1.AnimationHoverSpeed = 3!
+        Me.GunaAdvenceButton1.AnimationSpeed = 3!
+        Me.GunaAdvenceButton1.BackColor = System.Drawing.Color.Transparent
+        Me.GunaAdvenceButton1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(37,Byte),Integer), CType(CType(18,Byte),Integer), CType(CType(70,Byte),Integer))
+        Me.GunaAdvenceButton1.BorderColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton1.CheckedBaseColor = System.Drawing.Color.Gray
+        Me.GunaAdvenceButton1.CheckedBorderColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton1.CheckedForeColor = System.Drawing.Color.White
+        Me.GunaAdvenceButton1.CheckedImage = CType(resources.GetObject("GunaAdvenceButton1.CheckedImage"),System.Drawing.Image)
+        Me.GunaAdvenceButton1.CheckedLineColor = System.Drawing.Color.DimGray
+        Me.GunaAdvenceButton1.FocusedColor = System.Drawing.Color.Empty
+        Me.GunaAdvenceButton1.Font = New System.Drawing.Font("Segoe UI", 9!)
+        Me.GunaAdvenceButton1.ForeColor = System.Drawing.Color.Aqua
+        Me.GunaAdvenceButton1.Image = Global.HBR_Library_System.My.Resources.Resources.help_gradient_32
+        Me.GunaAdvenceButton1.ImageSize = New System.Drawing.Size(22, 22)
+        Me.GunaAdvenceButton1.LineColor = System.Drawing.Color.FromArgb(CType(CType(66,Byte),Integer), CType(CType(58,Byte),Integer), CType(CType(170,Byte),Integer))
+        Me.GunaAdvenceButton1.Location = New System.Drawing.Point(226, 3)
+        Me.GunaAdvenceButton1.Name = "GunaAdvenceButton1"
+        Me.GunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(224,Byte),Integer), CType(CType(224,Byte),Integer), CType(CType(224,Byte),Integer))
+        Me.GunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton1.OnHoverForeColor = System.Drawing.Color.Indigo
+        Me.GunaAdvenceButton1.OnHoverImage = Nothing
+        Me.GunaAdvenceButton1.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66,Byte),Integer), CType(CType(58,Byte),Integer), CType(CType(170,Byte),Integer))
+        Me.GunaAdvenceButton1.OnPressedColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton1.Radius = 3
+        Me.GunaAdvenceButton1.Size = New System.Drawing.Size(87, 23)
+        Me.GunaAdvenceButton1.TabIndex = 82
+        Me.GunaAdvenceButton1.Text = "Yardım"
+        '
         'libbo_basic
         '
         Me.libbo_basic.BaseColor = System.Drawing.SystemColors.Control
@@ -424,6 +487,40 @@ Partial Class Add_Book
         Me.LibBo_empty.TabIndex = 84
         Me.LibBo_empty.Text = "Veri Bulunamadı!"
         Me.LibBo_empty.Visible = false
+        '
+        'button_bot
+        '
+        Me.button_bot.Animated = true
+        Me.button_bot.AnimationHoverSpeed = 3!
+        Me.button_bot.AnimationSpeed = 3!
+        Me.button_bot.BackColor = System.Drawing.Color.Transparent
+        Me.button_bot.BaseColor = System.Drawing.Color.FromArgb(CType(CType(6,Byte),Integer), CType(CType(16,Byte),Integer), CType(CType(27,Byte),Integer))
+        Me.button_bot.BorderColor = System.Drawing.Color.Black
+        Me.button_bot.CheckedBaseColor = System.Drawing.Color.Gray
+        Me.button_bot.CheckedBorderColor = System.Drawing.Color.Black
+        Me.button_bot.CheckedForeColor = System.Drawing.Color.White
+        Me.button_bot.CheckedImage = CType(resources.GetObject("button_bot.CheckedImage"),System.Drawing.Image)
+        Me.button_bot.CheckedLineColor = System.Drawing.Color.DimGray
+        Me.button_bot.FocusedColor = System.Drawing.Color.Empty
+        Me.button_bot.Font = New System.Drawing.Font("Segoe UI", 12!)
+        Me.button_bot.ForeColor = System.Drawing.Color.Aqua
+        Me.button_bot.Image = Global.HBR_Library_System.My.Resources.Resources.downcloud_gradient_32
+        Me.button_bot.ImageSize = New System.Drawing.Size(32, 32)
+        Me.button_bot.LineColor = System.Drawing.Color.FromArgb(CType(CType(66,Byte),Integer), CType(CType(58,Byte),Integer), CType(CType(170,Byte),Integer))
+        Me.button_bot.Location = New System.Drawing.Point(70, 195)
+        Me.button_bot.Name = "button_bot"
+        Me.button_bot.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(224,Byte),Integer), CType(CType(224,Byte),Integer), CType(CType(224,Byte),Integer))
+        Me.button_bot.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.button_bot.OnHoverForeColor = System.Drawing.Color.Indigo
+        Me.button_bot.OnHoverImage = Nothing
+        Me.button_bot.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66,Byte),Integer), CType(CType(58,Byte),Integer), CType(CType(170,Byte),Integer))
+        Me.button_bot.OnPressedColor = System.Drawing.Color.Black
+        Me.button_bot.Radius = 20
+        Me.button_bot.Size = New System.Drawing.Size(205, 38)
+        Me.button_bot.TabIndex = 82
+        Me.button_bot.Text = "Libbo ile Doldur"
+        Me.button_bot.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.button_bot.TextOffsetX = 12
         '
         'GunaLabel9
         '
@@ -478,6 +575,52 @@ Partial Class Add_Book
         Me.GunaGroupBox1.Text = "Kitap Kapağı"
         Me.GunaGroupBox1.TextLocation = New System.Drawing.Point(10, 8)
         '
+        'btn_pbType
+        '
+        Me.btn_pbType.Animated = true
+        Me.btn_pbType.AnimationHoverSpeed = 3!
+        Me.btn_pbType.AnimationSpeed = 3!
+        Me.btn_pbType.BackColor = System.Drawing.Color.Transparent
+        Me.btn_pbType.BaseColor = System.Drawing.Color.FromArgb(CType(CType(37,Byte),Integer), CType(CType(18,Byte),Integer), CType(CType(70,Byte),Integer))
+        Me.btn_pbType.BorderColor = System.Drawing.Color.Black
+        Me.btn_pbType.CheckedBaseColor = System.Drawing.Color.Gray
+        Me.btn_pbType.CheckedBorderColor = System.Drawing.Color.Black
+        Me.btn_pbType.CheckedForeColor = System.Drawing.Color.White
+        Me.btn_pbType.CheckedImage = CType(resources.GetObject("btn_pbType.CheckedImage"),System.Drawing.Image)
+        Me.btn_pbType.CheckedLineColor = System.Drawing.Color.DimGray
+        Me.btn_pbType.FocusedColor = System.Drawing.Color.Empty
+        Me.btn_pbType.Font = New System.Drawing.Font("Segoe UI", 9!)
+        Me.btn_pbType.ForeColor = System.Drawing.Color.Aqua
+        Me.btn_pbType.Image = Global.HBR_Library_System.My.Resources.Resources.fit_to_width_64px
+        Me.btn_pbType.ImageSize = New System.Drawing.Size(24, 24)
+        Me.btn_pbType.LineColor = System.Drawing.Color.FromArgb(CType(CType(66,Byte),Integer), CType(CType(58,Byte),Integer), CType(CType(170,Byte),Integer))
+        Me.btn_pbType.Location = New System.Drawing.Point(99, 5)
+        Me.btn_pbType.Name = "btn_pbType"
+        Me.btn_pbType.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(224,Byte),Integer), CType(CType(224,Byte),Integer), CType(CType(224,Byte),Integer))
+        Me.btn_pbType.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.btn_pbType.OnHoverForeColor = System.Drawing.Color.Indigo
+        Me.btn_pbType.OnHoverImage = Nothing
+        Me.btn_pbType.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66,Byte),Integer), CType(CType(58,Byte),Integer), CType(CType(170,Byte),Integer))
+        Me.btn_pbType.OnPressedColor = System.Drawing.Color.Black
+        Me.btn_pbType.Radius = 3
+        Me.btn_pbType.Size = New System.Drawing.Size(103, 23)
+        Me.btn_pbType.TabIndex = 82
+        Me.btn_pbType.Text = "Sığdır"
+        '
+        'book_poster
+        '
+        Me.book_poster.BackColor = System.Drawing.Color.Transparent
+        Me.book_poster.BaseColor = System.Drawing.Color.White
+        Me.book_poster.Image = Global.HBR_Library_System.My.Resources.Resources.HBR
+        Me.book_poster.ImageLocation = ""
+        Me.book_poster.Location = New System.Drawing.Point(4, 37)
+        Me.book_poster.Name = "book_poster"
+        Me.book_poster.Radius = 6
+        Me.book_poster.Size = New System.Drawing.Size(200, 163)
+        Me.book_poster.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.book_poster.TabIndex = 0
+        Me.book_poster.TabStop = false
+        '
         'dataUpdater
         '
         Me.dataUpdater.Enabled = true
@@ -509,15 +652,6 @@ Partial Class Add_Book
         'libbo_reset
         '
         Me.libbo_reset.Interval = 3500
-        '
-        'subjectLog
-        '
-        Me.subjectLog.Location = New System.Drawing.Point(502, 3)
-        Me.subjectLog.Name = "subjectLog"
-        Me.subjectLog.Size = New System.Drawing.Size(240, 143)
-        Me.subjectLog.TabIndex = 82
-        Me.subjectLog.Text = ""
-        Me.subjectLog.Visible = false
         '
         'welcomeSESSION
         '
@@ -611,150 +745,6 @@ Partial Class Add_Book
         Me.btnINSERT.Text = "Ekle"
         Me.btnINSERT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'btn_pbType
-        '
-        Me.btn_pbType.Animated = true
-        Me.btn_pbType.AnimationHoverSpeed = 3!
-        Me.btn_pbType.AnimationSpeed = 3!
-        Me.btn_pbType.BackColor = System.Drawing.Color.Transparent
-        Me.btn_pbType.BaseColor = System.Drawing.Color.FromArgb(CType(CType(37,Byte),Integer), CType(CType(18,Byte),Integer), CType(CType(70,Byte),Integer))
-        Me.btn_pbType.BorderColor = System.Drawing.Color.Black
-        Me.btn_pbType.CheckedBaseColor = System.Drawing.Color.Gray
-        Me.btn_pbType.CheckedBorderColor = System.Drawing.Color.Black
-        Me.btn_pbType.CheckedForeColor = System.Drawing.Color.White
-        Me.btn_pbType.CheckedImage = CType(resources.GetObject("btn_pbType.CheckedImage"),System.Drawing.Image)
-        Me.btn_pbType.CheckedLineColor = System.Drawing.Color.DimGray
-        Me.btn_pbType.FocusedColor = System.Drawing.Color.Empty
-        Me.btn_pbType.Font = New System.Drawing.Font("Segoe UI", 9!)
-        Me.btn_pbType.ForeColor = System.Drawing.Color.Aqua
-        Me.btn_pbType.Image = Global.HBR_Library_System.My.Resources.Resources.fit_to_width_64px
-        Me.btn_pbType.ImageSize = New System.Drawing.Size(24, 24)
-        Me.btn_pbType.LineColor = System.Drawing.Color.FromArgb(CType(CType(66,Byte),Integer), CType(CType(58,Byte),Integer), CType(CType(170,Byte),Integer))
-        Me.btn_pbType.Location = New System.Drawing.Point(99, 5)
-        Me.btn_pbType.Name = "btn_pbType"
-        Me.btn_pbType.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(224,Byte),Integer), CType(CType(224,Byte),Integer), CType(CType(224,Byte),Integer))
-        Me.btn_pbType.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.btn_pbType.OnHoverForeColor = System.Drawing.Color.Indigo
-        Me.btn_pbType.OnHoverImage = Nothing
-        Me.btn_pbType.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66,Byte),Integer), CType(CType(58,Byte),Integer), CType(CType(170,Byte),Integer))
-        Me.btn_pbType.OnPressedColor = System.Drawing.Color.Black
-        Me.btn_pbType.Radius = 3
-        Me.btn_pbType.Size = New System.Drawing.Size(103, 23)
-        Me.btn_pbType.TabIndex = 82
-        Me.btn_pbType.Text = "Sığdır"
-        '
-        'book_poster
-        '
-        Me.book_poster.BackColor = System.Drawing.Color.Transparent
-        Me.book_poster.BaseColor = System.Drawing.Color.White
-        Me.book_poster.Image = Global.HBR_Library_System.My.Resources.Resources.HBR
-        Me.book_poster.ImageLocation = ""
-        Me.book_poster.Location = New System.Drawing.Point(4, 37)
-        Me.book_poster.Name = "book_poster"
-        Me.book_poster.Radius = 6
-        Me.book_poster.Size = New System.Drawing.Size(200, 163)
-        Me.book_poster.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.book_poster.TabIndex = 0
-        Me.book_poster.TabStop = false
-        '
-        'GunaAdvenceButton1
-        '
-        Me.GunaAdvenceButton1.Animated = true
-        Me.GunaAdvenceButton1.AnimationHoverSpeed = 3!
-        Me.GunaAdvenceButton1.AnimationSpeed = 3!
-        Me.GunaAdvenceButton1.BackColor = System.Drawing.Color.Transparent
-        Me.GunaAdvenceButton1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(37,Byte),Integer), CType(CType(18,Byte),Integer), CType(CType(70,Byte),Integer))
-        Me.GunaAdvenceButton1.BorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton1.CheckedBaseColor = System.Drawing.Color.Gray
-        Me.GunaAdvenceButton1.CheckedBorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton1.CheckedForeColor = System.Drawing.Color.White
-        Me.GunaAdvenceButton1.CheckedImage = CType(resources.GetObject("GunaAdvenceButton1.CheckedImage"),System.Drawing.Image)
-        Me.GunaAdvenceButton1.CheckedLineColor = System.Drawing.Color.DimGray
-        Me.GunaAdvenceButton1.FocusedColor = System.Drawing.Color.Empty
-        Me.GunaAdvenceButton1.Font = New System.Drawing.Font("Segoe UI", 9!)
-        Me.GunaAdvenceButton1.ForeColor = System.Drawing.Color.Aqua
-        Me.GunaAdvenceButton1.Image = Global.HBR_Library_System.My.Resources.Resources.help_gradient_32
-        Me.GunaAdvenceButton1.ImageSize = New System.Drawing.Size(22, 22)
-        Me.GunaAdvenceButton1.LineColor = System.Drawing.Color.FromArgb(CType(CType(66,Byte),Integer), CType(CType(58,Byte),Integer), CType(CType(170,Byte),Integer))
-        Me.GunaAdvenceButton1.Location = New System.Drawing.Point(226, 3)
-        Me.GunaAdvenceButton1.Name = "GunaAdvenceButton1"
-        Me.GunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(224,Byte),Integer), CType(CType(224,Byte),Integer), CType(CType(224,Byte),Integer))
-        Me.GunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton1.OnHoverForeColor = System.Drawing.Color.Indigo
-        Me.GunaAdvenceButton1.OnHoverImage = Nothing
-        Me.GunaAdvenceButton1.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66,Byte),Integer), CType(CType(58,Byte),Integer), CType(CType(170,Byte),Integer))
-        Me.GunaAdvenceButton1.OnPressedColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton1.Radius = 3
-        Me.GunaAdvenceButton1.Size = New System.Drawing.Size(87, 23)
-        Me.GunaAdvenceButton1.TabIndex = 82
-        Me.GunaAdvenceButton1.Text = "Yardım"
-        '
-        'button_bot
-        '
-        Me.button_bot.Animated = true
-        Me.button_bot.AnimationHoverSpeed = 3!
-        Me.button_bot.AnimationSpeed = 3!
-        Me.button_bot.BackColor = System.Drawing.Color.Transparent
-        Me.button_bot.BaseColor = System.Drawing.Color.FromArgb(CType(CType(6,Byte),Integer), CType(CType(16,Byte),Integer), CType(CType(27,Byte),Integer))
-        Me.button_bot.BorderColor = System.Drawing.Color.Black
-        Me.button_bot.CheckedBaseColor = System.Drawing.Color.Gray
-        Me.button_bot.CheckedBorderColor = System.Drawing.Color.Black
-        Me.button_bot.CheckedForeColor = System.Drawing.Color.White
-        Me.button_bot.CheckedImage = CType(resources.GetObject("button_bot.CheckedImage"),System.Drawing.Image)
-        Me.button_bot.CheckedLineColor = System.Drawing.Color.DimGray
-        Me.button_bot.FocusedColor = System.Drawing.Color.Empty
-        Me.button_bot.Font = New System.Drawing.Font("Segoe UI", 12!)
-        Me.button_bot.ForeColor = System.Drawing.Color.Aqua
-        Me.button_bot.Image = Global.HBR_Library_System.My.Resources.Resources.downcloud_gradient_32
-        Me.button_bot.ImageSize = New System.Drawing.Size(32, 32)
-        Me.button_bot.LineColor = System.Drawing.Color.FromArgb(CType(CType(66,Byte),Integer), CType(CType(58,Byte),Integer), CType(CType(170,Byte),Integer))
-        Me.button_bot.Location = New System.Drawing.Point(70, 195)
-        Me.button_bot.Name = "button_bot"
-        Me.button_bot.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(224,Byte),Integer), CType(CType(224,Byte),Integer), CType(CType(224,Byte),Integer))
-        Me.button_bot.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.button_bot.OnHoverForeColor = System.Drawing.Color.Indigo
-        Me.button_bot.OnHoverImage = Nothing
-        Me.button_bot.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66,Byte),Integer), CType(CType(58,Byte),Integer), CType(CType(170,Byte),Integer))
-        Me.button_bot.OnPressedColor = System.Drawing.Color.Black
-        Me.button_bot.Radius = 20
-        Me.button_bot.Size = New System.Drawing.Size(205, 38)
-        Me.button_bot.TabIndex = 82
-        Me.button_bot.Text = "Libbo ile Doldur"
-        Me.button_bot.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        Me.button_bot.TextOffsetX = 12
-        '
-        'btn_Clear
-        '
-        Me.btn_Clear.Animated = true
-        Me.btn_Clear.AnimationHoverSpeed = 3!
-        Me.btn_Clear.AnimationSpeed = 3!
-        Me.btn_Clear.BackColor = System.Drawing.Color.Transparent
-        Me.btn_Clear.BaseColor = System.Drawing.Color.FromArgb(CType(CType(37,Byte),Integer), CType(CType(18,Byte),Integer), CType(CType(70,Byte),Integer))
-        Me.btn_Clear.BorderColor = System.Drawing.Color.Black
-        Me.btn_Clear.CheckedBaseColor = System.Drawing.Color.Gray
-        Me.btn_Clear.CheckedBorderColor = System.Drawing.Color.Black
-        Me.btn_Clear.CheckedForeColor = System.Drawing.Color.White
-        Me.btn_Clear.CheckedImage = CType(resources.GetObject("btn_Clear.CheckedImage"),System.Drawing.Image)
-        Me.btn_Clear.CheckedLineColor = System.Drawing.Color.DimGray
-        Me.btn_Clear.FocusedColor = System.Drawing.Color.Empty
-        Me.btn_Clear.Font = New System.Drawing.Font("Segoe UI", 9!)
-        Me.btn_Clear.ForeColor = System.Drawing.Color.Aqua
-        Me.btn_Clear.Image = Global.HBR_Library_System.My.Resources.Resources.available_updates_64px
-        Me.btn_Clear.ImageSize = New System.Drawing.Size(24, 24)
-        Me.btn_Clear.LineColor = System.Drawing.Color.FromArgb(CType(CType(66,Byte),Integer), CType(CType(58,Byte),Integer), CType(CType(170,Byte),Integer))
-        Me.btn_Clear.Location = New System.Drawing.Point(402, 3)
-        Me.btn_Clear.Name = "btn_Clear"
-        Me.btn_Clear.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(224,Byte),Integer), CType(CType(224,Byte),Integer), CType(CType(224,Byte),Integer))
-        Me.btn_Clear.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.btn_Clear.OnHoverForeColor = System.Drawing.Color.Indigo
-        Me.btn_Clear.OnHoverImage = Nothing
-        Me.btn_Clear.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66,Byte),Integer), CType(CType(58,Byte),Integer), CType(CType(170,Byte),Integer))
-        Me.btn_Clear.OnPressedColor = System.Drawing.Color.Black
-        Me.btn_Clear.Radius = 3
-        Me.btn_Clear.Size = New System.Drawing.Size(87, 23)
-        Me.btn_Clear.TabIndex = 81
-        Me.btn_Clear.Text = "Sıfırla"
-        '
         'Add_Book
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
@@ -763,7 +753,6 @@ Partial Class Add_Book
         Me.Controls.Add(Me.welcomeSESSION)
         Me.Controls.Add(Me.GunaButton2)
         Me.Controls.Add(Me.GunaButton1)
-        Me.Controls.Add(Me.subjectLog)
         Me.Controls.Add(Me.btnINSERT)
         Me.Controls.Add(Me.GunaGroupBox1)
         Me.Controls.Add(Me.group_bot)
@@ -834,7 +823,6 @@ End Sub
     Friend WithEvents libbo_reset As Timer
     Friend WithEvents Timer2 As Timer
     Friend WithEvents GunaLabel10 As Guna.UI.WinForms.GunaLabel
-    Friend WithEvents subjectLog As RichTextBox
     Friend WithEvents GunaButton2 As Guna.UI.WinForms.GunaButton
     Friend WithEvents GunaButton1 As Guna.UI.WinForms.GunaButton
     Friend WithEvents welcomeSESSION As Guna.UI.WinForms.GunaLabel
