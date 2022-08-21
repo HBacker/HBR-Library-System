@@ -393,6 +393,6 @@ Public Class Login_Panel
     End Sub
 
     Private Sub GunaLabel4_Click(sender As Object, e As EventArgs) Handles GunaLabel4.Click
-        Kullanıcı_Kayıt.Show
+        Register_Panel.Show
     End Sub
 End Class
