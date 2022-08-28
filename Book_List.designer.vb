@@ -75,6 +75,7 @@ Partial Class Book_List
         Me.GunaElipse6 = New Guna.UI.WinForms.GunaElipse(Me.components)
         Me.GunaAdvenceButton1 = New Guna.UI.WinForms.GunaAdvenceButton()
         Me.BookList_X = New Guna.UI.WinForms.GunaDataGridView()
+        Me.dataLoader = New HBR_Library_System.loader()
         CType(Me.bookList,System.ComponentModel.ISupportInitialize).BeginInit
         Me.group_bot.SuspendLayout
         Me.group_extra.SuspendLayout
@@ -860,11 +861,21 @@ Partial Class Book_List
         Me.BookList_X.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(4,Byte),Integer), CType(CType(175,Byte),Integer), CType(CType(175,Byte),Integer))
         Me.BookList_X.Visible = false
         '
+        'dataLoader
+        '
+        Me.dataLoader.BackColor = System.Drawing.Color.FromArgb(CType(CType(6,Byte),Integer), CType(CType(16,Byte),Integer), CType(CType(27,Byte),Integer))
+        Me.dataLoader.ForeColor = System.Drawing.Color.FromArgb(CType(CType(4,Byte),Integer), CType(CType(175,Byte),Integer), CType(CType(175,Byte),Integer))
+        Me.dataLoader.Location = New System.Drawing.Point(9, 49)
+        Me.dataLoader.Name = "dataLoader"
+        Me.dataLoader.Size = New System.Drawing.Size(745, 686)
+        Me.dataLoader.TabIndex = 108
+        '
         'Book_List
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(6,Byte),Integer), CType(CType(16,Byte),Integer), CType(CType(27,Byte),Integer))
+        Me.Controls.Add(Me.dataLoader)
         Me.Controls.Add(Me.book_finder)
         Me.Controls.Add(Me.GunaAdvenceButton1)
         Me.Controls.Add(Me.method_author)
@@ -936,4 +947,5 @@ End Sub
     Friend WithEvents GunaElipse6 As Guna.UI.WinForms.GunaElipse
     Friend WithEvents GunaAdvenceButton1 As Guna.UI.WinForms.GunaAdvenceButton
     Friend WithEvents BookList_X As Guna.UI.WinForms.GunaDataGridView
+    Friend WithEvents dataLoader As loader
 End Class

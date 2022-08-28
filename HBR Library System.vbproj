@@ -175,6 +175,12 @@
     <Compile Include="ListMembers.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="loader.Designer.vb">
+      <DependentUpon>loader.vb</DependentUpon>
+    </Compile>
+    <Compile Include="loader.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -231,6 +237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ListMembers.resx">
       <DependentUpon>ListMembers.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="loader.resx">
+      <DependentUpon>loader.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -46,6 +46,7 @@ Partial Class ListMembers
         Me.member_finder = New Guna.UI.WinForms.GunaLineTextBox()
         Me.GunaElipse1 = New Guna.UI.WinForms.GunaElipse(Me.components)
         Me.GunaElipse4 = New Guna.UI.WinForms.GunaElipse(Me.components)
+        Me.dataLoader = New HBR_Library_System.loader()
         CType(Me.bookList,System.ComponentModel.ISupportInitialize).BeginInit
         Me.SuspendLayout
         '
@@ -370,11 +371,21 @@ Partial Class ListMembers
         Me.GunaElipse4.Radius = 5
         Me.GunaElipse4.TargetControl = Me.method_no
         '
+        'dataLoader
+        '
+        Me.dataLoader.BackColor = System.Drawing.Color.FromArgb(CType(CType(6,Byte),Integer), CType(CType(16,Byte),Integer), CType(CType(27,Byte),Integer))
+        Me.dataLoader.ForeColor = System.Drawing.Color.FromArgb(CType(CType(4,Byte),Integer), CType(CType(175,Byte),Integer), CType(CType(175,Byte),Integer))
+        Me.dataLoader.Location = New System.Drawing.Point(17, 50)
+        Me.dataLoader.Name = "dataLoader"
+        Me.dataLoader.Size = New System.Drawing.Size(733, 697)
+        Me.dataLoader.TabIndex = 102
+        '
         'ListMembers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(6,Byte),Integer), CType(CType(16,Byte),Integer), CType(CType(27,Byte),Integer))
+        Me.Controls.Add(Me.dataLoader)
         Me.Controls.Add(Me.member_finder)
         Me.Controls.Add(Me.REFRESH)
         Me.Controls.Add(Me.method_no)
@@ -412,4 +423,5 @@ End Sub
     Friend WithEvents member_finder As Guna.UI.WinForms.GunaLineTextBox
     Friend WithEvents GunaElipse1 As Guna.UI.WinForms.GunaElipse
     Friend WithEvents GunaElipse4 As Guna.UI.WinForms.GunaElipse
+    Friend WithEvents dataLoader As loader
 End Class

@@ -31,6 +31,7 @@ Public Class BookTracker
 
 
     Function getData()
+        dataLoader.Visible = True
         sDate = dashboard.vdate.Text.ToString()
         Try
             Dim db As New MySqlConnection(db_credentials)
@@ -42,15 +43,18 @@ Public Class BookTracker
 
             occurred.Visible = False
             Console.WriteLine("Veri Başarıyla Çekildi location=BookTracker.getData")
-
+            dataLoader.loading.Text = "Yükleniyor..."
             sendLog("Function.BookTracker_getData", "Tracker: SUCCESS ", "Working!")
+        dataLoader.Visible = False
         Catch ErrorEX As Exception
             occurred.Visible = True
-
+           dataLoader.loading.Text = "HATA >> Veritabanı ile bağlantı kurulurken bir hata meydana geldi! location=BookTracker.getData"
+            dataLoader.Visible = True
             Console.WriteLine("Veri Çekilemedi! location=BookTracker.getData" + vbNewLine + ErrorEX.Message)
             sendLog("Function.BookTracker_getData", "Tracker: ERROR ", ErrorEX.Message)
         Finally
             db.Dispose()
+            
         End Try
 
     End Function
@@ -97,5 +101,7 @@ Public Class BookTracker
 
     End Sub
 
+    Private Sub dataLoader_Load(sender As Object, e As EventArgs) Handles dataLoader.Load
 
+    End Sub
 End Class

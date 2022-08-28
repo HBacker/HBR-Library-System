@@ -29,6 +29,8 @@ Public Class Book_List
 
 
     Function getData()
+        dataLoader.Visible = True
+        dataLoader.loading.Text = "Yükleniyor..."
         Try
             Dim db As New MySqlConnection(db_credentials)
 
@@ -42,9 +44,13 @@ Public Class Book_List
             Console.WriteLine("Veri Başarıyla Çekildi location=getData")
             db.Dispose()
             delete_column
+             dataLoader.Visible = False
+        dataLoader.loading.Text = "Yükleniyor"
         Catch ErrorEX As Exception
             occurred.Visible = True
             Console.WriteLine("Veri Çekilemedi! location=getData" + vbNewLine + ErrorEX.Message)
+             dataLoader.Visible = True
+        dataLoader.loading.Text = "HATA >> Veritabanı ile bağlantı kurulurken bir hata meydana geldi! location=BookList.getData"
         End Try
 
     End Function

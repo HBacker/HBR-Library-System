@@ -411,11 +411,11 @@ Partial Class dashboard
         '
         Me.panel_dash.BackColor = System.Drawing.Color.Transparent
         Me.panel_dash.BaseColor = System.Drawing.Color.FromArgb(CType(CType(6,Byte),Integer), CType(CType(16,Byte),Integer), CType(CType(27,Byte),Integer))
-        Me.panel_dash.Controls.Add(Me.Section_Book_List)
         Me.panel_dash.Controls.Add(Me.Section_Track_Book)
         Me.panel_dash.Controls.Add(Me.Section_AddNewMember)
         Me.panel_dash.Controls.Add(Me.Section_List_Members)
         Me.panel_dash.Controls.Add(Me.Section_Add_Book)
+        Me.panel_dash.Controls.Add(Me.Section_Book_List)
         Me.panel_dash.Location = New System.Drawing.Point(279, 67)
         Me.panel_dash.Name = "panel_dash"
         Me.panel_dash.Radius = 7
@@ -437,7 +437,7 @@ Partial Class dashboard
         Me.Section_Track_Book.BackColor = System.Drawing.Color.FromArgb(CType(CType(6,Byte),Integer), CType(CType(16,Byte),Integer), CType(CType(27,Byte),Integer))
         Me.Section_Track_Book.Location = New System.Drawing.Point(-1, 0)
         Me.Section_Track_Book.Name = "Section_Track_Book"
-        Me.Section_Track_Book.Size = New System.Drawing.Size(764, 530)
+        Me.Section_Track_Book.Size = New System.Drawing.Size(764, 760)
         Me.Section_Track_Book.TabIndex = 4
         Me.Section_Track_Book.Visible = false
         '

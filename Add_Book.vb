@@ -34,29 +34,18 @@ Public Class Add_Book
     Private Sub Label1_Click(sender As Object, e As EventArgs)
     End Sub
     Sub loading_show
-        loading.Visible = True
+        dataLoader.Visible = True
+        loader_timer.Start
     End Sub
     Sub loading_hide
-        loading.Visible = False
+        dataLoader.Visible = False
     End Sub
     Private Sub button_bot_Click(sender As Object, e As EventArgs) Handles button_bot.Click
         If libbo_isbn.Text.Length <= 5 Then
 
             Else
             loading_show
-              If libbo_isbn.Text.Contains(" ") Then
-            libbo_isbn.Text = libbo_isbn.Text.Replace(" ", "")
-        End If
-        data_isbn = ""
-        raw_data = ""
-        data_isbn = libbo_isbn.Text
-        btn_Clear.PerformClick()
-        libbo(data_isbn)
-        text_ISBN.Text = data_isbn
-        If libbo_basic.Checked = true
-        else
-            LibBo_WebDriver(data_isbn)
-        End If
+             
         End If
       
 
@@ -799,5 +788,26 @@ Public Class Add_Book
     Private Sub GunaLabel11_Click(sender As Object, e As EventArgs) 
      
 
+    End Sub
+
+    Private Sub Loader1_Load(sender As Object, e As EventArgs) Handles dataLoader.Load
+
+    End Sub
+
+    Private Sub loader_timer_Tick(sender As Object, e As EventArgs) Handles loader_timer.Tick
+        loader_timer.Stop
+        If libbo_isbn.Text.Contains(" ") Then
+            libbo_isbn.Text = libbo_isbn.Text.Replace(" ", "")
+        End If
+        data_isbn = ""
+        raw_data = ""
+        data_isbn = libbo_isbn.Text
+        btn_Clear.PerformClick()
+        libbo(data_isbn)
+        text_ISBN.Text = data_isbn
+        If libbo_basic.Checked = true
+        else
+            LibBo_WebDriver(data_isbn)
+        End If
     End Sub
 End Class

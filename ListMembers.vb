@@ -19,6 +19,8 @@ Public Class ListMembers
         DevTool.log.Text = DevTool.log.Text + vbNewLine + "[" + dashboard.lTime.Text + "]" + "{" + SectionName + "}---" + title + " ==> " + message + " #ERR_BASE=>" + vbNewLine + "[" + ex + "]"
     End Function
     Function getData()
+         dataLoader.loading.Text = "Yükleniyor..."
+            dataLoader.Visible = True
         Try
             Dim db As New MySqlConnection(db_credentials)
 
@@ -31,10 +33,14 @@ Public Class ListMembers
             Console.WriteLine("Veri Başarıyla Çekildi location=getData")
             sendLog("SUCCESS!", "getData executed!", ":)")
             db.Dispose()
+             dataLoader.loading.Text = "Yükleniyor..."
+            dataLoader.Visible = True
         Catch ErrorEX As Exception
             occurred.Visible = True
             Console.WriteLine("Veri Çekilemedi! location=getData" + vbNewLine + ErrorEX.Message)
             sendLog("ERROR!", "getData occurred!", ErrorEX.Message)
+             dataLoader.loading.Text = "HATA >> Veritabanı ile bağlantı kurulurken bir hata meydana geldi! location=BookTracker.getData"
+            dataLoader.Visible = True
         End Try
 
     End Function
