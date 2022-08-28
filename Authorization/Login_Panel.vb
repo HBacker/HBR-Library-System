@@ -395,4 +395,24 @@ Public Class Login_Panel
     Private Sub GunaLabel4_Click(sender As Object, e As EventArgs) Handles GunaLabel4.Click
         Register_Panel.Show
     End Sub
+
+    Private Sub kod1_KeyDown(sender As Object, e As KeyEventArgs) Handles kod1.KeyDown
+        kod2.Text = ""
+        kod2.Select()
+    End Sub
+
+    Private Sub kod2_KeyDown(sender As Object, e As KeyEventArgs) Handles kod2.KeyDown
+        kod3.Text = ""
+        kod3.Select()
+    End Sub
+
+    Private Sub kod3_KeyDown(sender As Object, e As KeyEventArgs) Handles kod3.KeyDown
+        kod4.Text = ""
+        kod4.Select()
+    End Sub
+
+    Private Sub kod4_KeyDown(sender As Object, e As KeyEventArgs) Handles kod4.KeyDown
+        piyon.Text = ""
+        piyon.Select()
+    End Sub
 End Class

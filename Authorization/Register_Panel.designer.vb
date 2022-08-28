@@ -54,6 +54,8 @@ Partial Class Register_Panel
         Me.header_icon = New Guna.UI.WinForms.GunaPictureBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Header = New HBR_Library_System.FormSkin()
+        Me.header_title = New Guna.UI.WinForms.GunaLabel()
+        Me.GunaLabel7 = New Guna.UI.WinForms.GunaLabel()
         Me.GunaGradientButton2 = New Guna.UI.WinForms.GunaGradientButton()
         Me.GunaPictureBox1 = New Guna.UI.WinForms.GunaPictureBox()
         Me.GunaLabel2 = New Guna.UI.WinForms.GunaLabel()
@@ -67,8 +69,6 @@ Partial Class Register_Panel
         Me.level_high = New Guna.UI.WinForms.GunaRadioButton()
         Me.register = New Guna.UI.WinForms.GunaAdvenceButton()
         Me.btnNew = New Guna.UI.WinForms.GunaAdvenceButton()
-        Me.header_title = New Guna.UI.WinForms.GunaLabel()
-        Me.GunaLabel7 = New Guna.UI.WinForms.GunaLabel()
         Me.btnHelp = New Guna.UI.WinForms.GunaAdvenceButton()
         Me.gb_verify.SuspendLayout
         Me.GunaGradient2Panel3.SuspendLayout
@@ -500,6 +500,30 @@ Partial Class Register_Panel
         Me.Header.TabIndex = 58
         Me.Header.Text = "Header"
         '
+        'header_title
+        '
+        Me.header_title.AutoSize = true
+        Me.header_title.BackColor = System.Drawing.Color.Transparent
+        Me.header_title.Font = New System.Drawing.Font("Trebuchet MS", 17!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(162,Byte))
+        Me.header_title.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.header_title.Location = New System.Drawing.Point(99, 7)
+        Me.header_title.Name = "header_title"
+        Me.header_title.Size = New System.Drawing.Size(265, 28)
+        Me.header_title.TabIndex = 33
+        Me.header_title.Text = "HBR Kütüphane Sistemi"
+        '
+        'GunaLabel7
+        '
+        Me.GunaLabel7.AutoSize = true
+        Me.GunaLabel7.BackColor = System.Drawing.Color.Transparent
+        Me.GunaLabel7.Font = New System.Drawing.Font("Trebuchet MS", 10!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(162,Byte))
+        Me.GunaLabel7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(4,Byte),Integer), CType(CType(175,Byte),Integer), CType(CType(175,Byte),Integer))
+        Me.GunaLabel7.Location = New System.Drawing.Point(181, 32)
+        Me.GunaLabel7.Name = "GunaLabel7"
+        Me.GunaLabel7.Size = New System.Drawing.Size(76, 18)
+        Me.GunaLabel7.TabIndex = 90
+        Me.GunaLabel7.Text = "Yetkili Ekle"
+        '
         'GunaGradientButton2
         '
         Me.GunaGradientButton2.Animated = true
@@ -743,30 +767,6 @@ Partial Class Register_Panel
         Me.btnNew.TabIndex = 88
         Me.btnNew.Text = "Yeni Kayıt"
         '
-        'header_title
-        '
-        Me.header_title.AutoSize = true
-        Me.header_title.BackColor = System.Drawing.Color.Transparent
-        Me.header_title.Font = New System.Drawing.Font("Trebuchet MS", 17!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(162,Byte))
-        Me.header_title.ForeColor = System.Drawing.Color.WhiteSmoke
-        Me.header_title.Location = New System.Drawing.Point(99, 7)
-        Me.header_title.Name = "header_title"
-        Me.header_title.Size = New System.Drawing.Size(265, 28)
-        Me.header_title.TabIndex = 33
-        Me.header_title.Text = "HBR Kütüphane Sistemi"
-        '
-        'GunaLabel7
-        '
-        Me.GunaLabel7.AutoSize = true
-        Me.GunaLabel7.BackColor = System.Drawing.Color.Transparent
-        Me.GunaLabel7.Font = New System.Drawing.Font("Trebuchet MS", 10!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(162,Byte))
-        Me.GunaLabel7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(4,Byte),Integer), CType(CType(175,Byte),Integer), CType(CType(175,Byte),Integer))
-        Me.GunaLabel7.Location = New System.Drawing.Point(181, 32)
-        Me.GunaLabel7.Name = "GunaLabel7"
-        Me.GunaLabel7.Size = New System.Drawing.Size(76, 18)
-        Me.GunaLabel7.TabIndex = 90
-        Me.GunaLabel7.Text = "Yetkili Ekle"
-        '
         'btnHelp
         '
         Me.btnHelp.Animated = true
@@ -804,7 +804,7 @@ Partial Class Register_Panel
         Me.btnHelp.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.btnHelp.TextOffsetX = 18
         '
-        'Kullanıcı_Kayıt
+        'Register_Panel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -827,7 +827,7 @@ Partial Class Register_Panel
         Me.Controls.Add(Me.gb_verify)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"),System.Drawing.Icon)
-        Me.Name = "Kullanıcı_Kayıt"
+        Me.Name = "Register_Panel"
         Me.Text = "Yeni Kullanıcı Kaydı"
         Me.TopMost = true
         Me.gb_verify.ResumeLayout(false)

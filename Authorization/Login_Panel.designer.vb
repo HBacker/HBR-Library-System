@@ -62,10 +62,10 @@ Partial Class Login_Panel
         Me.login = New Guna.UI.WinForms.GunaAdvenceButton()
         Me.time_updater = New System.Windows.Forms.Timer(Me.components)
         Me.Header = New HBR_Library_System.FormSkin()
+        Me.GunaLabel4 = New Guna.UI.WinForms.GunaLabel()
         Me.header_kapat = New Guna.UI.WinForms.GunaGradientButton()
         Me.header_icon = New Guna.UI.WinForms.GunaPictureBox()
         Me.piyon = New HBR_Library_System.FlatTextBox()
-        Me.GunaLabel4 = New Guna.UI.WinForms.GunaLabel()
         Me.gb_verify.SuspendLayout
         Me.GunaGradient2Panel3.SuspendLayout
         Me.block.SuspendLayout
@@ -623,6 +623,18 @@ Partial Class Login_Panel
         Me.Header.TabIndex = 30
         Me.Header.Text = "Header"
         '
+        'GunaLabel4
+        '
+        Me.GunaLabel4.AutoSize = true
+        Me.GunaLabel4.BackColor = System.Drawing.Color.Transparent
+        Me.GunaLabel4.Font = New System.Drawing.Font("Trebuchet MS", 10!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(162,Byte))
+        Me.GunaLabel4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(4,Byte),Integer), CType(CType(175,Byte),Integer), CType(CType(175,Byte),Integer))
+        Me.GunaLabel4.Location = New System.Drawing.Point(199, 33)
+        Me.GunaLabel4.Name = "GunaLabel4"
+        Me.GunaLabel4.Size = New System.Drawing.Size(82, 18)
+        Me.GunaLabel4.TabIndex = 89
+        Me.GunaLabel4.Text = "Yetkili Girişi"
+        '
         'header_kapat
         '
         Me.header_kapat.Animated = true
@@ -677,18 +689,6 @@ Partial Class Login_Panel
         Me.piyon.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.piyon.TextColor = System.Drawing.Color.FromArgb(CType(CType(192,Byte),Integer), CType(CType(192,Byte),Integer), CType(CType(192,Byte),Integer))
         Me.piyon.UseSystemPasswordChar = false
-        '
-        'GunaLabel4
-        '
-        Me.GunaLabel4.AutoSize = true
-        Me.GunaLabel4.BackColor = System.Drawing.Color.Transparent
-        Me.GunaLabel4.Font = New System.Drawing.Font("Trebuchet MS", 10!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(162,Byte))
-        Me.GunaLabel4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(4,Byte),Integer), CType(CType(175,Byte),Integer), CType(CType(175,Byte),Integer))
-        Me.GunaLabel4.Location = New System.Drawing.Point(199, 33)
-        Me.GunaLabel4.Name = "GunaLabel4"
-        Me.GunaLabel4.Size = New System.Drawing.Size(82, 18)
-        Me.GunaLabel4.TabIndex = 89
-        Me.GunaLabel4.Text = "Yetkili Girişi"
         '
         'Login_Panel
         '

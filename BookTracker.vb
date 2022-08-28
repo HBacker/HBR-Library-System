@@ -35,20 +35,20 @@ Public Class BookTracker
         Try
             Dim db As New MySqlConnection(db_credentials)
 
-            Dim dap3 As New MySqlDataAdapter("SELECT * FROM members WHERE TeslimTarihi <= " & "'" & sDate & "'", db)
+            Dim dap3 As New MySqlDataAdapter("SELECT * FROM books WHERE TeslimEdilecegiTarih <= " & "'" & sDate & "'", db)
             Dim dt3 As New DataTable
             dap3.Fill(dt3)
             trackList.DataSource = dt3
 
             occurred.Visible = False
-            Console.WriteLine("Veri Başarıyla Çekildi location=getData")
+            Console.WriteLine("Veri Başarıyla Çekildi location=BookTracker.getData")
 
-            sendLog("Function.getData", "Tracker: SUCCESS ", "Working!")
+            sendLog("Function.BookTracker_getData", "Tracker: SUCCESS ", "Working!")
         Catch ErrorEX As Exception
             occurred.Visible = True
 
-            Console.WriteLine("Veri Çekilemedi! location=getData" + vbNewLine + ErrorEX.Message)
-            sendLog("Function.getData", "Tracker: ERROR ", ErrorEX.Message)
+            Console.WriteLine("Veri Çekilemedi! location=BookTracker.getData" + vbNewLine + ErrorEX.Message)
+            sendLog("Function.BookTracker_getData", "Tracker: ERROR ", ErrorEX.Message)
         Finally
             db.Dispose()
         End Try

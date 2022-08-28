@@ -90,12 +90,13 @@ Public Class Book_List
             Dim selectedRowX As DataGridViewRow
             selectedRow = bookList.Rows(index)
             selectedRowX = BookList_X.Rows(index)
-            selected_BookName.Text = selectedRow.Cells(2 - i).Value.ToString()
-            selected_Author.Text = selectedRow.Cells(3 - i).Value.ToString()
-            selected_Publisher.Text = selectedRow.Cells(4 - i).Value.ToString()
-            selected_ISBN.Text = selectedRow.Cells(7 - i).Value.ToString()
-            getBook_id.Text = selectedRow.Cells(0 - i).Value.ToString()
-            image = selectedRowX.Cells(1- i).Value.ToString()
+            selected_BookName.Text = selectedRow.Cells(2).Value.ToString()
+            selected_Author.Text = selectedRow.Cells(3).Value.ToString()
+            selected_Publisher.Text = selectedRow.Cells(4).Value.ToString()
+            selected_ISBN.Text = selectedRow.Cells(7).Value.ToString()
+            getBook_id.Text = selectedRow.Cells(0).Value.ToString()
+            image = selectedRowX.Cells(1).Value.ToString()
+           
             If image.Length < 6 Then
                 book_poster.Image = My.Resources.Resources.HBR
                 Elseif image.Contains("/library-posters/HBR.") Then
@@ -106,6 +107,7 @@ Public Class Book_List
                 book_poster.Load(image.ToString)
             End If
         Catch ex As Exception
+            book_poster.Image = My.Resources.Resources.HBR
             Console.WriteLine(ex.Message)
         End Try
     End Sub
@@ -189,6 +191,10 @@ Public Class Book_List
     End Sub
 
     Private Sub BookList_X_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles BookList_X.CellContentClick
+
+    End Sub
+
+    Private Sub GunaAdvenceButton2_Click(sender As Object, e As EventArgs) Handles GunaAdvenceButton2.Click
 
     End Sub
 End Class

@@ -103,7 +103,7 @@ Partial Class BookTracker
         Me.trackList.RowHeadersVisible = false
         Me.trackList.RowTemplate.Height = 31
         Me.trackList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.trackList.Size = New System.Drawing.Size(725, 375)
+        Me.trackList.Size = New System.Drawing.Size(725, 614)
         Me.trackList.TabIndex = 84
         Me.trackList.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna
         Me.trackList.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
@@ -176,7 +176,7 @@ Partial Class BookTracker
         Me.GunaAdvenceButton1.Image = Global.HBR_Library_System.My.Resources.Resources.available_updates_64px
         Me.GunaAdvenceButton1.ImageSize = New System.Drawing.Size(36, 36)
         Me.GunaAdvenceButton1.LineColor = System.Drawing.Color.FromArgb(CType(CType(66,Byte),Integer), CType(CType(58,Byte),Integer), CType(CType(170,Byte),Integer))
-        Me.GunaAdvenceButton1.Location = New System.Drawing.Point(635, 431)
+        Me.GunaAdvenceButton1.Location = New System.Drawing.Point(635, 685)
         Me.GunaAdvenceButton1.Name = "GunaAdvenceButton1"
         Me.GunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(224,Byte),Integer), CType(CType(224,Byte),Integer), CType(CType(224,Byte),Integer))
         Me.GunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Black
@@ -209,7 +209,7 @@ Partial Class BookTracker
         Me.btn_AutoSize.Image = Global.HBR_Library_System.My.Resources.Resources.resize_horizontal_96px
         Me.btn_AutoSize.ImageSize = New System.Drawing.Size(36, 36)
         Me.btn_AutoSize.LineColor = System.Drawing.Color.FromArgb(CType(CType(66,Byte),Integer), CType(CType(58,Byte),Integer), CType(CType(170,Byte),Integer))
-        Me.btn_AutoSize.Location = New System.Drawing.Point(519, 431)
+        Me.btn_AutoSize.Location = New System.Drawing.Point(519, 685)
         Me.btn_AutoSize.Name = "btn_AutoSize"
         Me.btn_AutoSize.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(224,Byte),Integer), CType(CType(224,Byte),Integer), CType(CType(224,Byte),Integer))
         Me.btn_AutoSize.OnHoverBorderColor = System.Drawing.Color.Black
@@ -243,7 +243,7 @@ Partial Class BookTracker
         Me.btn_FulLScreen.Image = Global.HBR_Library_System.My.Resources.Resources.fit_to_width_64px
         Me.btn_FulLScreen.ImageSize = New System.Drawing.Size(36, 36)
         Me.btn_FulLScreen.LineColor = System.Drawing.Color.FromArgb(CType(CType(66,Byte),Integer), CType(CType(58,Byte),Integer), CType(CType(170,Byte),Integer))
-        Me.btn_FulLScreen.Location = New System.Drawing.Point(403, 431)
+        Me.btn_FulLScreen.Location = New System.Drawing.Point(403, 685)
         Me.btn_FulLScreen.Name = "btn_FulLScreen"
         Me.btn_FulLScreen.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(224,Byte),Integer), CType(CType(224,Byte),Integer), CType(CType(224,Byte),Integer))
         Me.btn_FulLScreen.OnHoverBorderColor = System.Drawing.Color.Black
@@ -269,7 +269,7 @@ Partial Class BookTracker
         Me.Controls.Add(Me.trackList)
         Me.Controls.Add(Me.header_text)
         Me.Name = "BookTracker"
-        Me.Size = New System.Drawing.Size(764, 530)
+        Me.Size = New System.Drawing.Size(768, 752)
         CType(Me.trackList,System.ComponentModel.ISupportInitialize).EndInit
         Me.ResumeLayout(false)
         Me.PerformLayout

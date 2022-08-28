@@ -4,6 +4,8 @@ Imports HtmlAgilityPack
 Imports MySql.Data.MySqlClient
 Imports OpenQA.Selenium
 Imports OpenQA.Selenium.Chrome
+Imports System.Security.Cryptography
+Imports System.Text
 Public Class Add_Book
     
     Dim HTMLxpath As String = My.Settings.xpath
@@ -31,10 +33,18 @@ Public Class Add_Book
 
     Private Sub Label1_Click(sender As Object, e As EventArgs)
     End Sub
-
+    Sub loading_show
+        loading.Visible = True
+    End Sub
+    Sub loading_hide
+        loading.Visible = False
+    End Sub
     Private Sub button_bot_Click(sender As Object, e As EventArgs) Handles button_bot.Click
+        If libbo_isbn.Text.Length <= 5 Then
 
-        If libbo_isbn.Text.Contains(" ") Then
+            Else
+            loading_show
+              If libbo_isbn.Text.Contains(" ") Then
             libbo_isbn.Text = libbo_isbn.Text.Replace(" ", "")
         End If
         data_isbn = ""
@@ -47,6 +57,8 @@ Public Class Add_Book
         else
             LibBo_WebDriver(data_isbn)
         End If
+        End If
+      
 
 
     End Sub
@@ -84,13 +96,12 @@ Public Class Add_Book
             Try
                 Dim document = New HtmlWeb().Load("http://www.toplukatalog.gov.tr/?_f=1&the_page=1&cwid=2&keyword=" & text_ISBN.Text & "&tokat_search_field=1&order=0&command=Tara#alt")        
                 Dim veri = document.DocumentNode.SelectSingleNode("//*[@id='search_results']/table[2]")
-                Try
-                    backup = veri.InnerText
-                Catch ex As Exception
+               If veri Is Nothing Then
+                        libbo_emptydata
+                        Else
+                        backup = veri.InnerText
 
-                End Try
-                
-                sleep(1)
+                          sleep(1)
                 x = backup.ToString().ToLower()
                 'subjectLog.Text = subjectLog.Text + vbNewLine + "BACKUP;" + vbNewLine + x.ToString
                 If x.Contains("ingilizce hikaye") Then
@@ -112,6 +123,9 @@ Public Class Add_Book
                 Else
                     
                 End If
+               End If
+                
+              
             Catch ex As Exception
 
             End Try
@@ -129,11 +143,14 @@ Public Class Add_Book
         Try
             Dim document = New HtmlWeb().Load("http://www.toplukatalog.gov.tr/?_f=1&the_page=1&cwid=2&keyword=" & isbn & "&tokat_search_field=1&order=0&command=Tara#alt")
             Dim veri = document.DocumentNode.SelectSingleNode(HTMLxpath)
-            If LibBo_Data Is Nothing Then
+            If veri Is Nothing Then
                libbo_emptydata()
+              
                 Else
-                LibBo_Data = veri.InnerText
+                LibBo_Data  = veri.InnerText
+                
             End If
+           
             
            
 
@@ -371,12 +388,13 @@ Public Class Add_Book
             Dim svc As ChromeDriverService = ChromeDriverService.CreateDefaultService()
             svc.CreateDefaultService()
             svc.HideCommandPromptWindow = True
-            optionsx.AddArguments(" --headless", "--no-sandbox", "--disable-web-security", "--disable-gpu", "--incognito", "--proxy-bypass-list=*", "--proxy-server='direct://'", "--log-level=3", "--hide-scrollbars")
+            
+            optionsx.AddArguments("window-position=-10000,0", "--no-sandbox", "--disable-web-security", "--disable-gpu", "--incognito", "--proxy-bypass-list=*", "--proxy-server='direct://'", "--log-level=3", "--hide-scrollbars")
             If session = "user" Then
-                driver = New ChromeDriver(svc, optionsx)
-            Else
-                driver = New ChromeDriver()
-            End If
+               driver = New ChromeDriver(svc, optionsx)
+          Else
+              driver = New ChromeDriver(svc)
+           End If
 
 
             driver.Navigate().GoToUrl("https://www.bookfinder.com/?")
@@ -403,6 +421,7 @@ Public Class Add_Book
                 selenium_bookname = bookname.Text.ToString()
                 selenium_author = author.Text.ToString()
                 strPublisher = publisher.Text.ToString
+        
             Catch ex As Exception
                 sendLog("Ex.Function.Libbo_WebDriver.EX", "Ex.Function.Libbo_WebDriver.EX: ERROR", ex.message)
             End Try
@@ -565,6 +584,8 @@ Public Class Add_Book
             sendLog("Function.ConvertUTF8Display: SUCCESS", "Publisher(Decoded):: " & x, "")
         Catch ex As Exception
             sendLog("Function.ConvertUTF8Display: ERROR", ":: " & x, "")
+            Finally
+            loading_hide
         End Try
 
         text_Publisher.Text = publisher_converted
@@ -599,6 +620,16 @@ Public Class Add_Book
         dialog_box.Close()
         dialog_box.show()
     End Function
+     Function hasher(ByVal x As String)
+        Dim md5 As MD5 = New MD5CryptoServiceProvider()
+        Dim result As Byte()
+        result = md5.ComputeHash(Encoding.ASCII.GetBytes(x))
+        Dim output_hbr As New StringBuilder()
+        For i As Integer = 0 To result.Length - 1
+            output_hbr.Append(result(i).ToString("x2"))
+        Next
+        Return output_hbr.ToString.TrimEnd()
+    End Function
 
     Function AddBook()
 
@@ -609,6 +640,8 @@ Public Class Add_Book
         Dim Release As String = text_Release.Text
         Dim ISBN as String = text_ISBN.Text
         Dim ImageName as string
+        Dim xtime As String = dashboard.pdate.Value.ToString("dd.MM.yyyy") & " / " & dashboard.lTime.Text.ToString
+       Dim hash As String = hasher(Book & " | " & xtime)
         If ISBN = "" Then
             ImageName = "HBR"
         elseif ISBN.Length < 8 Then
@@ -627,11 +660,12 @@ Public Class Add_Book
                 db.Open()
                 cmd.Connection = db
 
-                cmd.CommandText = "INSERT INTO books (Kapak,Kitap,Yazar,Yayıncı,Konu,ÇıkışYılı,ISBN,KayıtTarihi,Sonİşlem,SonTeslimAlan,Durum) VALUES ('" & Image & "','" & Book & "','" & Author & "','" & Publisher & "','" & Subject & "','" & Release & "', '" & ISBN & "', '" & dashboard.pdate.Value.ToString("dd.MM.yyyy").ToString & "', '" & dashboard.pdate.Value.ToString("dd.MM.yyyy") & " / " & dashboard.lTime.Text.ToString & "', '" & "Yok" & "', '" & "Boşta" & "')"
+                cmd.CommandText = "INSERT INTO books (Kapak,Kitap,Yazar,Yayıncı,Konu,ÇıkışYılı,ISBN,KayıtTarihi,Sonİşlem,SonTeslimAlan,Durum,hash) VALUES ('" & Image & "','" & Book & "','" & Author & "','" & Publisher & "','" & Subject & "','" & Release & "', '" & ISBN & "', '" & dashboard.pdate.Value.ToString("dd.MM.yyyy").ToString & "', '" & dashboard.pdate.Value.ToString("dd.MM.yyyy") & " / " & dashboard.lTime.Text.ToString & "', '" & "Yok" & "', '" & "Kütüphanede" & "', '" & hash & "')"
                 cmd.ExecuteNonQuery()
                 btn_clear.PerformClick()
                 Console.WriteLine("Function.AddBook: SUCCESS")
                 sendLog("Function.AddBook: SUCCESS", "MySQL Data INSERT: SUCCESS", cmd.CommandText.Tostring)
+                 Book_Logger(hash) 'CREATE BOOK TRANSACTION HISTORY type=HASH
                 addButtonChange("success")
                 Dialog("AddBook-success", "Kitap bilgileri Veritabanına başarıyla eklendi!")
             Catch ERR As Exception
@@ -641,6 +675,23 @@ Public Class Add_Book
             End Try
         End If
 
+    End Function
+    Function Book_Logger(hash As String)
+                 Dim db_logger As New MySqlConnection(db_credentials)
+                Dim cmd As New MySqlCommand
+        Try        
+                db_logger.Open()
+                cmd.Connection = db_logger
+
+                cmd.CommandText = "CREATE TABLE `book_history`.`" & hash & "` ( `id` INT(255) NOT NULL AUTO_INCREMENT ,  `Yetkili` VARCHAR(535) NOT NULL ,  `TeslimAlan` VARCHAR(535) NOT NULL ,  `TeslimEdecegiTarih` VARCHAR(535) NOT NULL ,  `TeslimEttigiTarih` VARCHAR(535) NOT NULL ,  `TeslimEttigiZaman` VARCHAR(535) NOT NULL ,  `Durum` VARCHAR(535) NOT NULL ,  `hash` VARCHAR(535) NOT NULL ,    PRIMARY KEY  (`id`)) ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_turkish_ci COMMENT = 'this table created automatically by HBR Library System';"
+                cmd.ExecuteNonQuery()
+         sendLog("Function.BookLogger: SUCCESS", "TABLE CREATE by HASH(" & hash & "): SUCCESS", cmd.CommandText.Tostring)
+        Catch ex As Exception
+            sendLog("Function.BookLogger: ERROR", "Ex Exception", ex.Message)
+       Finally
+           db_logger.Dispose
+        End Try
+       
     End Function
     Function sendLog(title As String, message As String, ex As String)
         DevTool.log.Text = DevTool.log.Text + vbNewLine + "[" + dashboard.lTime.Text + "]" + "{" + SectionName + "}---" + title + " ==> " + message + " #BASE=>" + vbNewLine + "[" + ex + "]"
@@ -743,5 +794,10 @@ Public Class Add_Book
          My.Settings.session = "developer"
         My.Settings.Save
          welcomeSESSION.Text = "welcome, " & My.Settings.session.ToString & "!"
+    End Sub
+
+    Private Sub GunaLabel11_Click(sender As Object, e As EventArgs) 
+     
+
     End Sub
 End Class
