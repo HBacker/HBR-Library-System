@@ -26,6 +26,8 @@ Partial Class dashboard
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(dashboard))
         Me.elipse_main = New Guna.UI.WinForms.GunaElipse(Me.components)
         Me.panel_menu = New Guna.UI.WinForms.GunaElipsePanel()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.dev_login_pass = New Guna.UI.WinForms.GunaLineTextBox()
         Me.dev_login_button = New Guna.UI.WinForms.GunaAdvenceButton()
         Me.vdate = New Guna.UI.WinForms.GunaLabel()
@@ -38,11 +40,11 @@ Partial Class dashboard
         Me.MemberList = New Guna.UI.WinForms.GunaAdvenceButton()
         Me.BookNew = New Guna.UI.WinForms.GunaAdvenceButton()
         Me.panel_dash = New Guna.UI.WinForms.GunaElipsePanel()
+        Me.Section_Add_Book = New HBR_Library_System.Add_Book()
         Me.Section_Book_List = New HBR_Library_System.Book_List()
         Me.Section_Track_Book = New HBR_Library_System.BookTracker()
         Me.Section_AddNewMember = New HBR_Library_System.NewMember()
         Me.Section_List_Members = New HBR_Library_System.ListMembers()
-        Me.Section_Add_Book = New HBR_Library_System.Add_Book()
         Me.GunaLabel2 = New Guna.UI.WinForms.GunaLabel()
         Me.slider = New System.Windows.Forms.Timer(Me.components)
         Me.time = New System.Windows.Forms.Timer(Me.components)
@@ -66,6 +68,8 @@ Partial Class dashboard
         '
         Me.panel_menu.BackColor = System.Drawing.Color.Transparent
         Me.panel_menu.BaseColor = System.Drawing.Color.FromArgb(CType(CType(7,Byte),Integer), CType(CType(3,Byte),Integer), CType(CType(20,Byte),Integer))
+        Me.panel_menu.Controls.Add(Me.Button2)
+        Me.panel_menu.Controls.Add(Me.Button1)
         Me.panel_menu.Controls.Add(Me.dev_login_pass)
         Me.panel_menu.Controls.Add(Me.dev_login_button)
         Me.panel_menu.Controls.Add(Me.vdate)
@@ -82,6 +86,24 @@ Partial Class dashboard
         Me.panel_menu.Radius = 7
         Me.panel_menu.Size = New System.Drawing.Size(261, 760)
         Me.panel_menu.TabIndex = 2
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(137, 643)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 10
+        Me.Button2.Text = "Purple"
+        Me.Button2.UseVisualStyleBackColor = true
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(57, 643)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 9
+        Me.Button1.Text = "Dark"
+        Me.Button1.UseVisualStyleBackColor = true
         '
         'dev_login_pass
         '
@@ -411,16 +433,26 @@ Partial Class dashboard
         '
         Me.panel_dash.BackColor = System.Drawing.Color.Transparent
         Me.panel_dash.BaseColor = System.Drawing.Color.FromArgb(CType(CType(6,Byte),Integer), CType(CType(16,Byte),Integer), CType(CType(27,Byte),Integer))
+        Me.panel_dash.Controls.Add(Me.Section_Add_Book)
+        Me.panel_dash.Controls.Add(Me.Section_Book_List)
         Me.panel_dash.Controls.Add(Me.Section_Track_Book)
         Me.panel_dash.Controls.Add(Me.Section_AddNewMember)
         Me.panel_dash.Controls.Add(Me.Section_List_Members)
-        Me.panel_dash.Controls.Add(Me.Section_Add_Book)
-        Me.panel_dash.Controls.Add(Me.Section_Book_List)
         Me.panel_dash.Location = New System.Drawing.Point(279, 67)
         Me.panel_dash.Name = "panel_dash"
         Me.panel_dash.Radius = 7
         Me.panel_dash.Size = New System.Drawing.Size(766, 760)
         Me.panel_dash.TabIndex = 3
+        '
+        'Section_Add_Book
+        '
+        Me.Section_Add_Book.BackColor = System.Drawing.Color.FromArgb(CType(CType(6,Byte),Integer), CType(CType(16,Byte),Integer), CType(CType(27,Byte),Integer))
+        Me.Section_Add_Book.ForeColor = System.Drawing.Color.FromArgb(CType(CType(4,Byte),Integer), CType(CType(175,Byte),Integer), CType(CType(175,Byte),Integer))
+        Me.Section_Add_Book.Location = New System.Drawing.Point(-1, 0)
+        Me.Section_Add_Book.Name = "Section_Add_Book"
+        Me.Section_Add_Book.Size = New System.Drawing.Size(764, 760)
+        Me.Section_Add_Book.TabIndex = 1
+        Me.Section_Add_Book.Visible = false
         '
         'Section_Book_List
         '
@@ -460,16 +492,6 @@ Partial Class dashboard
         Me.Section_List_Members.Size = New System.Drawing.Size(764, 771)
         Me.Section_List_Members.TabIndex = 2
         Me.Section_List_Members.Visible = false
-        '
-        'Section_Add_Book
-        '
-        Me.Section_Add_Book.BackColor = System.Drawing.Color.FromArgb(CType(CType(6,Byte),Integer), CType(CType(16,Byte),Integer), CType(CType(27,Byte),Integer))
-        Me.Section_Add_Book.ForeColor = System.Drawing.Color.FromArgb(CType(CType(4,Byte),Integer), CType(CType(175,Byte),Integer), CType(CType(175,Byte),Integer))
-        Me.Section_Add_Book.Location = New System.Drawing.Point(-1, 0)
-        Me.Section_Add_Book.Name = "Section_Add_Book"
-        Me.Section_Add_Book.Size = New System.Drawing.Size(764, 760)
-        Me.Section_Add_Book.TabIndex = 1
-        Me.Section_Add_Book.Visible = false
         '
         'GunaLabel2
         '
@@ -619,4 +641,6 @@ End Sub
     Friend WithEvents dev_login_button As Guna.UI.WinForms.GunaAdvenceButton
     Friend WithEvents GunaElipse1 As Guna.UI.WinForms.GunaElipse
     Friend WithEvents Section_Book_List As Book_List
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
 End Class

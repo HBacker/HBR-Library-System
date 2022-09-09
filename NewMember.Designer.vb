@@ -24,7 +24,8 @@ Partial Class NewMember
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(NewMember))
-        Me.group_information = New Guna.UI.WinForms.GunaGroupBox()
+        Me.group_MemberInfo = New Guna.UI.WinForms.GunaGroupBox()
+        Me.GunaLabel7 = New Guna.UI.WinForms.GunaLabel()
         Me.combo_Class = New Guna.UI.WinForms.GunaComboBox()
         Me.GunaLabel6 = New Guna.UI.WinForms.GunaLabel()
         Me.text_Contact = New Guna.UI.WinForms.GunaLineTextBox()
@@ -48,35 +49,46 @@ Partial Class NewMember
         Me.GunaElipse5 = New Guna.UI.WinForms.GunaElipse(Me.components)
         Me.button_redirect_memberList = New Guna.UI.WinForms.GunaAdvenceButton()
         Me.button_add = New Guna.UI.WinForms.GunaGradientButton()
-        Me.GunaLabel7 = New Guna.UI.WinForms.GunaLabel()
-        Me.group_information.SuspendLayout
+        Me.group_MemberInfo.SuspendLayout
         Me.SuspendLayout
         '
-        'group_information
+        'group_MemberInfo
         '
-        Me.group_information.BackColor = System.Drawing.Color.Transparent
-        Me.group_information.BaseColor = System.Drawing.Color.FromArgb(CType(CType(37,Byte),Integer), CType(CType(18,Byte),Integer), CType(CType(70,Byte),Integer))
-        Me.group_information.BorderColor = System.Drawing.Color.Gainsboro
-        Me.group_information.Controls.Add(Me.GunaLabel7)
-        Me.group_information.Controls.Add(Me.combo_Class)
-        Me.group_information.Controls.Add(Me.GunaLabel6)
-        Me.group_information.Controls.Add(Me.text_Contact)
-        Me.group_information.Controls.Add(Me.GunaLabel5)
-        Me.group_information.Controls.Add(Me.btn_clear)
-        Me.group_information.Controls.Add(Me.text_No)
-        Me.group_information.Controls.Add(Me.GunaLabel4)
-        Me.group_information.Controls.Add(Me.text_Surname)
-        Me.group_information.Controls.Add(Me.GunaLabel3)
-        Me.group_information.Controls.Add(Me.text_Name)
-        Me.group_information.Controls.Add(Me.GunaLabel1)
-        Me.group_information.LineColor = System.Drawing.Color.Indigo
-        Me.group_information.Location = New System.Drawing.Point(159, 103)
-        Me.group_information.Name = "group_information"
-        Me.group_information.Radius = 5
-        Me.group_information.Size = New System.Drawing.Size(412, 318)
-        Me.group_information.TabIndex = 3
-        Me.group_information.Text = "Üye Bilgileri"
-        Me.group_information.TextLocation = New System.Drawing.Point(10, 8)
+        Me.group_MemberInfo.BackColor = System.Drawing.Color.Transparent
+        Me.group_MemberInfo.BaseColor = System.Drawing.Color.FromArgb(CType(CType(37,Byte),Integer), CType(CType(18,Byte),Integer), CType(CType(70,Byte),Integer))
+        Me.group_MemberInfo.BorderColor = System.Drawing.Color.Gainsboro
+        Me.group_MemberInfo.Controls.Add(Me.GunaLabel7)
+        Me.group_MemberInfo.Controls.Add(Me.combo_Class)
+        Me.group_MemberInfo.Controls.Add(Me.GunaLabel6)
+        Me.group_MemberInfo.Controls.Add(Me.text_Contact)
+        Me.group_MemberInfo.Controls.Add(Me.GunaLabel5)
+        Me.group_MemberInfo.Controls.Add(Me.btn_clear)
+        Me.group_MemberInfo.Controls.Add(Me.text_No)
+        Me.group_MemberInfo.Controls.Add(Me.GunaLabel4)
+        Me.group_MemberInfo.Controls.Add(Me.text_Surname)
+        Me.group_MemberInfo.Controls.Add(Me.GunaLabel3)
+        Me.group_MemberInfo.Controls.Add(Me.text_Name)
+        Me.group_MemberInfo.Controls.Add(Me.GunaLabel1)
+        Me.group_MemberInfo.LineColor = System.Drawing.Color.Indigo
+        Me.group_MemberInfo.Location = New System.Drawing.Point(159, 103)
+        Me.group_MemberInfo.Name = "group_MemberInfo"
+        Me.group_MemberInfo.Radius = 5
+        Me.group_MemberInfo.Size = New System.Drawing.Size(412, 318)
+        Me.group_MemberInfo.TabIndex = 3
+        Me.group_MemberInfo.Text = "Üye Bilgileri"
+        Me.group_MemberInfo.TextLocation = New System.Drawing.Point(10, 8)
+        '
+        'GunaLabel7
+        '
+        Me.GunaLabel7.AutoSize = true
+        Me.GunaLabel7.Font = New System.Drawing.Font("Segoe UI", 7!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(162,Byte))
+        Me.GunaLabel7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(4,Byte),Integer), CType(CType(175,Byte),Integer), CType(CType(175,Byte),Integer))
+        Me.GunaLabel7.Location = New System.Drawing.Point(25, 287)
+        Me.GunaLabel7.Name = "GunaLabel7"
+        Me.GunaLabel7.Size = New System.Drawing.Size(53, 12)
+        Me.GunaLabel7.TabIndex = 90
+        Me.GunaLabel7.Text = "(opsiyonel)"
+        Me.GunaLabel7.Visible = false
         '
         'combo_Class
         '
@@ -374,18 +386,6 @@ Partial Class NewMember
         Me.button_add.TabIndex = 5
         Me.button_add.Text = "Ekle"
         '
-        'GunaLabel7
-        '
-        Me.GunaLabel7.AutoSize = true
-        Me.GunaLabel7.Font = New System.Drawing.Font("Segoe UI", 7!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(162,Byte))
-        Me.GunaLabel7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(4,Byte),Integer), CType(CType(175,Byte),Integer), CType(CType(175,Byte),Integer))
-        Me.GunaLabel7.Location = New System.Drawing.Point(25, 287)
-        Me.GunaLabel7.Name = "GunaLabel7"
-        Me.GunaLabel7.Size = New System.Drawing.Size(53, 12)
-        Me.GunaLabel7.TabIndex = 90
-        Me.GunaLabel7.Text = "(opsiyonel)"
-        Me.GunaLabel7.Visible = false
-        '
         'NewMember
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
@@ -396,18 +396,18 @@ Partial Class NewMember
         Me.Controls.Add(Me.button_redirect_memberList)
         Me.Controls.Add(Me.button_add)
         Me.Controls.Add(Me.GunaLabel2)
-        Me.Controls.Add(Me.group_information)
+        Me.Controls.Add(Me.group_MemberInfo)
         Me.ForeColor = System.Drawing.Color.FromArgb(CType(CType(4,Byte),Integer), CType(CType(175,Byte),Integer), CType(CType(175,Byte),Integer))
         Me.Name = "NewMember"
         Me.Size = New System.Drawing.Size(764, 530)
-        Me.group_information.ResumeLayout(false)
-        Me.group_information.PerformLayout
+        Me.group_MemberInfo.ResumeLayout(false)
+        Me.group_MemberInfo.PerformLayout
         Me.ResumeLayout(false)
         Me.PerformLayout
 
 End Sub
 
-    Friend WithEvents group_information As Guna.UI.WinForms.GunaGroupBox
+    Friend WithEvents group_MemberInfo As Guna.UI.WinForms.GunaGroupBox
     Friend WithEvents btn_clear As Guna.UI.WinForms.GunaAdvenceButton
     Friend WithEvents GunaLabel4 As Guna.UI.WinForms.GunaLabel
     Friend WithEvents text_Surname As Guna.UI.WinForms.GunaLineTextBox

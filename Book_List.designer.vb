@@ -23,15 +23,15 @@ Partial Class Book_List
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Book_List))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GunaLabel1 = New Guna.UI.WinForms.GunaLabel()
         Me.elipse_dataList = New Guna.UI.WinForms.GunaElipse(Me.components)
         Me.occurred = New Guna.UI.WinForms.GunaLabel()
@@ -43,7 +43,7 @@ Partial Class Book_List
         Me.btn_FulLScreen = New Guna.UI.WinForms.GunaAdvenceButton()
         Me.Controller = New System.Windows.Forms.Timer(Me.components)
         Me.dataUpdater = New System.Windows.Forms.Timer(Me.components)
-        Me.group_bot = New Guna.UI.WinForms.GunaGroupBox()
+        Me.group_give = New Guna.UI.WinForms.GunaGroupBox()
         Me.button_GetBook = New Guna.UI.WinForms.GunaAdvenceButton()
         Me.getBook_id = New Guna.UI.WinForms.GunaLabel()
         Me.GunaLabel4 = New Guna.UI.WinForms.GunaLabel()
@@ -52,7 +52,7 @@ Partial Class Book_List
         Me.getBook_date = New Guna.UI.WinForms.GunaDateTimePicker()
         Me.getBook_reset = New Guna.UI.WinForms.GunaAdvenceButton()
         Me.getBook_no = New Guna.UI.WinForms.GunaLineTextBox()
-        Me.group_extra = New Guna.UI.WinForms.GunaGroupBox()
+        Me.group_information = New Guna.UI.WinForms.GunaGroupBox()
         Me.selected_ISBN = New Guna.UI.WinForms.GunaLineTextBox()
         Me.GunaLabel7 = New Guna.UI.WinForms.GunaLabel()
         Me.selected_Publisher = New Guna.UI.WinForms.GunaLineTextBox()
@@ -75,10 +75,10 @@ Partial Class Book_List
         Me.GunaElipse6 = New Guna.UI.WinForms.GunaElipse(Me.components)
         Me.GunaAdvenceButton1 = New Guna.UI.WinForms.GunaAdvenceButton()
         Me.BookList_X = New Guna.UI.WinForms.GunaDataGridView()
-        Me.dataLoader = New HBR_Library_System.loader()
+        Me.dataLoader = New HBR_Library_System.sd()
         CType(Me.bookList,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.group_bot.SuspendLayout
-        Me.group_extra.SuspendLayout
+        Me.group_give.SuspendLayout
+        Me.group_information.SuspendLayout
         CType(Me.book_poster,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.BookList_X,System.ComponentModel.ISupportInitialize).BeginInit
         Me.SuspendLayout
@@ -117,49 +117,49 @@ Partial Class Book_List
         '
         Me.bookList.AllowUserToAddRows = false
         Me.bookList.AllowUserToDeleteRows = false
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33,Byte),Integer), CType(CType(39,Byte),Integer), CType(CType(50,Byte),Integer))
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(19,Byte),Integer), CType(CType(25,Byte),Integer), CType(CType(34,Byte),Integer))
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(4,Byte),Integer), CType(CType(175,Byte),Integer), CType(CType(175,Byte),Integer))
-        Me.bookList.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle13.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33,Byte),Integer), CType(CType(39,Byte),Integer), CType(CType(50,Byte),Integer))
+        DataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(19,Byte),Integer), CType(CType(25,Byte),Integer), CType(CType(34,Byte),Integer))
+        DataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(4,Byte),Integer), CType(CType(175,Byte),Integer), CType(CType(175,Byte),Integer))
+        Me.bookList.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle13
         Me.bookList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.bookList.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(19,Byte),Integer), CType(CType(25,Byte),Integer), CType(CType(34,Byte),Integer))
         Me.bookList.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.bookList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.bookList.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText
         Me.bookList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(100,Byte),Integer), CType(CType(88,Byte),Integer), CType(CType(255,Byte),Integer))
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(4,Byte),Integer), CType(CType(10,Byte),Integer), CType(CType(18,Byte),Integer))
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(4,Byte),Integer), CType(CType(175,Byte),Integer), CType(CType(175,Byte),Integer))
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.bookList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(CType(CType(100,Byte),Integer), CType(CType(88,Byte),Integer), CType(CType(255,Byte),Integer))
+        DataGridViewCellStyle14.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle14.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(4,Byte),Integer), CType(CType(10,Byte),Integer), CType(CType(18,Byte),Integer))
+        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(4,Byte),Integer), CType(CType(175,Byte),Integer), CType(CType(175,Byte),Integer))
+        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.bookList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle14
         Me.bookList.ColumnHeadersHeight = 27
         Me.bookList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(3,Byte),Integer), CType(CType(61,Byte),Integer), CType(CType(59,Byte),Integer))
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(19,Byte),Integer), CType(CType(25,Byte),Integer), CType(CType(34,Byte),Integer))
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(4,Byte),Integer), CType(CType(175,Byte),Integer), CType(CType(175,Byte),Integer))
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.bookList.DefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle15.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle15.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(CType(CType(3,Byte),Integer), CType(CType(61,Byte),Integer), CType(CType(59,Byte),Integer))
+        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(19,Byte),Integer), CType(CType(25,Byte),Integer), CType(CType(34,Byte),Integer))
+        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(4,Byte),Integer), CType(CType(175,Byte),Integer), CType(CType(175,Byte),Integer))
+        DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.bookList.DefaultCellStyle = DataGridViewCellStyle15
         Me.bookList.EnableHeadersVisualStyles = false
         Me.bookList.GridColor = System.Drawing.Color.FromArgb(CType(CType(231,Byte),Integer), CType(CType(229,Byte),Integer), CType(CType(255,Byte),Integer))
         Me.bookList.Location = New System.Drawing.Point(20, 49)
         Me.bookList.Name = "bookList"
         Me.bookList.ReadOnly = true
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(254,Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.bookList.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle16.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(254,Byte))
+        DataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.bookList.RowHeadersDefaultCellStyle = DataGridViewCellStyle16
         Me.bookList.RowHeadersVisible = false
         Me.bookList.RowTemplate.Height = 31
         Me.bookList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -279,29 +279,29 @@ Partial Class Book_List
         Me.dataUpdater.Enabled = true
         Me.dataUpdater.Interval = 1000
         '
-        'group_bot
+        'group_give
         '
-        Me.group_bot.BackColor = System.Drawing.Color.Transparent
-        Me.group_bot.BaseColor = System.Drawing.Color.FromArgb(CType(CType(37,Byte),Integer), CType(CType(18,Byte),Integer), CType(CType(70,Byte),Integer))
-        Me.group_bot.BorderColor = System.Drawing.Color.MidnightBlue
-        Me.group_bot.BorderSize = 1
-        Me.group_bot.Controls.Add(Me.button_GetBook)
-        Me.group_bot.Controls.Add(Me.getBook_id)
-        Me.group_bot.Controls.Add(Me.GunaLabel4)
-        Me.group_bot.Controls.Add(Me.GunaLabel3)
-        Me.group_bot.Controls.Add(Me.GunaLabel2)
-        Me.group_bot.Controls.Add(Me.getBook_date)
-        Me.group_bot.Controls.Add(Me.getBook_reset)
-        Me.group_bot.Controls.Add(Me.getBook_no)
-        Me.group_bot.LineBottom = 3
-        Me.group_bot.LineColor = System.Drawing.Color.Indigo
-        Me.group_bot.Location = New System.Drawing.Point(488, 500)
-        Me.group_bot.Name = "group_bot"
-        Me.group_bot.Radius = 5
-        Me.group_bot.Size = New System.Drawing.Size(257, 235)
-        Me.group_bot.TabIndex = 83
-        Me.group_bot.Text = "Kitap Teslim"
-        Me.group_bot.TextLocation = New System.Drawing.Point(10, 8)
+        Me.group_give.BackColor = System.Drawing.Color.Transparent
+        Me.group_give.BaseColor = System.Drawing.Color.FromArgb(CType(CType(37,Byte),Integer), CType(CType(18,Byte),Integer), CType(CType(70,Byte),Integer))
+        Me.group_give.BorderColor = System.Drawing.Color.MidnightBlue
+        Me.group_give.BorderSize = 1
+        Me.group_give.Controls.Add(Me.button_GetBook)
+        Me.group_give.Controls.Add(Me.getBook_id)
+        Me.group_give.Controls.Add(Me.GunaLabel4)
+        Me.group_give.Controls.Add(Me.GunaLabel3)
+        Me.group_give.Controls.Add(Me.GunaLabel2)
+        Me.group_give.Controls.Add(Me.getBook_date)
+        Me.group_give.Controls.Add(Me.getBook_reset)
+        Me.group_give.Controls.Add(Me.getBook_no)
+        Me.group_give.LineBottom = 3
+        Me.group_give.LineColor = System.Drawing.Color.Indigo
+        Me.group_give.Location = New System.Drawing.Point(488, 500)
+        Me.group_give.Name = "group_give"
+        Me.group_give.Radius = 5
+        Me.group_give.Size = New System.Drawing.Size(257, 235)
+        Me.group_give.TabIndex = 83
+        Me.group_give.Text = "Kitap Teslim"
+        Me.group_give.TextLocation = New System.Drawing.Point(10, 8)
         '
         'button_GetBook
         '
@@ -450,31 +450,31 @@ Partial Class Book_List
         Me.getBook_no.TabIndex = 4
         Me.getBook_no.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'group_extra
+        'group_information
         '
-        Me.group_extra.BackColor = System.Drawing.Color.Transparent
-        Me.group_extra.BaseColor = System.Drawing.Color.FromArgb(CType(CType(37,Byte),Integer), CType(CType(18,Byte),Integer), CType(CType(70,Byte),Integer))
-        Me.group_extra.BorderColor = System.Drawing.Color.MidnightBlue
-        Me.group_extra.BorderSize = 1
-        Me.group_extra.Controls.Add(Me.selected_ISBN)
-        Me.group_extra.Controls.Add(Me.GunaLabel7)
-        Me.group_extra.Controls.Add(Me.selected_Publisher)
-        Me.group_extra.Controls.Add(Me.GunaLabel8)
-        Me.group_extra.Controls.Add(Me.selected_Author)
-        Me.group_extra.Controls.Add(Me.GunaLabel5)
-        Me.group_extra.Controls.Add(Me.GunaAdvenceButton2)
-        Me.group_extra.Controls.Add(Me.book_poster)
-        Me.group_extra.Controls.Add(Me.selected_BookName)
-        Me.group_extra.Controls.Add(Me.GunaLabel6)
-        Me.group_extra.LineBottom = 3
-        Me.group_extra.LineColor = System.Drawing.Color.Indigo
-        Me.group_extra.Location = New System.Drawing.Point(20, 500)
-        Me.group_extra.Name = "group_extra"
-        Me.group_extra.Radius = 5
-        Me.group_extra.Size = New System.Drawing.Size(462, 235)
-        Me.group_extra.TabIndex = 82
-        Me.group_extra.Text = "Seçilen Kitap Bilgileri"
-        Me.group_extra.TextLocation = New System.Drawing.Point(10, 8)
+        Me.group_information.BackColor = System.Drawing.Color.Transparent
+        Me.group_information.BaseColor = System.Drawing.Color.FromArgb(CType(CType(37,Byte),Integer), CType(CType(18,Byte),Integer), CType(CType(70,Byte),Integer))
+        Me.group_information.BorderColor = System.Drawing.Color.MidnightBlue
+        Me.group_information.BorderSize = 1
+        Me.group_information.Controls.Add(Me.selected_ISBN)
+        Me.group_information.Controls.Add(Me.GunaLabel7)
+        Me.group_information.Controls.Add(Me.selected_Publisher)
+        Me.group_information.Controls.Add(Me.GunaLabel8)
+        Me.group_information.Controls.Add(Me.selected_Author)
+        Me.group_information.Controls.Add(Me.GunaLabel5)
+        Me.group_information.Controls.Add(Me.GunaAdvenceButton2)
+        Me.group_information.Controls.Add(Me.book_poster)
+        Me.group_information.Controls.Add(Me.selected_BookName)
+        Me.group_information.Controls.Add(Me.GunaLabel6)
+        Me.group_information.LineBottom = 3
+        Me.group_information.LineColor = System.Drawing.Color.Indigo
+        Me.group_information.Location = New System.Drawing.Point(20, 500)
+        Me.group_information.Name = "group_information"
+        Me.group_information.Radius = 5
+        Me.group_information.Size = New System.Drawing.Size(462, 235)
+        Me.group_information.TabIndex = 82
+        Me.group_information.Text = "Seçilen Kitap Bilgileri"
+        Me.group_information.TextLocation = New System.Drawing.Point(10, 8)
         '
         'selected_ISBN
         '
@@ -789,49 +789,49 @@ Partial Class Book_List
         '
         Me.BookList_X.AllowUserToAddRows = false
         Me.BookList_X.AllowUserToDeleteRows = false
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33,Byte),Integer), CType(CType(39,Byte),Integer), CType(CType(50,Byte),Integer))
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(19,Byte),Integer), CType(CType(25,Byte),Integer), CType(CType(34,Byte),Integer))
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(4,Byte),Integer), CType(CType(175,Byte),Integer), CType(CType(175,Byte),Integer))
-        Me.BookList_X.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33,Byte),Integer), CType(CType(39,Byte),Integer), CType(CType(50,Byte),Integer))
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(19,Byte),Integer), CType(CType(25,Byte),Integer), CType(CType(34,Byte),Integer))
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(4,Byte),Integer), CType(CType(175,Byte),Integer), CType(CType(175,Byte),Integer))
+        Me.BookList_X.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle9
         Me.BookList_X.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.BookList_X.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(19,Byte),Integer), CType(CType(25,Byte),Integer), CType(CType(34,Byte),Integer))
         Me.BookList_X.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.BookList_X.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.BookList_X.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText
         Me.BookList_X.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(100,Byte),Integer), CType(CType(88,Byte),Integer), CType(CType(255,Byte),Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(4,Byte),Integer), CType(CType(10,Byte),Integer), CType(CType(18,Byte),Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(4,Byte),Integer), CType(CType(175,Byte),Integer), CType(CType(175,Byte),Integer))
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.BookList_X.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(CType(CType(100,Byte),Integer), CType(CType(88,Byte),Integer), CType(CType(255,Byte),Integer))
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(4,Byte),Integer), CType(CType(10,Byte),Integer), CType(CType(18,Byte),Integer))
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(4,Byte),Integer), CType(CType(175,Byte),Integer), CType(CType(175,Byte),Integer))
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.BookList_X.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
         Me.BookList_X.ColumnHeadersHeight = 27
         Me.BookList_X.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(3,Byte),Integer), CType(CType(61,Byte),Integer), CType(CType(59,Byte),Integer))
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(19,Byte),Integer), CType(CType(25,Byte),Integer), CType(CType(34,Byte),Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(4,Byte),Integer), CType(CType(175,Byte),Integer), CType(CType(175,Byte),Integer))
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.BookList_X.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle11.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(3,Byte),Integer), CType(CType(61,Byte),Integer), CType(CType(59,Byte),Integer))
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(19,Byte),Integer), CType(CType(25,Byte),Integer), CType(CType(34,Byte),Integer))
+        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(4,Byte),Integer), CType(CType(175,Byte),Integer), CType(CType(175,Byte),Integer))
+        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.BookList_X.DefaultCellStyle = DataGridViewCellStyle11
         Me.BookList_X.EnableHeadersVisualStyles = false
         Me.BookList_X.GridColor = System.Drawing.Color.FromArgb(CType(CType(231,Byte),Integer), CType(CType(229,Byte),Integer), CType(CType(255,Byte),Integer))
         Me.BookList_X.Location = New System.Drawing.Point(704, 22)
         Me.BookList_X.Name = "BookList_X"
         Me.BookList_X.ReadOnly = true
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(254,Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.BookList_X.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(254,Byte))
+        DataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.BookList_X.RowHeadersDefaultCellStyle = DataGridViewCellStyle12
         Me.BookList_X.RowHeadersVisible = false
         Me.BookList_X.RowTemplate.Height = 31
         Me.BookList_X.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -882,8 +882,8 @@ Partial Class Book_List
         Me.Controls.Add(Me.method_bookname)
         Me.Controls.Add(Me.method_isbn)
         Me.Controls.Add(Me.book_find)
-        Me.Controls.Add(Me.group_bot)
-        Me.Controls.Add(Me.group_extra)
+        Me.Controls.Add(Me.group_give)
+        Me.Controls.Add(Me.group_information)
         Me.Controls.Add(Me.btn_AutoSize)
         Me.Controls.Add(Me.btn_FulLScreen)
         Me.Controls.Add(Me.occurred)
@@ -894,10 +894,10 @@ Partial Class Book_List
         Me.Name = "Book_List"
         Me.Size = New System.Drawing.Size(768, 752)
         CType(Me.bookList,System.ComponentModel.ISupportInitialize).EndInit
-        Me.group_bot.ResumeLayout(false)
-        Me.group_bot.PerformLayout
-        Me.group_extra.ResumeLayout(false)
-        Me.group_extra.PerformLayout
+        Me.group_give.ResumeLayout(false)
+        Me.group_give.PerformLayout
+        Me.group_information.ResumeLayout(false)
+        Me.group_information.PerformLayout
         CType(Me.book_poster,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.BookList_X,System.ComponentModel.ISupportInitialize).EndInit
         Me.ResumeLayout(false)
@@ -915,10 +915,10 @@ End Sub
     Friend WithEvents btn_AutoSize As Guna.UI.WinForms.GunaAdvenceButton
     Friend WithEvents Controller As Timer
     Friend WithEvents dataUpdater As Timer
-    Friend WithEvents group_bot As Guna.UI.WinForms.GunaGroupBox
+    Friend WithEvents group_give As Guna.UI.WinForms.GunaGroupBox
     Friend WithEvents getBook_reset As Guna.UI.WinForms.GunaAdvenceButton
     Friend WithEvents getBook_no As Guna.UI.WinForms.GunaLineTextBox
-    Friend WithEvents group_extra As Guna.UI.WinForms.GunaGroupBox
+    Friend WithEvents group_information As Guna.UI.WinForms.GunaGroupBox
     Friend WithEvents selected_BookName As Guna.UI.WinForms.GunaLineTextBox
     Friend WithEvents GunaLabel6 As Guna.UI.WinForms.GunaLabel
     Friend WithEvents GunaElipse1 As Guna.UI.WinForms.GunaElipse
@@ -947,5 +947,5 @@ End Sub
     Friend WithEvents GunaElipse6 As Guna.UI.WinForms.GunaElipse
     Friend WithEvents GunaAdvenceButton1 As Guna.UI.WinForms.GunaAdvenceButton
     Friend WithEvents BookList_X As Guna.UI.WinForms.GunaDataGridView
-    Friend WithEvents dataLoader As loader
+    Friend WithEvents dataLoader As sd
 End Class

@@ -5,8 +5,13 @@ Imports MySql.Data.MySqlClient
 Imports OpenQA.Selenium
 Imports OpenQA.Selenium.Chrome
 Imports System.Security.Cryptography
+Imports System.IO
+Imports System.Net.Security
+Imports System.Drawing
 Imports System.Text
-Public Class Add_Book
+Imports System.Net
+Imports System.Net.Security.SslStream
+Public Class Add_Book : Inherits UserControl
     
     Dim HTMLxpath As String = My.Settings.xpath
     Dim LibBo_Data As String
@@ -23,6 +28,7 @@ Public Class Add_Book
     Dim selenium_author as String
     dim getFromSelenium as Boolean
     Dim bookPoster_ex As String
+    Dim success_addToDB as boolean
     Dim path as String = Application.StartupPath.ToString() + "\"
     Private Sub Add_Book_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         combo_Subject.SelectedItem = "Seçiniz..."
@@ -34,17 +40,21 @@ Public Class Add_Book
     Private Sub Label1_Click(sender As Object, e As EventArgs)
     End Sub
     Sub loading_show
+       dataLoader.Enabled = True
+        dataLoader.Refresh
         dataLoader.Visible = True
-        loader_timer.Start
     End Sub
     Sub loading_hide
+        dataLoader.Refresh
+       dataLoader.Enabled = False
         dataLoader.Visible = False
     End Sub
     Private Sub button_bot_Click(sender As Object, e As EventArgs) Handles button_bot.Click
         If libbo_isbn.Text.Length <= 5 Then
 
             Else
-            loading_show
+            dataLoader.Visible=True
+            BlockLoading
              
         End If
       
@@ -59,7 +69,7 @@ Public Class Add_Book
         dim backup as string
         
       if  x  Is Nothing Then
-             libbo_emptydata()
+            
             Else
            x = x.ToString().ToLower()
             'subjectLog.Text = subjectLog.Text + vbNewLine + "Main;" + vbNewLine + x.ToString
@@ -86,7 +96,7 @@ Public Class Add_Book
                 Dim document = New HtmlWeb().Load("http://www.toplukatalog.gov.tr/?_f=1&the_page=1&cwid=2&keyword=" & text_ISBN.Text & "&tokat_search_field=1&order=0&command=Tara#alt")        
                 Dim veri = document.DocumentNode.SelectSingleNode("//*[@id='search_results']/table[2]")
                If veri Is Nothing Then
-                        libbo_emptydata
+                       
                         Else
                         backup = veri.InnerText
 
@@ -133,7 +143,7 @@ Public Class Add_Book
             Dim document = New HtmlWeb().Load("http://www.toplukatalog.gov.tr/?_f=1&the_page=1&cwid=2&keyword=" & isbn & "&tokat_search_field=1&order=0&command=Tara#alt")
             Dim veri = document.DocumentNode.SelectSingleNode(HTMLxpath)
             If veri Is Nothing Then
-               libbo_emptydata()
+           
               
                 Else
                 LibBo_Data  = veri.InnerText
@@ -162,7 +172,7 @@ Public Class Add_Book
 
                 çıktı = Split((Split(text, ":")(3).ToString), "/")(0).ToString.TrimEnd()
                 text_bookName.Text = çıktı.ToString.TrimEnd
-                System.Threading.Thread.Sleep((50))
+                System.Threading.Thread.Sleep((1))
                 If çıktı.Contains(";") Then
                     çıktı = Split((Split(text, ":")(3).ToString), "/")(0).ToString.TrimEnd()
                     Console.WriteLine("/  ve ; Bulundu: " + vbNewLine + çıktı.TrimEnd())
@@ -175,6 +185,14 @@ Public Class Add_Book
 
                 text_bookName.Text = çıktı.ToString.TrimEnd
             End If
+            If çıktı.Contains("-") Then
+
+               çıktı = çıktı.Split("-")(0)
+                  text_bookName.Text = çıktı.ToString.TrimEnd
+                Else
+                  text_bookName.Text = çıktı.ToString.TrimEnd
+            End If
+            
             sendLog("Function.Libbo", "Libbo HtmlAgilityPack_Module: SUCCESS", "RAW DATA:: " & çıktı.TrimEnd().ToString())
         Catch ex As Exception
             libbo_emptydata()
@@ -227,7 +245,7 @@ Public Class Add_Book
         Catch ex As Exception
             Console.WriteLine("yazar Bilgisi BAŞARISIZ!" + vbNewLine + ex.Message)
             If getFromSelenium = True Then
-
+                text_Author.Text = selenium_author.TrimEnd.ToString
             else
 
                 text_Author.Text = ""
@@ -310,7 +328,7 @@ Public Class Add_Book
         End Try
         text_Release.MaxLength = 4
         text_Publisher.Select()
-
+        group_bot.Select
     End Function
 
     Private Sub text_bookName_TextChanged(sender As Object, e As EventArgs) Handles text_bookName.TextChanged
@@ -340,7 +358,6 @@ Public Class Add_Book
     End Sub
     Sub libbo_emptydata()
         LibBo_empty.Visible = True
-        LibBoEmpty_timer.Start()
     End Sub
 
     Private Sub libbo_isbn_TextChanged(sender As Object, e As EventArgs) Handles libbo_isbn.TextChanged
@@ -386,14 +403,13 @@ Public Class Add_Book
            End If
 
 
-            driver.Navigate().GoToUrl("https://www.bookfinder.com/?")
-            Sleep(100)
-            Dim isbn As IWebElement = driver.FindElement(By.Name("isbn"))
-            Dim button As IWebElement = driver.FindElement(By.Name("submitBtn"))
-            isbn.SendKeys(x)
-            a = isbn.Text.TrimEnd.ToString
-            button.Click()
-            Sleep(1000)
+            driver.Navigate().GoToUrl("https://www.bookfinder.com/search/?author=&title=&lang=en&isbn=" & x & "&new_used=*&destination=tr&currency=TR&mode=basic&st=sr&ac=qr")
+           ' Dim isbn As IWebElement = driver.FindElement(By.Name("isbn"))
+           ' Dim button As IWebElement = driver.FindElement(By.Name("submitBtn"))
+           ' isbn.SendKeys(x)
+          '  a = isbn.Text.TrimEnd.ToString
+           ' button.Click()
+           '  Sleep(1000)
             Dim image As IWebElement = driver.FindElement(By.Id("coverImage"))
         bookPoster_ex = image.GetAttribute("src").ToString
             Dim strPublisher As String
@@ -410,7 +426,7 @@ Public Class Add_Book
                 selenium_bookname = bookname.Text.ToString()
                 selenium_author = author.Text.ToString()
                 strPublisher = publisher.Text.ToString
-        
+                
             Catch ex As Exception
                 sendLog("Ex.Function.Libbo_WebDriver.EX", "Ex.Function.Libbo_WebDriver.EX: ERROR", ex.message)
             End Try
@@ -436,16 +452,8 @@ Public Class Add_Book
             Console.WriteLine("Image=> " + xyz.TrimEnd)
             bookPoster_ex = xyz.ToString
            
-            If getFromSelenium = true Then
-                TRY
-                    sendLog("Function. LibBo_WebDriver.TransferToSeleniumData", "Libbo Preferred to Libbo_Selenium", "Book Name:: " & selenium_bookname.ToString() & "Author:: " & selenium_author.ToString())
-                    text_bookName.Text = selenium_bookname.ToString()
-                    text_Author.Text = selenium_author.ToString()
-                Catch ERR As Exception
-                    sendLog("Function. LibBo_WebDriver.ex.TransferToSeleniumData", "TransferToSeleniumData: ERROR", ERR.Message)
-                End Try
-            else
-            End If
+           
+           
             SendDLReqToHBR(xyz, x)
            
             book_poster.Load(xyz)
@@ -460,17 +468,34 @@ Public Class Add_Book
             sendLog("Function.LibBo_WebDriver / REQUESTED BY:: " & session, "Web Driver: SUCCESS", "Book Name:: " & selenium_bookname.ToString() & "Author:: " & selenium_author.ToString() & "IMAGE:: " & xyz.ToString() & " / Publisher(Encoded):: " & strPublisher.TrimEnd().ToString() & " / ISBN:: " & abcx.TrimEnd().ToString())
 
             ' y = y.Split("*prefix*")(0)
-            driver.Quit()
+           
+
+        Catch ex As Exception
+            Console.WriteLine("WebDriver: ERROR. EX_BASE> " + vbNewLine + ex.Message)
+            sendLog("Function.LibBo_WebDriver / REQUESTED BY:: " & session, "Web Driver: ERROR", EX.Message)
+        Finally
+             'BEGIN POST_API
+
+                driver.Navigate.GoToUrl(My.Settings.api_url.ToString & "getImage.php/?" &  "image-url=isbn/TEST2323-&key=878217809048")
+
+                'END POST_API
+                 driver.Quit()
             For Each prog As Process In Process.GetProcesses
                 If prog.ProcessName = "chromedriver" Then
                     prog.Kill()
                 End If
             Next
-
-        Catch ex As Exception
-            Console.WriteLine("WebDriver: ERROR. EX_BASE> " + vbNewLine + ex.Message)
-            sendLog("Function.LibBo_WebDriver / REQUESTED BY:: " & session, "Web Driver: ERROR", EX.Message)
         End Try
+         If getFromSelenium = true Then
+                TRY
+                    sendLog("Function. LibBo_WebDriver.TransferToSeleniumData", "Libbo Preferred to Libbo_Selenium", "Book Name:: " & selenium_bookname.ToString() & "Author:: " & selenium_author.ToString())
+                    text_bookName.Text = selenium_bookname.ToString()
+                    text_Author.Text = selenium_author.ToString()
+                Catch ERR As Exception
+                    sendLog("Function. LibBo_WebDriver.ex.TransferToSeleniumData", "TransferToSeleniumData: ERROR", ERR.Message)
+                End Try
+            else
+            End If
         Try
              book_poster.Load("https://pictures.abebooks.com/isbn/" & text_ISBN.text  & "-us-300.jpg")
      
@@ -481,11 +506,55 @@ Public Class Add_Book
        
 
     End Function
+    Public Shared Function processCCRequest As String
+   
+
+    Dim ThisRequest As WebRequest = WebRequest.Create("https://hbacker.dev/api/getImage.php/?code=878217809048&isbn=9786053034087&image-url=https://pictures.abebooks.com/isbn/9786051710051-us-300.jpg")
+   
+    ThisRequest.ContentType = "application/x-www-form-urlencoded"
+    ThisRequest.Method = "POST"
+
+   
+    Dim Encoder As New System.Text.ASCIIEncoding
+
+    
+    Dim StreamToSend As Stream = ThisRequest.GetRequestStream
+
+    StreamToSend.Close()
+
+    ''ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072;
+    ''allows for validation of SSL conversations
+    ''ServicePointManager.ServerCertificateValidationCallback = New System.Net.Security.RemoteCertificateValidationCallback(AddressOf)
+    ServicePointManager.Expect100Continue = True
+    ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12
+    System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12
+     ''| SecurityProtocolType.Tls11 | SecurityProtocolType.Tls
+   ' var(response = WebRequest.Create("https://www.howsmyssl.com/").GetResponse())
+    'var(body = New StreamReader(response.GetResponseStream()).ReadToEnd())
+
+
+    'Catch the response from the webrequest object
+    Dim TheirResponse As HttpWebResponse = ThisRequest.GetResponse
+
+    Dim sr As New StreamReader(TheirResponse.GetResponseStream)
+    Dim strResponse As String = sr.ReadToEnd
+
+    'Out put the string to a message box - application should parse the request instead
+     MsgBox(strResponse)
+
+    sr.Close()
+    Return strResponse
+End Function
     Function SendDLReqToHBR(ReqUrl As String, ISBN As String)
+
+       
+   
         Dim base As String = My.Settings.api_url
         Dim baseModule As String = "getImage.php/"
         Dim code As String = My.Settings.code
         Try
+             
+
             Dim GETx As String
 
 
@@ -493,10 +562,15 @@ Public Class Add_Book
 
             GETx = url + "?image-url=" + ReqUrl _
                    + "&isbn=" + ISBN _
-                   + "&code=" + code
+                   + "&key=" + code
             Console.WriteLine("WEB Request: " + GETx.ToString())
+            
+                        ServicePointManager.Expect100Continue = true
+        ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls Or SecurityProtocolType.Tls11 Or SecurityProtocolType.Tls12 Or SecurityProtocolType.Ssl3
             Dim webClient As New Net.WebClient
+     
             Dim writeÇıktı As String = webClient.DownloadString(GETx)
+        
             Console.WriteLine("Web Request: OUTPUT. " + writeÇıktı.TrimEnd().ToString())
             sendLog("Function.SendDLReqToHBR", "API/WEB Request: SUCCESS", writeÇıktı.TrimEnd().ToString())
         Catch ex As Exception
@@ -506,8 +580,35 @@ Public Class Add_Book
         data_isbn = ""
 
     End Function
+     Function getLinkByAPI(API As String, Link As String, Password As String)
+       ServicePointManager.Expect100Continue = true
+        ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls Or SecurityProtocolType.Tls11 Or SecurityProtocolType.Tls12 Or SecurityProtocolType.Ssl3
+   
+        Dim base As String = My.Settings.api_url
+        Dim baseModule As String = "getLink.php/"
+        Try
+            Dim Uri As String
+            Dim url As String = base & baseModule
+
+            Uri = url + "?api=" + API _
+                   + "&url=" + Link _
+                   + "&password=" + Password
+            Console.WriteLine("WEB Request: " + Uri.ToString())                            
+          Dim webClient As New Net.WebClient    
+            Dim getOutput As String = webClient.DownloadString(Uri)   
+            Console.WriteLine("Web Request[getLink.php]: OUTPUT. " + getOutput.TrimEnd().ToString())
+            'sendLog("Function.getLinkByAPI", "API/WEB Request: SUCCESS", writeÇıktı.TrimEnd().ToString())
+        Catch ex As Exception
+            Console.WriteLine("WEB Request[getLink.php]: ERROR.  " + ex.Message)
+            'sendLog("Function.getLinkByAPI", "API/WEB Request: ERROR", EX.Message)
+        End Try
+
+    End Function
     Function ConvertUTF8Display(x As String)
-        If x.Contains(",") Then
+        İF x = Nothing Then
+
+            Else
+               If x.Contains(",") Then
             x = x.Split(",")(0)
         Else
         End If
@@ -571,11 +672,14 @@ Public Class Add_Book
             publisher_converted = publisher_converted.Replace("Yayinlari", "Yayınları")
             publisher_converted = publisher_converted.Replace("yayinlari", "yayınları")
             sendLog("Function.ConvertUTF8Display: SUCCESS", "Publisher(Decoded):: " & x, "")
-        Catch ex As Exception
+                 Catch ex As Exception
             sendLog("Function.ConvertUTF8Display: ERROR", ":: " & x, "")
             Finally
             loading_hide
         End Try
+        End If
+     
+       
 
         text_Publisher.Text = publisher_converted
 
@@ -603,10 +707,12 @@ Public Class Add_Book
     Private Sub dataUpdater_Tick(sender As Object, e As EventArgs) Handles dataUpdater.Tick
         db_credentials = "server=" & My.Settings.sqlhost & ";" & "userid=" & My.Settings.sqluser & ";" & "pwd=" & My.Settings.sqlpwd & ";" & "database=" & My.Settings.sqldb & ";" & "port=" & My.Settings.sqlport & ";" & "charset=" & My.Settings.sqlcharset & ";" & "SslMode=" & My.Settings.sqlssl & ";"
     End Sub
-    Function Dialog(data As String, help_message As String)
-        My.Settings.dialog = data
-        My.Settings.dialog_help = help_message
-        dialog_box.Close()
+    Function Dialog(data As String, help_message As String)      
+       
+ My.Settings.dialog = data
+        My.Settings.dialog_help = help_message     
+                      
+       dialog_box.Close()
         dialog_box.show()
     End Function
      Function hasher(ByVal x As String)
@@ -620,9 +726,12 @@ Public Class Add_Book
         Return output_hbr.ToString.TrimEnd()
     End Function
 
-    Function AddBook()
-
-        Dim Book as String = text_bookName.Text
+   Private Async Function AddBook() As Task
+          System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls = False
+       loading_show
+        success_addToDB = False
+       
+                            Dim Book as String = text_bookName.Text
         Dim Author As String = text_Author.Text
         Dim Publisher As String = text_Publisher.Text
         Dim Subject as String = combo_Subject.SelectedItem.ToString()
@@ -656,17 +765,27 @@ Public Class Add_Book
                 sendLog("Function.AddBook: SUCCESS", "MySQL Data INSERT: SUCCESS", cmd.CommandText.Tostring)
                  Book_Logger(hash) 'CREATE BOOK TRANSACTION HISTORY type=HASH
                 addButtonChange("success")
-                Dialog("AddBook-success", "Kitap bilgileri Veritabanına başarıyla eklendi!")
+                success_addToDB = True
             Catch ERR As Exception
                 Console.WriteLine("Function.AddBook: ERROR " + ERR.Message)
                 sendLog("Function.AddBook: ERROR", "Ex Exception", ERR.Message)
+                                   success_addToDB = False
                 addButtonChange("error")
             End Try
         End If
+                       
+        If success_addToDB = True
+            Dialog("AddBook-success", "Kitap bilgileri Veritabanına başarıyla eklendi!")
+            Else
 
+        End If
+        loading_hide
     End Function
-    Function Book_Logger(hash As String)
-                 Dim db_logger As New MySqlConnection(db_credentials)
+    Private Async Function Book_Logger(hash As String) As Task
+          System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls = False
+       loading_show
+        Await Task.Run(Sub()
+  Dim db_logger As New MySqlConnection(db_credentials)
                 Dim cmd As New MySqlCommand
         Try        
                 db_logger.Open()
@@ -680,7 +799,8 @@ Public Class Add_Book
        Finally
            db_logger.Dispose
         End Try
-       
+                       End Sub)
+               loading_hide 
     End Function
     Function sendLog(title As String, message As String, ex As String)
         DevTool.log.Text = DevTool.log.Text + vbNewLine + "[" + dashboard.lTime.Text + "]" + "{" + SectionName + "}---" + title + " ==> " + message + " #BASE=>" + vbNewLine + "[" + ex + "]"
@@ -774,6 +894,7 @@ Public Class Add_Book
     End Sub
 
     Private Sub GunaButton1_Click(sender As Object, e As EventArgs) Handles GunaButton1.Click
+       
         My.Settings.session = "user"
         My.Settings.Save
         welcomeSESSION.Text = "welcome, " & My.Settings.session.ToString & "!"
@@ -796,7 +917,13 @@ Public Class Add_Book
 
     Private Sub loader_timer_Tick(sender As Object, e As EventArgs) Handles loader_timer.Tick
         loader_timer.Stop
-        If libbo_isbn.Text.Contains(" ") Then
+       
+    End Sub
+    Public Async Function BlockLoading() as Task
+   loading_show
+        System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls = False
+        Await Task.Run(Sub()
+                         If libbo_isbn.Text.Contains(" ") Then
             libbo_isbn.Text = libbo_isbn.Text.Replace(" ", "")
         End If
         data_isbn = ""
@@ -807,7 +934,14 @@ Public Class Add_Book
         text_ISBN.Text = data_isbn
         If libbo_basic.Checked = true
         else
-            LibBo_WebDriver(data_isbn)
+           LibBo_WebDriver(data_isbn)
         End If
+                    End Sub)
+   loading_hide
+        LibBoEmpty_timer.Start
+        
+End Function
+    Private Sub welcomeSESSION_Click(sender As Object, e As EventArgs) Handles welcomeSESSION.Click
+        SendDLReqToHBR("","")
     End Sub
 End Class

@@ -46,7 +46,7 @@ Partial Class ListMembers
         Me.member_finder = New Guna.UI.WinForms.GunaLineTextBox()
         Me.GunaElipse1 = New Guna.UI.WinForms.GunaElipse(Me.components)
         Me.GunaElipse4 = New Guna.UI.WinForms.GunaElipse(Me.components)
-        Me.dataLoader = New HBR_Library_System.loader()
+        Me.dataLoader = New HBR_Library_System.sd()
         CType(Me.bookList,System.ComponentModel.ISupportInitialize).BeginInit
         Me.SuspendLayout
         '
@@ -423,5 +423,5 @@ End Sub
     Friend WithEvents member_finder As Guna.UI.WinForms.GunaLineTextBox
     Friend WithEvents GunaElipse1 As Guna.UI.WinForms.GunaElipse
     Friend WithEvents GunaElipse4 As Guna.UI.WinForms.GunaElipse
-    Friend WithEvents dataLoader As loader
+    Friend WithEvents dataLoader As sd
 End Class

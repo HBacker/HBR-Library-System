@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.HBR_Library_System.dashboard
+            Me.MainForm = Global.HBR_Library_System.AppLoader
         End Sub
     End Class
 End Namespace

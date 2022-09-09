@@ -152,7 +152,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("https://hbacker.dev/api/")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("https://api.hbacker.dev/")>  _
         Public Property api_url() As String
             Get
                 Return CType(Me("api_url"),String)
@@ -219,6 +219,18 @@ Namespace My
             End Get
             Set
                 Me("dialog_help") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("1.0.0")>  _
+        Public Property version() As String
+            Get
+                Return CType(Me("version"),String)
+            End Get
+            Set
+                Me("version") = value
             End Set
         End Property
     End Class

@@ -27,7 +27,7 @@
       <Value Profile="(Default)">//*[@id="search_results"]/table</Value>
     </Setting>
     <Setting Name="api_url" Type="System.String" Scope="User">
-      <Value Profile="(Default)">https://hbacker.dev/api/</Value>
+      <Value Profile="(Default)">https://api.hbacker.dev/</Value>
     </Setting>
     <Setting Name="code" Type="System.String" Scope="User">
       <Value Profile="(Default)">878217809048</Value>
@@ -43,6 +43,9 @@
     </Setting>
     <Setting Name="dialog_help" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="version" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1.0.0</Value>
     </Setting>
   </Settings>
 </SettingsFile>

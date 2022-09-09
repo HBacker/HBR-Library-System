@@ -5,8 +5,9 @@
     Private Sub button_bot_Click(sender As Object, e As EventArgs)
 
     End Sub
-    Function dialog(x As String)
-        help_message.Text = "MESAJ AÇIKLAMASI"
+   Function dialog(x As String) 
+       
+                            help_message.Text = "MESAJ AÇIKLAMASI"
         Colormaster.Start()
         If x = "AddBook-empty_area" Then
             title.Text = "Uyarı"
@@ -64,12 +65,28 @@ Aynı K.Adı'na sahip maximum
 1 Yetkili Bulunabilir"
             btnHelp.Enabled = True
 
+            elseIf x = "Config-success" Then
+            title.Text = "Mesaj"
+            message.Location = new Point(91, 122)
+            message.Text = "Konfigürasyon Dosyası
+Başarıyla Yapılandırıldı!"
+            btnHelp.Enabled = False
+            configuration.Hide
+            AppLoader.GET_Dialog(True)
         elseIf x = "MemberList-search.404" Then
             title.Text = "Mesaj"
             message.Location = new Point(151, 141)
             message.Text = "Üye Bulunamadı!
 "
             btnHelp.Enabled = False
+             elseIf x = "AppLoader-ConfigFileMissing" Then
+            title.Text = "Uyarı"
+            message.Location = new Point(41, 94)
+            message.Text = "Konfigürasyon Dosyanız Eksik!
+Yeniden oluşturmak için
+Yapılandırıcıya 
+Yönlendiriliyorsunuz..."
+            btnHelp.Enabled = True
             elseIf x = "BookList-search.404" Then
             title.Text = "Mesaj"
             message.Location = new Point(151, 141)
@@ -85,6 +102,8 @@ Aynı K.Adı'na sahip maximum
         Else
             help_message.Text = data_help.ToString()
         End If
+                      
+       
     End Function
     Private Sub dialog_box_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dialog(data)

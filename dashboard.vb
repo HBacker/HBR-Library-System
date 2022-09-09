@@ -29,12 +29,34 @@
     '---
     'BEGIN Sub Theme DARK
 
-    Sub theme_dark()
+     Function Theme_Dark(sub_theme As String)
+       If sub_theme = "darkPurple" Then
+             'BEGIN Add_Book Module Theme
+        Section_Add_Book.group_bot.BaseColor = Color.FromArgb(16, 8, 31)
+        Section_Add_Book.group_bot.LineColor = Color.FromArgb(28, 2, 48)
+             Section_Add_Book.group_extra.BaseColor = Color.FromArgb(16, 8, 31)
+        Section_Add_Book.group_extra.LineColor = Color.FromArgb(28, 2, 48)
+             Section_Add_Book.group_information.BaseColor = Color.FromArgb(16, 8, 31)
+        Section_Add_Book.group_information.LineColor = Color.FromArgb(28, 2, 48)
+             Section_Add_Book.group_poster.BaseColor = Color.FromArgb(16, 8, 31)
+        Section_Add_Book.group_poster.LineColor = Color.FromArgb(28, 2, 48)
+        'END Add_Book Module Theme
+        'BEGIN Book_List Module Theme
+        Section_Book_List.group_information.BaseColor = Color.FromArgb(16, 8, 31)
+        Section_Book_List.group_information.LineColor = Color.FromArgb(28, 2, 48)
+            Section_Book_List.group_give.BaseColor = Color.FromArgb(16, 8, 31)
+        Section_Book_List.group_give.LineColor = Color.FromArgb(28, 2, 48)
+            'END Book_List Module Theme
+                  'BEGIN New_Member Module Theme
+                  Section_AddNewMember.group_MemberInfo.BaseColor = Color.FromArgb(16, 8, 31)
+             Section_AddNewMember.group_MemberInfo.LineColor = Color.FromArgb(16, 8, 31)
+                   'END New_Member Module Theme
+            Else
 
-
-
-        apply_theme()
-    End Sub
+       End If
+       
+        
+  End Function
 
     'END Sub Theme DARK
     '---
@@ -42,6 +64,7 @@
 
     Sub theme_light()
 
+        
 
         apply_theme()
     End Sub
@@ -97,7 +120,7 @@
     End Sub
 
     Private Sub GunaAdvenceButton1_Click(sender As Object, e As EventArgs)
-        theme_dark()
+        
     End Sub
 
     'END ApplyTheme
@@ -209,11 +232,23 @@
         End If
     End Sub
 
-    Private Sub Section_Book_List_Load(sender As Object, e As EventArgs) 
+    Private Sub Section_Book_List_Load_1(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub Section_Book_List_Load_1(sender As Object, e As EventArgs) Handles Section_Book_List.Load
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+       Theme_Dark("darkPurple")
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+         Theme_Dark("Dark")
+    End Sub
+
+    Private Sub Section_Add_Book_Load(sender As Object, e As EventArgs) Handles Section_Add_Book.Load
+
+    End Sub
+
+    Private Sub panel_menu_Paint(sender As Object, e As PaintEventArgs) Handles panel_menu.Paint
 
     End Sub
 End Class

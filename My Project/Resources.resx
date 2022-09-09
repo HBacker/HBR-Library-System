@@ -124,14 +124,17 @@
   <data name="resize_horizontal_96px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>F:\vbİcons\resize_horizontal_96px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="loader_booksFAST" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>I:\visual studio\gif\loader_booksFAST.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="cancel_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>F:\vbİcons\cancel_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="contact_details_96px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>F:\vbİcons\contact_details_96px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="downcloud_gradient_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>F:\vbİcons\downcloud_gradient_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="help_gradient_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>F:\vbİcons\help_gradient_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="timesheet_96px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>F:\vbİcons\timesheet_96px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,44 +145,8 @@
   <data name="statistics_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>I:\icons\statistics_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fit_to_width_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>F:\vbİcons\fit_to_width_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="bulleted_list_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>I:\icons\bulleted_list_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="search_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>F:\vbİcons\search_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="forward_96px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>F:\vbİcons\forward_96px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="help_gradient_321" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\..\Ucretsiz-Anonim-SMS-Gonderici--HBR\Resources\help_gradient_321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="available_updates_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>F:\vbİcons\available_updates_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="password_96px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\..\Ucretsiz-Anonim-SMS-Gonderici--HBR\Resources\password_96px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_plus_96px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\..\Ucretsiz-Anonim-SMS-Gonderici--HBR\Resources\icons8_plus_96px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="approval_96px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>F:\vbİcons\approval_96px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="book_96px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>F:\vbİcons\book_96px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="conference_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>F:\vbİcons\conference_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="collaboration_96px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\..\Ucretsiz-Anonim-SMS-Gonderici--HBR\Resources\collaboration_96px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="data_backup_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>I:\icons\data_backup_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="HBR" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -727,10 +694,46 @@
         n/j/Aey/N7SpTv6WAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="help_gradient_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>F:\vbİcons\help_gradient_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="forward_96px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>F:\vbİcons\forward_96px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="loader_booksFAST" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>I:\visual studio\gif\loader_booksFAST.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="collaboration_96px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\Ucretsiz-Anonim-SMS-Gonderici--HBR\Resources\collaboration_96px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="help_gradient_321" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\Ucretsiz-Anonim-SMS-Gonderici--HBR\Resources\help_gradient_321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="available_updates_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>F:\vbİcons\available_updates_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="password_96px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\Ucretsiz-Anonim-SMS-Gonderici--HBR\Resources\password_96px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_plus_96px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\..\Ucretsiz-Anonim-SMS-Gonderici--HBR\Resources\icons8_plus_96px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="approval_96px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>F:\vbİcons\approval_96px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="book_96px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>F:\vbİcons\book_96px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="conference_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>F:\vbİcons\conference_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="search_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>F:\vbİcons\search_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="data_backup_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>I:\icons\data_backup_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fit_to_width_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>F:\vbİcons\fit_to_width_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="contact_details_96px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>F:\vbİcons\contact_details_96px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="developer_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>F:\vbİcons\developer_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -59,7 +59,7 @@ Partial Class Add_Book
         Me.libbo_isbn = New Guna.UI.WinForms.GunaLineTextBox()
         Me.LibBoEmpty_timer = New System.Windows.Forms.Timer(Me.components)
         Me.elipse_isbn = New Guna.UI.WinForms.GunaElipse(Me.components)
-        Me.GunaGroupBox1 = New Guna.UI.WinForms.GunaGroupBox()
+        Me.group_poster = New Guna.UI.WinForms.GunaGroupBox()
         Me.btn_pbType = New Guna.UI.WinForms.GunaAdvenceButton()
         Me.book_poster = New Guna.UI.WinForms.GunaPictureBox()
         Me.dataUpdater = New System.Windows.Forms.Timer(Me.components)
@@ -76,11 +76,11 @@ Partial Class Add_Book
         Me.GunaButton1 = New Guna.UI.WinForms.GunaButton()
         Me.btnINSERT = New Guna.UI.WinForms.GunaAdvenceButton()
         Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
-        Me.dataLoader = New HBR_Library_System.loader()
+        Me.dataLoader = New HBR_Library_System.sd()
         Me.group_information.SuspendLayout
         Me.group_extra.SuspendLayout
         Me.group_bot.SuspendLayout
-        Me.GunaGroupBox1.SuspendLayout
+        Me.group_poster.SuspendLayout
         CType(Me.book_poster,System.ComponentModel.ISupportInitialize).BeginInit
         Me.SuspendLayout
         '
@@ -116,7 +116,7 @@ Partial Class Add_Book
         Me.text_Author.Name = "text_Author"
         Me.text_Author.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.text_Author.Size = New System.Drawing.Size(374, 47)
-        Me.text_Author.TabIndex = 2
+        Me.text_Author.TabIndex = 1
         Me.text_Author.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'GunaLabel1
@@ -134,7 +134,7 @@ Partial Class Add_Book
         Me.group_information.BackColor = System.Drawing.Color.Transparent
         Me.group_information.BaseColor = System.Drawing.Color.FromArgb(CType(CType(37,Byte),Integer), CType(CType(18,Byte),Integer), CType(CType(70,Byte),Integer))
         Me.group_information.BorderColor = System.Drawing.Color.MidnightBlue
-        Me.group_information.BorderSize = 1
+        Me.group_information.BorderSize = 2
         Me.group_information.Controls.Add(Me.btn_Clear)
         Me.group_information.Controls.Add(Me.text_Publisher)
         Me.group_information.Controls.Add(Me.GunaLabel4)
@@ -142,7 +142,6 @@ Partial Class Add_Book
         Me.group_information.Controls.Add(Me.GunaLabel3)
         Me.group_information.Controls.Add(Me.text_bookName)
         Me.group_information.Controls.Add(Me.GunaLabel1)
-        Me.group_information.LineBottom = 3
         Me.group_information.LineColor = System.Drawing.Color.Indigo
         Me.group_information.Location = New System.Drawing.Point(228, 152)
         Me.group_information.Name = "group_information"
@@ -196,7 +195,7 @@ Partial Class Add_Book
         Me.text_Publisher.Name = "text_Publisher"
         Me.text_Publisher.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.text_Publisher.Size = New System.Drawing.Size(374, 47)
-        Me.text_Publisher.TabIndex = 4
+        Me.text_Publisher.TabIndex = 2
         Me.text_Publisher.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'GunaLabel4
@@ -277,7 +276,7 @@ Partial Class Add_Book
         Me.rate.Name = "rate"
         Me.rate.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.rate.Size = New System.Drawing.Size(257, 38)
-        Me.rate.TabIndex = 8
+        Me.rate.TabIndex = 5
         Me.rate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'combo_Subject
@@ -299,7 +298,7 @@ Partial Class Add_Book
         Me.combo_Subject.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(CType(CType(100,Byte),Integer), CType(CType(88,Byte),Integer), CType(CType(255,Byte),Integer))
         Me.combo_Subject.OnHoverItemForeColor = System.Drawing.Color.White
         Me.combo_Subject.Size = New System.Drawing.Size(257, 30)
-        Me.combo_Subject.TabIndex = 7
+        Me.combo_Subject.TabIndex = 3
         '
         'text_ISBN
         '
@@ -313,7 +312,7 @@ Partial Class Add_Book
         Me.text_ISBN.Name = "text_ISBN"
         Me.text_ISBN.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.text_ISBN.Size = New System.Drawing.Size(257, 38)
-        Me.text_ISBN.TabIndex = 4
+        Me.text_ISBN.TabIndex = 6
         Me.text_ISBN.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'GunaLabel5
@@ -338,7 +337,7 @@ Partial Class Add_Book
         Me.text_Release.Name = "text_Release"
         Me.text_Release.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.text_Release.Size = New System.Drawing.Size(257, 38)
-        Me.text_Release.TabIndex = 2
+        Me.text_Release.TabIndex = 4
         Me.text_Release.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'GunaLabel6
@@ -430,7 +429,7 @@ Partial Class Add_Book
         Me.libbo_advanced.Location = New System.Drawing.Point(176, 165)
         Me.libbo_advanced.Name = "libbo_advanced"
         Me.libbo_advanced.Size = New System.Drawing.Size(131, 20)
-        Me.libbo_advanced.TabIndex = 88
+        Me.libbo_advanced.TabIndex = 10
         Me.libbo_advanced.Text = "Detaylı Bilgiler"
         '
         'GunaAdvenceButton1
@@ -475,7 +474,7 @@ Partial Class Add_Book
         Me.libbo_basic.Location = New System.Drawing.Point(45, 165)
         Me.libbo_basic.Name = "libbo_basic"
         Me.libbo_basic.Size = New System.Drawing.Size(117, 20)
-        Me.libbo_basic.TabIndex = 87
+        Me.libbo_basic.TabIndex = 9
         Me.libbo_basic.Text = "Basit Bilgiler"
         '
         'LibBo_empty
@@ -519,7 +518,7 @@ Partial Class Add_Book
         Me.button_bot.OnPressedColor = System.Drawing.Color.Black
         Me.button_bot.Radius = 20
         Me.button_bot.Size = New System.Drawing.Size(205, 38)
-        Me.button_bot.TabIndex = 82
+        Me.button_bot.TabIndex = 11
         Me.button_bot.Text = "Libbo ile Doldur"
         Me.button_bot.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         Me.button_bot.TextOffsetX = 12
@@ -549,7 +548,7 @@ Partial Class Add_Book
         Me.libbo_isbn.Name = "libbo_isbn"
         Me.libbo_isbn.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.libbo_isbn.Size = New System.Drawing.Size(257, 47)
-        Me.libbo_isbn.TabIndex = 4
+        Me.libbo_isbn.TabIndex = 8
         Me.libbo_isbn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'LibBoEmpty_timer
@@ -561,21 +560,21 @@ Partial Class Add_Book
         Me.elipse_isbn.Radius = 6
         Me.elipse_isbn.TargetControl = Me.libbo_isbn
         '
-        'GunaGroupBox1
+        'group_poster
         '
-        Me.GunaGroupBox1.BackColor = System.Drawing.Color.Transparent
-        Me.GunaGroupBox1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(37,Byte),Integer), CType(CType(18,Byte),Integer), CType(CType(70,Byte),Integer))
-        Me.GunaGroupBox1.BorderColor = System.Drawing.Color.Gainsboro
-        Me.GunaGroupBox1.Controls.Add(Me.btn_pbType)
-        Me.GunaGroupBox1.Controls.Add(Me.book_poster)
-        Me.GunaGroupBox1.LineColor = System.Drawing.Color.Indigo
-        Me.GunaGroupBox1.Location = New System.Drawing.Point(15, 152)
-        Me.GunaGroupBox1.Name = "GunaGroupBox1"
-        Me.GunaGroupBox1.Radius = 5
-        Me.GunaGroupBox1.Size = New System.Drawing.Size(207, 208)
-        Me.GunaGroupBox1.TabIndex = 82
-        Me.GunaGroupBox1.Text = "Kitap Kapağı"
-        Me.GunaGroupBox1.TextLocation = New System.Drawing.Point(10, 8)
+        Me.group_poster.BackColor = System.Drawing.Color.Transparent
+        Me.group_poster.BaseColor = System.Drawing.Color.FromArgb(CType(CType(37,Byte),Integer), CType(CType(18,Byte),Integer), CType(CType(70,Byte),Integer))
+        Me.group_poster.BorderColor = System.Drawing.Color.Gainsboro
+        Me.group_poster.Controls.Add(Me.btn_pbType)
+        Me.group_poster.Controls.Add(Me.book_poster)
+        Me.group_poster.LineColor = System.Drawing.Color.Indigo
+        Me.group_poster.Location = New System.Drawing.Point(15, 152)
+        Me.group_poster.Name = "group_poster"
+        Me.group_poster.Radius = 5
+        Me.group_poster.Size = New System.Drawing.Size(207, 208)
+        Me.group_poster.TabIndex = 82
+        Me.group_poster.Text = "Kitap Kapağı"
+        Me.group_poster.TextLocation = New System.Drawing.Point(10, 8)
         '
         'btn_pbType
         '
@@ -636,7 +635,7 @@ Partial Class Add_Book
         '
         'addedTimer
         '
-        Me.addedTimer.Interval = 5000
+        Me.addedTimer.Interval = 2800
         '
         'colorMASTER
         '
@@ -751,7 +750,7 @@ Partial Class Add_Book
         Me.btnINSERT.OnPressedColor = System.Drawing.Color.Black
         Me.btnINSERT.Radius = 10
         Me.btnINSERT.Size = New System.Drawing.Size(263, 67)
-        Me.btnINSERT.TabIndex = 85
+        Me.btnINSERT.TabIndex = 12
         Me.btnINSERT.Text = "Ekle"
         Me.btnINSERT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -761,7 +760,7 @@ Partial Class Add_Book
         Me.dataLoader.ForeColor = System.Drawing.Color.FromArgb(CType(CType(4,Byte),Integer), CType(CType(175,Byte),Integer), CType(CType(175,Byte),Integer))
         Me.dataLoader.Location = New System.Drawing.Point(13, 151)
         Me.dataLoader.Name = "dataLoader"
-        Me.dataLoader.Size = New System.Drawing.Size(740, 570)
+        Me.dataLoader.Size = New System.Drawing.Size(738, 570)
         Me.dataLoader.TabIndex = 89
         Me.dataLoader.Visible = false
         '
@@ -775,7 +774,7 @@ Partial Class Add_Book
         Me.Controls.Add(Me.GunaButton2)
         Me.Controls.Add(Me.GunaButton1)
         Me.Controls.Add(Me.btnINSERT)
-        Me.Controls.Add(Me.GunaGroupBox1)
+        Me.Controls.Add(Me.group_poster)
         Me.Controls.Add(Me.group_bot)
         Me.Controls.Add(Me.group_extra)
         Me.Controls.Add(Me.GunaLabel2)
@@ -789,7 +788,7 @@ Partial Class Add_Book
         Me.group_extra.PerformLayout
         Me.group_bot.ResumeLayout(false)
         Me.group_bot.PerformLayout
-        Me.GunaGroupBox1.ResumeLayout(false)
+        Me.group_poster.ResumeLayout(false)
         CType(Me.book_poster,System.ComponentModel.ISupportInitialize).EndInit
         Me.ResumeLayout(false)
         Me.PerformLayout
@@ -826,7 +825,7 @@ End Sub
     Friend WithEvents LibBoEmpty_timer As Timer
     Friend WithEvents elipse_isbn As Guna.UI.WinForms.GunaElipse
     Friend WithEvents GunaAdvenceButton1 As Guna.UI.WinForms.GunaAdvenceButton
-    Friend WithEvents GunaGroupBox1 As Guna.UI.WinForms.GunaGroupBox
+    Friend WithEvents group_poster As Guna.UI.WinForms.GunaGroupBox
     Friend WithEvents book_poster As Guna.UI.WinForms.GunaPictureBox
     Friend WithEvents btn_pbType As Guna.UI.WinForms.GunaAdvenceButton
     Friend WithEvents dataUpdater As Timer
@@ -847,6 +846,6 @@ End Sub
     Friend WithEvents GunaButton2 As Guna.UI.WinForms.GunaButton
     Friend WithEvents GunaButton1 As Guna.UI.WinForms.GunaButton
     Friend WithEvents welcomeSESSION As Guna.UI.WinForms.GunaLabel
-    Friend WithEvents dataLoader As loader
+    Friend WithEvents dataLoader As sd
     Friend WithEvents Timer3 As Timer
 End Class

@@ -28,31 +28,49 @@ Public Class Book_List
 
 
 
-    Function getData()
-        dataLoader.Visible = True
+    Async Function getData() As Task
+        Dim status_dt As Boolean = False
+
+                  System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls = False
+               dataLoader.Enabled = True
+        'DataLoader load()
+         dataLoader.Visible = True
         dataLoader.loading.Text = "Yükleniyor..."
-        Try
+          Dim dt3 As New DataTable
+        Await Task.Run(Sub ()
+                           
+          Try                    
             Dim db As New MySqlConnection(db_credentials)
 
             Dim dap3 As New MySqlDataAdapter("Select * FROM books", db)
-            Dim dt3 As New DataTable
+          
             dap3.Fill(dt3)
-            BookList_X.DataSource = DT3
-            bookList.DataSource = dt3
+           status_dt = True
             db.Dispose()
             occurred.Visible = False
             Console.WriteLine("Veri Başarıyla Çekildi location=getData")
             db.Dispose()
             delete_column
-             dataLoader.Visible = False
+     
         dataLoader.loading.Text = "Yükleniyor"
         Catch ErrorEX As Exception
-            occurred.Visible = True
+         
             Console.WriteLine("Veri Çekilemedi! location=getData" + vbNewLine + ErrorEX.Message)
-             dataLoader.Visible = True
+             
         dataLoader.loading.Text = "HATA >> Veritabanı ile bağlantı kurulurken bir hata meydana geldi! location=BookList.getData"
         End Try
+                       End Sub)
+        If status_dt = True
+               BookList_X.DataSource = DT3
+            bookList.DataSource = dt3
+            status_dt = False
+            Else
 
+        End If
+      status_dt = False
+       dataLoader.Visible = False
+       dataLoader.Enabled = False
+        
     End Function
 
 
@@ -201,6 +219,10 @@ Public Class Book_List
     End Sub
 
     Private Sub GunaAdvenceButton2_Click(sender As Object, e As EventArgs) Handles GunaAdvenceButton2.Click
+
+    End Sub
+
+    Private Sub dataLoader_Load(sender As Object, e As EventArgs) Handles dataLoader.Load
 
     End Sub
 End Class

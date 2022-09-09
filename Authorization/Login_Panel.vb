@@ -415,4 +415,12 @@ Public Class Login_Panel
         piyon.Text = ""
         piyon.Select()
     End Sub
+
+    Private Sub GunaLabel9_Click(sender As Object, e As EventArgs) Handles GunaLabel9.Click
+        
+    End Sub
+
+    Private Sub GunaAdvenceButton1_Click(sender As Object, e As EventArgs) Handles GunaAdvenceButton1.Click
+        DevDEMO.Show
+    End Sub
 End Class

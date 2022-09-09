@@ -57,15 +57,16 @@ Partial Class Login_Panel
         Me.header_switcher = New System.Windows.Forms.Timer(Me.components)
         Me.GunaAnimateWindow1 = New Guna.UI.WinForms.GunaAnimateWindow(Me.components)
         Me.header_title = New Guna.UI.WinForms.GunaLabel()
-        Me.btnContact = New Guna.UI.WinForms.GunaAdvenceButton()
         Me.GunaLabel3 = New Guna.UI.WinForms.GunaLabel()
-        Me.login = New Guna.UI.WinForms.GunaAdvenceButton()
         Me.time_updater = New System.Windows.Forms.Timer(Me.components)
         Me.Header = New HBR_Library_System.FormSkin()
         Me.GunaLabel4 = New Guna.UI.WinForms.GunaLabel()
         Me.header_kapat = New Guna.UI.WinForms.GunaGradientButton()
         Me.header_icon = New Guna.UI.WinForms.GunaPictureBox()
         Me.piyon = New HBR_Library_System.FlatTextBox()
+        Me.GunaAdvenceButton1 = New Guna.UI.WinForms.GunaAdvenceButton()
+        Me.login = New Guna.UI.WinForms.GunaAdvenceButton()
+        Me.btnContact = New Guna.UI.WinForms.GunaAdvenceButton()
         Me.gb_verify.SuspendLayout
         Me.GunaGradient2Panel3.SuspendLayout
         Me.block.SuspendLayout
@@ -345,9 +346,9 @@ Partial Class Login_Panel
         Me.block.Controls.Add(Me.verify_box)
         Me.block.Controls.Add(Me.block_box)
         Me.block.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.block.Location = New System.Drawing.Point(0, 53)
+        Me.block.Location = New System.Drawing.Point(-2, 53)
         Me.block.Name = "block"
-        Me.block.Size = New System.Drawing.Size(490, 388)
+        Me.block.Size = New System.Drawing.Size(492, 388)
         Me.block.TabIndex = 43
         Me.block.Visible = false
         '
@@ -518,39 +519,6 @@ Partial Class Login_Panel
         Me.header_title.TabIndex = 32
         Me.header_title.Text = "HBR Kütüphane Sistemi"
         '
-        'btnContact
-        '
-        Me.btnContact.Animated = true
-        Me.btnContact.AnimationHoverSpeed = 10!
-        Me.btnContact.AnimationSpeed = 10!
-        Me.btnContact.BackColor = System.Drawing.Color.Transparent
-        Me.btnContact.BaseColor = System.Drawing.Color.Transparent
-        Me.btnContact.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224,Byte),Integer), CType(CType(224,Byte),Integer), CType(CType(224,Byte),Integer))
-        Me.btnContact.CheckedBaseColor = System.Drawing.Color.Gray
-        Me.btnContact.CheckedBorderColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnContact.CheckedForeColor = System.Drawing.Color.White
-        Me.btnContact.CheckedImage = Global.HBR_Library_System.My.Resources.Resources.icons8_plus_96px
-        Me.btnContact.CheckedLineColor = System.Drawing.Color.FromArgb(CType(CType(66,Byte),Integer), CType(CType(58,Byte),Integer), CType(CType(170,Byte),Integer))
-        Me.btnContact.FocusedColor = System.Drawing.Color.Empty
-        Me.btnContact.Font = New System.Drawing.Font("Segoe UI", 9!)
-        Me.btnContact.ForeColor = System.Drawing.Color.Aqua
-        Me.btnContact.Image = Global.HBR_Library_System.My.Resources.Resources.collaboration_96px
-        Me.btnContact.ImageSize = New System.Drawing.Size(42, 42)
-        Me.btnContact.LineBottom = 3
-        Me.btnContact.LineColor = System.Drawing.Color.Aqua
-        Me.btnContact.Location = New System.Drawing.Point(123, 346)
-        Me.btnContact.Name = "btnContact"
-        Me.btnContact.OnHoverBaseColor = System.Drawing.Color.DarkSlateGray
-        Me.btnContact.OnHoverBorderColor = System.Drawing.Color.MidnightBlue
-        Me.btnContact.OnHoverForeColor = System.Drawing.Color.White
-        Me.btnContact.OnHoverImage = Nothing
-        Me.btnContact.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66,Byte),Integer), CType(CType(58,Byte),Integer), CType(CType(170,Byte),Integer))
-        Me.btnContact.OnPressedColor = System.Drawing.Color.Black
-        Me.btnContact.Radius = 8
-        Me.btnContact.Size = New System.Drawing.Size(128, 60)
-        Me.btnContact.TabIndex = 50
-        Me.btnContact.Text = "İletişim"
-        '
         'GunaLabel3
         '
         Me.GunaLabel3.AutoSize = true
@@ -562,41 +530,6 @@ Partial Class Login_Panel
         Me.GunaLabel3.Size = New System.Drawing.Size(98, 15)
         Me.GunaLabel3.TabIndex = 48
         Me.GunaLabel3.Text = "app version: 4.0.0"
-        '
-        'login
-        '
-        Me.login.Animated = true
-        Me.login.AnimationHoverSpeed = 5!
-        Me.login.AnimationSpeed = 5!
-        Me.login.BackColor = System.Drawing.Color.Transparent
-        Me.login.BaseColor = System.Drawing.Color.FromArgb(CType(CType(59,Byte),Integer), CType(CType(0,Byte),Integer), CType(CType(151,Byte),Integer))
-        Me.login.BorderColor = System.Drawing.Color.Black
-        Me.login.CheckedBaseColor = System.Drawing.Color.Gray
-        Me.login.CheckedBorderColor = System.Drawing.Color.Black
-        Me.login.CheckedForeColor = System.Drawing.Color.White
-        Me.login.CheckedImage = CType(resources.GetObject("login.CheckedImage"),System.Drawing.Image)
-        Me.login.CheckedLineColor = System.Drawing.Color.DimGray
-        Me.login.FocusedColor = System.Drawing.Color.Empty
-        Me.login.Font = New System.Drawing.Font("Montserrat SemiBold", 12!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(162,Byte))
-        Me.login.ForeColor = System.Drawing.Color.Aqua
-        Me.login.Image = Global.HBR_Library_System.My.Resources.Resources.forward_96px
-        Me.login.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right
-        Me.login.ImageSize = New System.Drawing.Size(32, 32)
-        Me.login.LineBottom = 3
-        Me.login.LineColor = System.Drawing.Color.FromArgb(CType(CType(4,Byte),Integer), CType(CType(175,Byte),Integer), CType(CType(175,Byte),Integer))
-        Me.login.Location = New System.Drawing.Point(257, 346)
-        Me.login.Name = "login"
-        Me.login.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(224,Byte),Integer), CType(CType(224,Byte),Integer), CType(CType(224,Byte),Integer))
-        Me.login.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.login.OnHoverForeColor = System.Drawing.Color.Indigo
-        Me.login.OnHoverImage = Nothing
-        Me.login.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66,Byte),Integer), CType(CType(58,Byte),Integer), CType(CType(170,Byte),Integer))
-        Me.login.OnPressedColor = System.Drawing.Color.Black
-        Me.login.Radius = 10
-        Me.login.Size = New System.Drawing.Size(221, 60)
-        Me.login.TabIndex = 86
-        Me.login.Text = "Giriş Yap"
-        Me.login.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'time_updater
         '
@@ -690,6 +623,107 @@ Partial Class Login_Panel
         Me.piyon.TextColor = System.Drawing.Color.FromArgb(CType(CType(192,Byte),Integer), CType(CType(192,Byte),Integer), CType(CType(192,Byte),Integer))
         Me.piyon.UseSystemPasswordChar = false
         '
+        'GunaAdvenceButton1
+        '
+        Me.GunaAdvenceButton1.Animated = true
+        Me.GunaAdvenceButton1.AnimationHoverSpeed = 10!
+        Me.GunaAdvenceButton1.AnimationSpeed = 10!
+        Me.GunaAdvenceButton1.BackColor = System.Drawing.Color.Transparent
+        Me.GunaAdvenceButton1.BaseColor = System.Drawing.Color.Transparent
+        Me.GunaAdvenceButton1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224,Byte),Integer), CType(CType(224,Byte),Integer), CType(CType(224,Byte),Integer))
+        Me.GunaAdvenceButton1.CheckedBaseColor = System.Drawing.Color.Gray
+        Me.GunaAdvenceButton1.CheckedBorderColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.GunaAdvenceButton1.CheckedForeColor = System.Drawing.Color.White
+        Me.GunaAdvenceButton1.CheckedImage = Global.HBR_Library_System.My.Resources.Resources.icons8_plus_96px
+        Me.GunaAdvenceButton1.CheckedLineColor = System.Drawing.Color.FromArgb(CType(CType(66,Byte),Integer), CType(CType(58,Byte),Integer), CType(CType(170,Byte),Integer))
+        Me.GunaAdvenceButton1.FocusedColor = System.Drawing.Color.Empty
+        Me.GunaAdvenceButton1.Font = New System.Drawing.Font("Segoe UI", 8!)
+        Me.GunaAdvenceButton1.ForeColor = System.Drawing.Color.Aqua
+        Me.GunaAdvenceButton1.Image = Global.HBR_Library_System.My.Resources.Resources.developer_64px
+        Me.GunaAdvenceButton1.ImageSize = New System.Drawing.Size(32, 32)
+        Me.GunaAdvenceButton1.LineBottom = 3
+        Me.GunaAdvenceButton1.LineColor = System.Drawing.Color.Aqua
+        Me.GunaAdvenceButton1.Location = New System.Drawing.Point(12, 353)
+        Me.GunaAdvenceButton1.Name = "GunaAdvenceButton1"
+        Me.GunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.DarkSlateGray
+        Me.GunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.MidnightBlue
+        Me.GunaAdvenceButton1.OnHoverForeColor = System.Drawing.Color.White
+        Me.GunaAdvenceButton1.OnHoverImage = Nothing
+        Me.GunaAdvenceButton1.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66,Byte),Integer), CType(CType(58,Byte),Integer), CType(CType(170,Byte),Integer))
+        Me.GunaAdvenceButton1.OnPressedColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton1.Radius = 8
+        Me.GunaAdvenceButton1.Size = New System.Drawing.Size(107, 49)
+        Me.GunaAdvenceButton1.TabIndex = 87
+        Me.GunaAdvenceButton1.Text = "Developer"
+        '
+        'login
+        '
+        Me.login.Animated = true
+        Me.login.AnimationHoverSpeed = 5!
+        Me.login.AnimationSpeed = 5!
+        Me.login.BackColor = System.Drawing.Color.Transparent
+        Me.login.BaseColor = System.Drawing.Color.FromArgb(CType(CType(59,Byte),Integer), CType(CType(0,Byte),Integer), CType(CType(151,Byte),Integer))
+        Me.login.BorderColor = System.Drawing.Color.Black
+        Me.login.CheckedBaseColor = System.Drawing.Color.Gray
+        Me.login.CheckedBorderColor = System.Drawing.Color.Black
+        Me.login.CheckedForeColor = System.Drawing.Color.White
+        Me.login.CheckedImage = CType(resources.GetObject("login.CheckedImage"),System.Drawing.Image)
+        Me.login.CheckedLineColor = System.Drawing.Color.DimGray
+        Me.login.FocusedColor = System.Drawing.Color.Empty
+        Me.login.Font = New System.Drawing.Font("Montserrat SemiBold", 12!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(162,Byte))
+        Me.login.ForeColor = System.Drawing.Color.Aqua
+        Me.login.Image = Global.HBR_Library_System.My.Resources.Resources.forward_96px
+        Me.login.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.login.ImageSize = New System.Drawing.Size(32, 32)
+        Me.login.LineBottom = 3
+        Me.login.LineColor = System.Drawing.Color.FromArgb(CType(CType(4,Byte),Integer), CType(CType(175,Byte),Integer), CType(CType(175,Byte),Integer))
+        Me.login.Location = New System.Drawing.Point(257, 346)
+        Me.login.Name = "login"
+        Me.login.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(224,Byte),Integer), CType(CType(224,Byte),Integer), CType(CType(224,Byte),Integer))
+        Me.login.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.login.OnHoverForeColor = System.Drawing.Color.Indigo
+        Me.login.OnHoverImage = Nothing
+        Me.login.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66,Byte),Integer), CType(CType(58,Byte),Integer), CType(CType(170,Byte),Integer))
+        Me.login.OnPressedColor = System.Drawing.Color.Black
+        Me.login.Radius = 10
+        Me.login.Size = New System.Drawing.Size(221, 60)
+        Me.login.TabIndex = 86
+        Me.login.Text = "Giriş Yap"
+        Me.login.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'btnContact
+        '
+        Me.btnContact.Animated = true
+        Me.btnContact.AnimationHoverSpeed = 10!
+        Me.btnContact.AnimationSpeed = 10!
+        Me.btnContact.BackColor = System.Drawing.Color.Transparent
+        Me.btnContact.BaseColor = System.Drawing.Color.Transparent
+        Me.btnContact.BorderColor = System.Drawing.Color.FromArgb(CType(CType(224,Byte),Integer), CType(CType(224,Byte),Integer), CType(CType(224,Byte),Integer))
+        Me.btnContact.CheckedBaseColor = System.Drawing.Color.Gray
+        Me.btnContact.CheckedBorderColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btnContact.CheckedForeColor = System.Drawing.Color.White
+        Me.btnContact.CheckedImage = Global.HBR_Library_System.My.Resources.Resources.icons8_plus_96px
+        Me.btnContact.CheckedLineColor = System.Drawing.Color.FromArgb(CType(CType(66,Byte),Integer), CType(CType(58,Byte),Integer), CType(CType(170,Byte),Integer))
+        Me.btnContact.FocusedColor = System.Drawing.Color.Empty
+        Me.btnContact.Font = New System.Drawing.Font("Segoe UI", 9!)
+        Me.btnContact.ForeColor = System.Drawing.Color.Aqua
+        Me.btnContact.Image = Global.HBR_Library_System.My.Resources.Resources.collaboration_96px
+        Me.btnContact.ImageSize = New System.Drawing.Size(42, 42)
+        Me.btnContact.LineBottom = 3
+        Me.btnContact.LineColor = System.Drawing.Color.Aqua
+        Me.btnContact.Location = New System.Drawing.Point(123, 346)
+        Me.btnContact.Name = "btnContact"
+        Me.btnContact.OnHoverBaseColor = System.Drawing.Color.DarkSlateGray
+        Me.btnContact.OnHoverBorderColor = System.Drawing.Color.MidnightBlue
+        Me.btnContact.OnHoverForeColor = System.Drawing.Color.White
+        Me.btnContact.OnHoverImage = Nothing
+        Me.btnContact.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66,Byte),Integer), CType(CType(58,Byte),Integer), CType(CType(170,Byte),Integer))
+        Me.btnContact.OnPressedColor = System.Drawing.Color.Black
+        Me.btnContact.Radius = 8
+        Me.btnContact.Size = New System.Drawing.Size(128, 60)
+        Me.btnContact.TabIndex = 50
+        Me.btnContact.Text = "İletişim"
+        '
         'Login_Panel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
@@ -697,6 +731,7 @@ Partial Class Login_Panel
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(24,Byte),Integer), CType(CType(27,Byte),Integer), CType(CType(33,Byte),Integer))
         Me.ClientSize = New System.Drawing.Size(490, 441)
         Me.Controls.Add(Me.block)
+        Me.Controls.Add(Me.GunaAdvenceButton1)
         Me.Controls.Add(Me.login)
         Me.Controls.Add(Me.btnContact)
         Me.Controls.Add(Me.GunaLabel3)
@@ -772,4 +807,5 @@ End Sub
     Friend WithEvents btnOK As Guna.UI.WinForms.GunaAdvenceButton
     Friend WithEvents time_updater As Timer
     Friend WithEvents GunaLabel4 As Guna.UI.WinForms.GunaLabel
+    Friend WithEvents GunaAdvenceButton1 As Guna.UI.WinForms.GunaAdvenceButton
 End Class

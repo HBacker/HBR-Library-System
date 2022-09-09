@@ -1,5 +1,15 @@
 ﻿Imports MySql.Data.MySqlClient
 Imports HtmlAgilityPack
+Imports System.Net
+Imports System.IO
+Imports System.Text
+Imports Newtonsoft.Json
+Imports Newtonsoft.Json.Linq
+Imports System.Net.Http
+Imports System.Net.Http.Headers
+Imports System.Web.Script.Serialization
+
+Imports System.Threading.Tasks
 Public Class DevDEMO
      Dim x As String
     Dim db_credentials As String = "server=" & My.Settings.sqlhost & ";" & "userid=" & My.Settings.sqluser & ";" & "pwd=" & My.Settings.sqlpwd & ";" & "database=" & My.Settings.sqldb & ";" & "port=" & My.Settings.sqlport & ";" & "charset=" & My.Settings.sqlcharset & ";" & "SslMode=" & My.Settings.sqlssl & ";"
@@ -11,6 +21,41 @@ Public Class DevDEMO
             End If
         Next
     End Sub
+
+
+    
+    Function getLinkByAPI(ReqUrl As String, ISBN As String)
+       ServicePointManager.Expect100Continue = true
+        ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls Or SecurityProtocolType.Tls11 Or SecurityProtocolType.Tls12 Or SecurityProtocolType.Ssl3
+        Dim api As String = ""
+        Dim link As String = ""
+       Dim password As String = ""
+   
+        Dim base As String = My.Settings.api_url
+        Dim baseModule As String = "getLink.php/"
+        Dim code As String = My.Settings.code
+        Try
+            Dim Uri As String
+            Dim url As String = base & baseModule
+
+            Uri = url + "?api=" + api _
+                   + "&link=" + link _
+                   + "&password=" + password
+            Console.WriteLine("WEB Request: " + Uri.ToString())
+            
+                       
+            Dim webClient As New Net.WebClient
+     
+            Dim getOutput As String = webClient.DownloadString(Uri)
+        
+            Console.WriteLine("Web Request[getLink.php]: OUTPUT. " + getOutput.TrimEnd().ToString())
+            'sendLog("Function.getLinkByAPI", "API/WEB Request: SUCCESS", writeÇıktı.TrimEnd().ToString())
+        Catch ex As Exception
+            Console.WriteLine("WEB Request[getLink.php]: ERROR.  " + ex.Message)
+            'sendLog("Function.getLinkByAPI", "API/WEB Request: ERROR", EX.Message)
+        End Try
+
+    End Function
     Function getData() Handles MyBase.Load
         Try
             Dim db As New MySqlConnection(db_credentials)
@@ -89,5 +134,9 @@ Public Class DevDEMO
                 Else
                     MsgBox("KONU BULUNAMADI")
                 End If
+    End Sub
+
+    Private Sub FlatButton2_Click(sender As Object, e As EventArgs) Handles FlatButton2.Click
+    
     End Sub
 End Class
