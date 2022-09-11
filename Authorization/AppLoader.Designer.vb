@@ -26,23 +26,24 @@ Partial Class AppLoader
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AppLoader))
         Me.group_update = New Guna.UI.WinForms.GunaGroupBox()
         Me.checkingText = New Guna.UI.WinForms.GunaLabel()
+        Me.versionText = New Guna.UI.WinForms.GunaLabel()
+        Me.GunaLabel1 = New Guna.UI.WinForms.GunaLabel()
         Me.update_text = New Guna.UI.WinForms.GunaLabel()
         Me.btnUPDATE = New Guna.UI.WinForms.GunaAdvenceButton()
         Me.elipse_form = New Guna.UI.WinForms.GunaElipse(Me.components)
         Me.elipse_updategroup = New Guna.UI.WinForms.GunaElipse(Me.components)
-        Me.FormSkin1 = New HBR_Library_System.FormSkin()
-        Me.title = New Guna.UI.WinForms.GunaLabel()
-        Me.GunaLabel1 = New Guna.UI.WinForms.GunaLabel()
-        Me.versionText = New Guna.UI.WinForms.GunaLabel()
         Me.GunaGroupBox1 = New Guna.UI.WinForms.GunaGroupBox()
         Me.configText = New Guna.UI.WinForms.GunaLabel()
         Me.checkStatus = New System.Windows.Forms.Timer(Me.components)
         Me.restarter = New System.Windows.Forms.Timer(Me.components)
         Me.GunaLabel2 = New Guna.UI.WinForms.GunaLabel()
+        Me.FormSkin1 = New HBR_Library_System.FormSkin()
         Me.GunaAdvenceButton1 = New Guna.UI.WinForms.GunaAdvenceButton()
+        Me.title = New Guna.UI.WinForms.GunaLabel()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.group_update.SuspendLayout
-        Me.FormSkin1.SuspendLayout
         Me.GunaGroupBox1.SuspendLayout
+        Me.FormSkin1.SuspendLayout
         Me.SuspendLayout
         '
         'group_update
@@ -50,11 +51,11 @@ Partial Class AppLoader
         Me.group_update.BackColor = System.Drawing.Color.Transparent
         Me.group_update.BaseColor = System.Drawing.Color.FromArgb(CType(CType(3,Byte),Integer), CType(CType(9,Byte),Integer), CType(CType(46,Byte),Integer))
         Me.group_update.BorderColor = System.Drawing.Color.FromArgb(CType(CType(19,Byte),Integer), CType(CType(32,Byte),Integer), CType(CType(42,Byte),Integer))
-        Me.group_update.Controls.Add(Me.checkingText)
         Me.group_update.Controls.Add(Me.versionText)
-        Me.group_update.Controls.Add(Me.GunaLabel1)
+        Me.group_update.Controls.Add(Me.checkingText)
         Me.group_update.Controls.Add(Me.update_text)
         Me.group_update.Controls.Add(Me.btnUPDATE)
+        Me.group_update.Controls.Add(Me.GunaLabel1)
         Me.group_update.LineColor = System.Drawing.Color.FromArgb(CType(CType(19,Byte),Integer), CType(CType(32,Byte),Integer), CType(CType(42,Byte),Integer))
         Me.group_update.Location = New System.Drawing.Point(12, 69)
         Me.group_update.Name = "group_update"
@@ -74,6 +75,30 @@ Partial Class AppLoader
         Me.checkingText.TabIndex = 90
         Me.checkingText.Text = "Güncelleştirmeler Denetleniyor..."
         Me.checkingText.Visible = false
+        '
+        'versionText
+        '
+        Me.versionText.AutoSize = true
+        Me.versionText.BackColor = System.Drawing.Color.Transparent
+        Me.versionText.Font = New System.Drawing.Font("Trebuchet MS", 7!, System.Drawing.FontStyle.Bold)
+        Me.versionText.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.versionText.Location = New System.Drawing.Point(485, 9)
+        Me.versionText.Name = "versionText"
+        Me.versionText.Size = New System.Drawing.Size(49, 15)
+        Me.versionText.TabIndex = 91
+        Me.versionText.Text = "$version"
+        '
+        'GunaLabel1
+        '
+        Me.GunaLabel1.AutoSize = true
+        Me.GunaLabel1.BackColor = System.Drawing.Color.Transparent
+        Me.GunaLabel1.Font = New System.Drawing.Font("Trebuchet MS", 7!, System.Drawing.FontStyle.Bold)
+        Me.GunaLabel1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.GunaLabel1.Location = New System.Drawing.Point(410, 9)
+        Me.GunaLabel1.Name = "GunaLabel1"
+        Me.GunaLabel1.Size = New System.Drawing.Size(80, 15)
+        Me.GunaLabel1.TabIndex = 90
+        Me.GunaLabel1.Text = "mevcut sürüm:"
         '
         'update_text
         '
@@ -132,59 +157,6 @@ Partial Class AppLoader
         Me.elipse_updategroup.Radius = 3
         Me.elipse_updategroup.TargetControl = Me.group_update
         '
-        'FormSkin1
-        '
-        Me.FormSkin1.BackColor = System.Drawing.Color.White
-        Me.FormSkin1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(60,Byte),Integer), CType(CType(70,Byte),Integer), CType(CType(73,Byte),Integer))
-        Me.FormSkin1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(53,Byte),Integer), CType(CType(58,Byte),Integer), CType(CType(60,Byte),Integer))
-        Me.FormSkin1.Controls.Add(Me.GunaAdvenceButton1)
-        Me.FormSkin1.Controls.Add(Me.title)
-        Me.FormSkin1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.FormSkin1.FlatColor = System.Drawing.Color.FromArgb(CType(CType(35,Byte),Integer), CType(CType(168,Byte),Integer), CType(CType(109,Byte),Integer))
-        Me.FormSkin1.Font = New System.Drawing.Font("Segoe UI", 12!)
-        Me.FormSkin1.HeaderColor = System.Drawing.Color.FromArgb(CType(CType(59,Byte),Integer), CType(CType(0,Byte),Integer), CType(CType(151,Byte),Integer))
-        Me.FormSkin1.HeaderMaximize = false
-        Me.FormSkin1.Location = New System.Drawing.Point(0, 0)
-        Me.FormSkin1.Name = "FormSkin1"
-        Me.FormSkin1.Size = New System.Drawing.Size(552, 48)
-        Me.FormSkin1.TabIndex = 1
-        Me.FormSkin1.Text = "FormSkin1"
-        '
-        'title
-        '
-        Me.title.AutoSize = true
-        Me.title.BackColor = System.Drawing.Color.Transparent
-        Me.title.Font = New System.Drawing.Font("Montserrat", 20!, System.Drawing.FontStyle.Bold)
-        Me.title.Location = New System.Drawing.Point(124, 5)
-        Me.title.Name = "title"
-        Me.title.Size = New System.Drawing.Size(321, 37)
-        Me.title.TabIndex = 0
-        Me.title.Text = "HBRLib Önyükleyicisi"
-        '
-        'GunaLabel1
-        '
-        Me.GunaLabel1.AutoSize = true
-        Me.GunaLabel1.BackColor = System.Drawing.Color.Transparent
-        Me.GunaLabel1.Font = New System.Drawing.Font("Trebuchet MS", 9!, System.Drawing.FontStyle.Bold)
-        Me.GunaLabel1.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.GunaLabel1.Location = New System.Drawing.Point(378, 6)
-        Me.GunaLabel1.Name = "GunaLabel1"
-        Me.GunaLabel1.Size = New System.Drawing.Size(91, 18)
-        Me.GunaLabel1.TabIndex = 90
-        Me.GunaLabel1.Text = "mevcut sürüm:"
-        '
-        'versionText
-        '
-        Me.versionText.AutoSize = true
-        Me.versionText.BackColor = System.Drawing.Color.Transparent
-        Me.versionText.Font = New System.Drawing.Font("Trebuchet MS", 9!, System.Drawing.FontStyle.Bold)
-        Me.versionText.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.versionText.Location = New System.Drawing.Point(464, 6)
-        Me.versionText.Name = "versionText"
-        Me.versionText.Size = New System.Drawing.Size(56, 18)
-        Me.versionText.TabIndex = 91
-        Me.versionText.Text = "$version"
-        '
         'GunaGroupBox1
         '
         Me.GunaGroupBox1.BackColor = System.Drawing.Color.Transparent
@@ -231,6 +203,24 @@ Partial Class AppLoader
         Me.GunaLabel2.TabIndex = 92
         Me.GunaLabel2.Text = "Önyükleyici Kontrollerini Tamamladığında Otomatik olarak Kapanacaktır..."
         '
+        'FormSkin1
+        '
+        Me.FormSkin1.BackColor = System.Drawing.Color.White
+        Me.FormSkin1.BaseColor = System.Drawing.Color.FromArgb(CType(CType(60,Byte),Integer), CType(CType(70,Byte),Integer), CType(CType(73,Byte),Integer))
+        Me.FormSkin1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(53,Byte),Integer), CType(CType(58,Byte),Integer), CType(CType(60,Byte),Integer))
+        Me.FormSkin1.Controls.Add(Me.GunaAdvenceButton1)
+        Me.FormSkin1.Controls.Add(Me.title)
+        Me.FormSkin1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.FormSkin1.FlatColor = System.Drawing.Color.FromArgb(CType(CType(35,Byte),Integer), CType(CType(168,Byte),Integer), CType(CType(109,Byte),Integer))
+        Me.FormSkin1.Font = New System.Drawing.Font("Segoe UI", 12!)
+        Me.FormSkin1.HeaderColor = System.Drawing.Color.FromArgb(CType(CType(59,Byte),Integer), CType(CType(0,Byte),Integer), CType(CType(151,Byte),Integer))
+        Me.FormSkin1.HeaderMaximize = false
+        Me.FormSkin1.Location = New System.Drawing.Point(0, 0)
+        Me.FormSkin1.Name = "FormSkin1"
+        Me.FormSkin1.Size = New System.Drawing.Size(552, 48)
+        Me.FormSkin1.TabIndex = 1
+        Me.FormSkin1.Text = "FormSkin1"
+        '
         'GunaAdvenceButton1
         '
         Me.GunaAdvenceButton1.Animated = true
@@ -254,7 +244,7 @@ Partial Class AppLoader
         Me.GunaAdvenceButton1.LineLeft = 3
         Me.GunaAdvenceButton1.LineRight = 3
         Me.GunaAdvenceButton1.LineTop = 3
-        Me.GunaAdvenceButton1.Location = New System.Drawing.Point(483, 5)
+        Me.GunaAdvenceButton1.Location = New System.Drawing.Point(483, 8)
         Me.GunaAdvenceButton1.Name = "GunaAdvenceButton1"
         Me.GunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.Crimson
         Me.GunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Black
@@ -263,11 +253,27 @@ Partial Class AppLoader
         Me.GunaAdvenceButton1.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66,Byte),Integer), CType(CType(58,Byte),Integer), CType(CType(170,Byte),Integer))
         Me.GunaAdvenceButton1.OnPressedColor = System.Drawing.Color.Black
         Me.GunaAdvenceButton1.Radius = 3
-        Me.GunaAdvenceButton1.Size = New System.Drawing.Size(55, 38)
+        Me.GunaAdvenceButton1.Size = New System.Drawing.Size(55, 31)
         Me.GunaAdvenceButton1.TabIndex = 93
         Me.GunaAdvenceButton1.Text = "X"
         Me.GunaAdvenceButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.GunaAdvenceButton1.TextOffsetX = 18
+        '
+        'title
+        '
+        Me.title.AutoSize = true
+        Me.title.BackColor = System.Drawing.Color.Transparent
+        Me.title.Font = New System.Drawing.Font("Montserrat", 20!, System.Drawing.FontStyle.Bold)
+        Me.title.Location = New System.Drawing.Point(100, 5)
+        Me.title.Name = "title"
+        Me.title.Size = New System.Drawing.Size(321, 37)
+        Me.title.TabIndex = 0
+        Me.title.Text = "HBRLib Önyükleyicisi"
+        '
+        'Timer1
+        '
+        Me.Timer1.Enabled = true
+        Me.Timer1.Interval = 300
         '
         'AppLoader
         '
@@ -287,10 +293,10 @@ Partial Class AppLoader
         Me.Text = "HBRLib Önyükleyicisi"
         Me.group_update.ResumeLayout(false)
         Me.group_update.PerformLayout
-        Me.FormSkin1.ResumeLayout(false)
-        Me.FormSkin1.PerformLayout
         Me.GunaGroupBox1.ResumeLayout(false)
         Me.GunaGroupBox1.PerformLayout
+        Me.FormSkin1.ResumeLayout(false)
+        Me.FormSkin1.PerformLayout
         Me.ResumeLayout(false)
         Me.PerformLayout
 
@@ -312,4 +318,5 @@ End Sub
     Friend WithEvents restarter As Timer
     Friend WithEvents GunaLabel2 As Guna.UI.WinForms.GunaLabel
     Friend WithEvents GunaAdvenceButton1 As Guna.UI.WinForms.GunaAdvenceButton
+    Friend WithEvents Timer1 As Timer
 End Class

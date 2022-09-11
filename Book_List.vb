@@ -6,6 +6,10 @@ Public Class Book_List
     Dim db As New MySqlConnection(db_credentials)
     Dim index As Integer
     Dim indexX As Integer
+    Dim api_url As String = My.Settings.api_url
+    Dim api_key As String = My.Settings.api_key
+    Dim api_application_directory As String = My.Settings.api_application_directory
+    Dim api_ImageBook_folder As String = My.Settings.api_ImageBook_folder
     'END Section MySQL
 
     'Section boolean_controllers
@@ -28,7 +32,7 @@ Public Class Book_List
 
 
 
-    Async Function getData() As Task
+    Async Function getBooks() As Task
         Dim status_dt As Boolean = False
 
                   System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls = False
@@ -42,7 +46,7 @@ Public Class Book_List
           Try                    
             Dim db As New MySqlConnection(db_credentials)
 
-            Dim dap3 As New MySqlDataAdapter("Select * FROM books", db)
+            Dim dap3 As New MySqlDataAdapter("Select id,Kitap,Yazar,Yayıncı,ISBN FROM books", db)
           
             dap3.Fill(dt3)
            status_dt = True
@@ -55,9 +59,9 @@ Public Class Book_List
         dataLoader.loading.Text = "Yükleniyor"
         Catch ErrorEX As Exception
          
-            Console.WriteLine("Veri Çekilemedi! location=getData" + vbNewLine + ErrorEX.Message)
+            Console.WriteLine("Veri Çekilemedi! location=BookList_Function.getBooks" + vbNewLine + ErrorEX.Message)
              
-        dataLoader.loading.Text = "HATA >> Veritabanı ile bağlantı kurulurken bir hata meydana geldi! location=BookList.getData"
+        dataLoader.loading.Text = "HATA >> Veritabanı ile bağlantı kurulurken bir hata meydana geldi! location=BookList_Function.getBooks"
         End Try
                        End Sub)
         If status_dt = True
@@ -105,36 +109,55 @@ Public Class Book_List
     End Sub
 
     Private Sub bookList_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles bookList.CellContentClick, bookList.RowEnter
+       Dim selectedRow As DataGridViewRow
+       Dim selectedRowX As DataGridViewRow
+       selectedRow = bookList.Rows(index)
+       selectedRowX = BookList_X.Rows(index)
+        'BEGIN Integers of DB
+        Dim id_i as integer = 0
+        Dim BookName_i as integer= 2
+        Dim Author_i as integer = 3
+        Dim Publisher_i as integer = 1
+        Dim Image_i as integer = 1
+        Dim ISBN_i as integer = 4
+        Dim ISBN_selected As String
+
+        'END Integers of DB
         Dim image As String
+        api_ImageBook_folder = "book_cover/"
+        api_application_directory = "application/library_system/"
         Dim i As Integer = 0
         Try
                     index = e.RowIndex
          
-            Dim selectedRow As DataGridViewRow
-            Dim selectedRowX As DataGridViewRow
-            selectedRow = bookList.Rows(index)
-            selectedRowX = BookList_X.Rows(index)
-            selected_BookName.Text = selectedRow.Cells(2).Value.ToString()
-            selected_Author.Text = selectedRow.Cells(3).Value.ToString()
-            selected_Publisher.Text = selectedRow.Cells(4).Value.ToString()
-            selected_ISBN.Text = selectedRow.Cells(7).Value.ToString()
-            getBook_id.Text = selectedRow.Cells(0).Value.ToString()
-            image = selectedRowX.Cells(1).Value.ToString()
            
-            If image.Length < 6 Then
+         selected_BookName.Text = selectedRow.Cells(BookName_i).Value.ToString()
+         selected_Author.Text = selectedRow.Cells(Author_i).Value.ToString()
+          selected_Publisher.Text = selectedRow.Cells(Publisher_i).Value.ToString()
+            selected_ISBN.Text = selectedRow.Cells(ISBN_i).Value.ToString()
+            ISBN_selected = selectedRow.Cells(ISBN_i).Value.ToString()
+            getBook_id.Text = selectedRow.Cells(id_i).Value.ToString()
+            'image = selectedRowX.Cells(Image_i).Value.ToString()
+           Catch ex As Exception
+            MsgBox( "A "& ex.Message)
+            End Try
+        Try
+            If ISBN_selected Is Nothing Then
+                               book_poster.Image = My.Resources.Resources.HBR
+                 Else
+                  If ISBN_selected.Length < 5 Then
                 book_poster.Image = My.Resources.Resources.HBR
-                Elseif image.Contains("/library-posters/HBR.") Then
-            book_poster.Image = My.Resources.Resources.HBR   
-                ElseIf image.Contains("/library-posters/.jpg") Then
-            book_poster.Image = My.Resources.Resources.HBR
-            Else
-                book_poster.Load(image.ToString)
-            End If
+                Else
+                book_poster.Load(api_url.ToString & api_application_directory & api_ImageBook_folder & selectedRow.Cells(ISBN_i).Value.ToString() & ".jpg")
+                    
+           End If  
+            End If     
+           
         Catch ex As Exception
-            book_poster.Image = My.Resources.Resources.HBR
-            Console.WriteLine(ex.Message)
+
+          book_poster.Image = My.Resources.Resources.HBR
         End Try
-    End Sub
+          End Sub
     Sub delete_column
         bookList.Columns.Remove("Kapak")
     End Sub

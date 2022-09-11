@@ -11,7 +11,13 @@ Public Class configuration
     Dim type As Boolean
     Dim success As Boolean
     Private Sub configuration_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        dbServer.Text = ""
+        dbPassword.Text=""
+        dbUserID.Text=""
+        dbName.Text=""
+        webAPI_url.Text=""
+        webAPI_key.Text=""
+        INSERTFromJSONFileToTextFields
     End Sub
 
     Private Sub GunaLabel7_Click(sender As Object, e As EventArgs)
@@ -29,7 +35,6 @@ Public Class configuration
 
         Public Property api_url As String
     Public Property api_key As String
-    Public Property cover_directory As String
 End Class
     Function LockEvent(eventx As string)
         If  eventx = "lock" Then
@@ -67,7 +72,7 @@ End Class
         credentials.api_url = webAPI_url.Text
         credentials.api_key = webAPI_key.Text 
                             If System.IO.File.Exists(application_path & "config.json") = True Then
-           System.IO.File.Delete(application_path & "config.json")
+                               System.IO.File.Delete(application_path & "config.json")              
      End If
                            Try
                                  Dim json As String = JsonConvert.SerializeObject(credentials)
@@ -95,6 +100,26 @@ End Class
        dialog_box.Close()
         dialog_box.show()
     End Function
+    Function INSERTFromJSONFileToTextFields
+          If System.IO.File.Exists(application_path & "config.json") = True Then
+            'BEGIN INSERT_StringsFromCurrentConfigFile
+            Try
+            Dim json_path As String = File.ReadAllText(application_path & "config.json")
+           Dim json As JObject = JObject.Parse(json_path)
+           
+        dbServer.Text = json.SelectToken("db_server")
+       dbUserID.Text =   json.SelectToken("db_userid")
+        dbPassword.Text =  json.SelectToken("db_password")
+       dbName.Text = json.SelectToken("db_name")
+       webAPI_url.Text =  json.SelectToken("api_url")
+      webAPI_key.Text =  json.SelectToken("api_key")          
+            Catch ex As Exception
+            End Try
+            Else
+           End if
+            'END INSERT_StringsFromCurrentConfigFile
+    End Function
+   
     Private Sub save_Click(sender As Object, e As EventArgs) Handles save.Click
         log.Text = ""
         If type = True Then
@@ -189,5 +214,9 @@ End Class
 
     Private Sub GunaAdvenceButton1_Click(sender As Object, e As EventArgs) Handles GunaAdvenceButton1.Click
         Application.Exit
+    End Sub
+
+    Private Sub LoaderX_Click(sender As Object, e As EventArgs) Handles LoaderX.Click
+
     End Sub
 End Class

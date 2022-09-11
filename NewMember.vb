@@ -1,4 +1,6 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.Text
+Imports System.Security.Cryptography
+Imports MySql.Data.MySqlClient
 Public Class NewMember
     'Section MySQL
     Dim db_credentials As String = "server=" & My.Settings.sqlhost & ";" & "userid=" & My.Settings.sqluser & ";" & "pwd=" & My.Settings.sqlpwd & ";" & "database=" & My.Settings.sqldb & ";" & "port=" & My.Settings.sqlport & ";" & "charset=" & My.Settings.sqlcharset & ";" & "SslMode=" & My.Settings.sqlssl & ";"
@@ -44,6 +46,16 @@ Public Class NewMember
 
         End If
     End Sub
+     Function hasher(ByVal x As String)
+        Dim md5 As MD5 = New MD5CryptoServiceProvider()
+        Dim result As Byte()
+        result = md5.ComputeHash(Encoding.ASCII.GetBytes(x))
+        Dim output_hbr As New StringBuilder()
+        For i As Integer = 0 To result.Length - 1
+            output_hbr.Append(result(i).ToString("x2"))
+        Next
+        Return output_hbr.ToString.TrimEnd()
+    End Function
     Function Dialog(data As String, help_message As String)
         My.Settings.dialog = data
         My.Settings.dialog_help = help_message
@@ -56,8 +68,9 @@ Public Class NewMember
             Dim cmd As New MySqlCommand
             db.Open()
             cmd.Connection = db
-
-            cmd.CommandText = "INSERT INTO members (No,Adı,Soyadı,Sınıf,Durum,İletişim) VALUES ('" & x & "','" & y & "','" & z & "','" & a & "','" & b & "','" & c & "')"
+             Dim time_now As String = dashboard.pdate.Value.ToString("dd-MM-yyyy") & " / " & dashboard.lTime.Text.ToString
+            Dim hash As String = hasher(x & " | " & time_now)
+            cmd.CommandText = "INSERT INTO members (No,Adı,Soyadı,Sınıf,Durum,İletişim,hash) VALUES ('" & x & "','" & y & "','" & z & "','" & a & "','" & b & "','" & c & "','" & hash & "')"
             cmd.ExecuteNonQuery()
             btn_clear.PerformClick()
 

@@ -2,7 +2,8 @@
 Imports Newtonsoft.Json
 Imports Newtonsoft.Json.Linq
 Imports System.Net
-
+Imports System.IO
+Imports System.Text
 Public Class AppLoader
     Dim app_version As String = My.Settings.version.ToString
     Dim version_status As String
@@ -11,6 +12,7 @@ Public Class AppLoader
     Dim result_update As Boolean
     Dim result_configFile As Boolean
     Dim update_link As String
+    Dim Configration_Update As Boolean
     Private Sub btnUPDATE_Click(sender As Object, e As EventArgs) Handles btnUPDATE.Click
         If update_link = "" or update_link = "null" Or update_link = "NULL" Then
             Else
@@ -53,6 +55,7 @@ Public Class AppLoader
          
           Catch ex As Exception
 Console.WriteLine(ex.Message)
+                                           group_update.text = "Sunucu Kaynaklı bir HATA meydana geldi. Lütfen Daha Sonra Tekrar Deneyiniz."
           End Try
                                           
 Catch ex As Exception
@@ -98,6 +101,7 @@ End Function
      Function config_status(status As String)
         If status = "OK" Then
             configText.Text = "    Konfigürasyon Dosyası Doğrulandı!"
+            
             Else
            configText.Text = " Konfigürasyon Dosyası Doğrulanmadı!"
             Dialog("AppLoader-ConfigFileMissing","Uygulama, Çalışırken Veritabanı ve Web İşlemleri yürütmek için Sunuculara belirli Komut Dizeleri gönderir ve Bu Komutların doğru adreslere gitmesi ya da bazı Kimlik Doğrulamaları geçmesi gerekmektedir işte bu gibi Veriler Konfigürasyon dosyasında saklanır ve Uygulamanın buna ihtiyacı vardır.")
@@ -108,11 +112,46 @@ End Function
     Function CheckTheConfigFile()
          If System.IO.File.Exists(application_path & "config.json") = True Then
              result_configFile = True
-           config_status("OK")
+           ConfigurationUPDATE
             Else
              result_configFile = False
                 config_status("FAIL")
          End If
+    End Function
+    Function ConfigurationUPDATE
+         Try
+            Dim json_path As String = File.ReadAllText(application_path & "config.json")
+           Dim json As JObject = JObject.Parse(json_path)
+            'BEGIN Update_Strings
+         My.Settings.sqlhost = json.SelectToken("db_server")
+         My.Settings.sqluser = json.SelectToken("db_userid")
+         My.Settings.sqlpwd = json.SelectToken("db_password")
+         My.Settings.sqldb = json.SelectToken("db_name")
+
+         My.Settings.api_url = json.SelectToken("api_url")
+         My.Settings.api_key = json.SelectToken("api_key")   
+              
+            'END Update_Strings
+            My.Settings.Save
+            Console.WriteLine("Application Configration Updated! " & vbNewLine & json_path.ToString)
+          
+        Catch ex As Exception
+            Console.WriteLine("ERROR(UPDATE CONFIGS); " & vbNewLine & ex.Message)
+            Configration_Update = False
+            Finally
+            If My.Settings.sqlhost = "" Or My.Settings.sqluser = "" Or My.Settings.sqldb = "" Or My.Settings.api_url = "" Or My.Settings.api_key = "" Then
+                 Configration_Update = False
+                config_status("FAIL")
+                Dialog("AppLoader-ConfigFileMissing","Uygulama, Çalışırken Veritabanı ve Web İşlemleri yürütmek için Sunuculara belirli Komut Dizeleri gönderir ve Bu Komutların doğru adreslere gitmesi ya da bazı Kimlik Doğrulamaları geçmesi gerekmektedir işte bu gibi Veriler Konfigürasyon dosyasında saklanır ve Uygulamanın buna ihtiyacı vardır.")
+                
+                configuration.Show
+               
+            Else
+                config_status("OK")
+                Configration_Update = True
+            End If
+        End Try    
+              
     End Function
     Private Sub AppLoader_Load(sender As Object, e As EventArgs) Handles Me.Load
         versionText.Text = My.Settings.version.ToString
@@ -132,7 +171,7 @@ End Function
 
 
     Private Sub checkStatus_Tick(sender As Object, e As EventArgs) Handles checkStatus.Tick
-        If result_update = True And result_configFile = True Then
+        If result_update = True And result_configFile = True And Configration_Update = True Then
             Me.Hide
             checkStatus.Stop
             Login_Panel.Show
@@ -155,5 +194,17 @@ Private Sub restarter_Tick(sender As Object, e As EventArgs) Handles restarter.T
 
     Private Sub GunaAdvenceButton1_Click(sender As Object, e As EventArgs) Handles GunaAdvenceButton1.Click
         Application.Exit
+    End Sub
+
+    Private Sub GunaLabel2_Click(sender As Object, e As EventArgs) Handles GunaLabel2.Click
+       
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+     
+    End Sub
+
+    Private Sub GunaLabel3_Click(sender As Object, e As EventArgs) 
+      
     End Sub
 End Class

@@ -18,10 +18,12 @@ Public Class ListMembers
     Function sendLog(title As String, message As String, ex As String)
         DevTool.log.Text = DevTool.log.Text + vbNewLine + "[" + dashboard.lTime.Text + "]" + "{" + SectionName + "}---" + title + " ==> " + message + " #ERR_BASE=>" + vbNewLine + "[" + ex + "]"
     End Function
-    Function getData()
-         dataLoader.loading.Text = "Yükleniyor..."
-            dataLoader.Visible = True
-        Try
+    Async Function getData() As Task
+        DataLoader.Visible = True
+        dataLoader.loading.Text = "Yükleniyor..."
+        Await Task.Run(Sub()
+
+ Try
             Dim db As New MySqlConnection(db_credentials)
 
             Dim dap3 As New MySqlDataAdapter("Select * FROM members", db)
@@ -30,7 +32,7 @@ Public Class ListMembers
             bookList.DataSource = dt3
             db.Dispose()
             occurred.Visible = False
-            Console.WriteLine("Veri Başarıyla Çekildi location=getData")
+            Console.WriteLine("Üye Listesi Verileri Başarıyla Çekildi location=ListMembers.Function.getData")
             sendLog("SUCCESS!", "getData executed!", ":)")
             db.Dispose()
              dataLoader.loading.Text = "Yükleniyor..."
@@ -42,7 +44,9 @@ Public Class ListMembers
              dataLoader.loading.Text = "HATA >> Veritabanı ile bağlantı kurulurken bir hata meydana geldi! location=BookTracker.getData"
             dataLoader.Visible = True
         End Try
-
+                       End Sub)
+         
+            dataLoader.Visible = False
     End Function
 
 

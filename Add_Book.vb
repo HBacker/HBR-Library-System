@@ -49,10 +49,20 @@ Public Class Add_Book : Inherits UserControl
        dataLoader.Enabled = False
         dataLoader.Visible = False
     End Sub
+    Sub reset_dataFields
+        text_bookName.Text = ""
+            text_Author.Text = ""
+            text_Publisher.Text = ""
+            text_Release.Text = ""
+            text_ISBN.Text = ""
+            combo_Subject.SelectedItem = "Seçiniz..."
+                    book_poster.Image = My.Resources.Resources.HBR
+    End Sub
     Private Sub button_bot_Click(sender As Object, e As EventArgs) Handles button_bot.Click
         If libbo_isbn.Text.Length <= 5 Then
 
             Else
+            reset_dataFields
             dataLoader.Visible=True
             BlockLoading
              
@@ -155,7 +165,7 @@ Public Class Add_Book : Inherits UserControl
 
 
         Catch ex As Exception
-            libbo_emptydata()
+         
         End Try
         Try
 
@@ -195,7 +205,7 @@ Public Class Add_Book : Inherits UserControl
             
             sendLog("Function.Libbo", "Libbo HtmlAgilityPack_Module: SUCCESS", "RAW DATA:: " & çıktı.TrimEnd().ToString())
         Catch ex As Exception
-            libbo_emptydata()
+           
             sendLog("Function.Libbo", "Libbo HtmlAgilityPack_Module: ERROR", ex.Message)
             getFromSelenium = True
             selenium_bookname = ""
@@ -430,11 +440,11 @@ Public Class Add_Book : Inherits UserControl
             Catch ex As Exception
                 sendLog("Ex.Function.Libbo_WebDriver.EX", "Ex.Function.Libbo_WebDriver.EX: ERROR", ex.message)
             End Try
-
+            
             dim rating as IWebElement = driver.FindElement(By.XPath("//*[@id='bd-isbn']/div/div[2]/div[4]/span[1]"))
             Dim rate_x as String = rating.Text.ToString()
             rate_x = rate_x.Split(" ")(0)
-
+           
 
             If rate_x.Contains(" ") Then
                 rate_x = rate_x.Replace(" ", "")
@@ -476,13 +486,87 @@ Public Class Add_Book : Inherits UserControl
         Finally
              'BEGIN POST_API
 
-                driver.Navigate.GoToUrl(My.Settings.api_url.ToString & "getImage.php/?" &  "image-url=isbn/TEST2323-&key=878217809048")
+              
+               Dim strOL_BookName As String
+               Dim strOL_NumberOfPage As String
+               Dim strOL_Author As String
+               Dim strOL_Publisher As String
+               Dim strOL_Rate As String
+               Dim strOL_ReleaseDate As String
+
+                driver.Navigate().GoToUrl("https://openlibrary.org/isbn/" & x)
+               Try
+                dim OL_BookName as IWebElement = driver.FindElement(By.XPath("//*[@id='contentBody']/div[1]/div[2]/div[2]/h1"))
+               If OL_BookName.Text Is Nothing Then    
+                    
+                    Else
+                    strOL_BookName = OL_BookName.Text.ToString
+                    Console.WriteLine("OL_BookName ==>  " & OL_BookName.Text.ToString)
+                End If
+                Catch ex As Exception
+
+               End Try
+               Try
+                    dim OL_Author as IWebElement = driver.FindElement(By.XPath("//*[@id='contentBody']/div[1]/div[2]/div[2]/h2/a"))
+                 If OL_Author.Text Is Nothing Then               
+                    Else
+                    strOL_Author = OL_Author.Text.ToString
+                    Console.WriteLine("OL_Author ==>  " & OL_Author.Text.ToString)
+                End If
+                Catch ex As Exception
+
+               End Try
+                Try
+                    dim OL_Publisher as IWebElement = driver.FindElement(By.XPath("//*[@id='contentBody']/div[1]/div[2]/div[4]/div/div[2]/span/a[1]"))
+                If OL_Publisher.Text Is Nothing Then               
+                    Else
+                    strOL_Publisher = OL_Publisher.Text.ToString
+                    Console.WriteLine("OL_Publisher ==>  " & OL_Publisher.Text.ToString)
+                End If
+                Catch ex As Exception
+
+                End Try
+                Try
+                    dim OL_NumberOfPage as IWebElement = driver.FindElement(By.XPath("//*[@id='contentBody']/div[1]/div[2]/div[4]/div/div[4]/span"))
+                 If OL_NumberOfPage.Text Is Nothing Then               
+                    Else
+                    strOL_NumberOfPage = OL_NumberOfPage.Text.ToString
+                    Console.WriteLine("OL_NumberOfPage ==>  " & OL_NumberOfPage.Text.ToString)
+                End If
+                Catch ex As Exception
+
+                End Try
+                Try
+                dim OL_Rate as IWebElement = driver.FindElement(By.XPath("//*[@id='contentBody']/div[1]/div[2]/div[2]/ul/li[1]/span[5]"))
+               If OL_Rate.Text Is Nothing Then    
+                    
+                    Else
+                    strOL_BookName = OL_Rate.Text.ToString
+                    Console.WriteLine("OL_Rate ==>  " & OL_Rate.Text.ToString)
+                End If
+                Try
+                    dim OL_ReleaseDate as IWebElement = driver.FindElement(By.XPath("//*[@id='contentBody']/div[1]/div[2]/div[4]/div/div[1]/span"))
+                If OL_ReleaseDate.Text Is Nothing Then               
+                    Else
+                    strOL_ReleaseDate = OL_ReleaseDate.Text.ToString
+                    If strOL_ReleaseDate.Contains(",") Then
+                        strOL_ReleaseDate = strOL_ReleaseDate.Split(",")(0)
+                        Console.WriteLine("OL_ReleaseDate ==>  " & OL_ReleaseDate.Text.ToString)
+                    End If                 
+                End If
+                Catch ex As Exception
+
+                End Try
+                                                                          
+               Catch ex As Exception
+
+                End Try
 
                 'END POST_API
-                 driver.Quit()
+               '  driver.Quit()
             For Each prog As Process In Process.GetProcesses
                 If prog.ProcessName = "chromedriver" Then
-                    prog.Kill()
+               '     prog.Kill()
                 End If
             Next
         End Try
@@ -731,14 +815,25 @@ End Function
        loading_show
         success_addToDB = False
        
-                            Dim Book as String = text_bookName.Text
-        Dim Author As String = text_Author.Text
-        Dim Publisher As String = text_Publisher.Text
-        Dim Subject as String = combo_Subject.SelectedItem.ToString()
+       Dim Book as String = text_bookName.Text.ToUpper
+        Dim Author As String = text_Author.Text.ToUpper
+        Dim Publisher As String = text_Publisher.Text.ToUpper
+        Dim Subject as String = combo_Subject.SelectedItem.ToString.ToUpper
         Dim Release As String = text_Release.Text
         Dim ISBN as String = text_ISBN.Text
         Dim ImageName as string
-        Dim xtime As String = dashboard.pdate.Value.ToString("dd.MM.yyyy") & " / " & dashboard.lTime.Text.ToString
+        'BEGIN ConvertCharacters
+        If Book.Contains("İ") Then
+            Book = Book.Replace("İ","I")
+        End If
+         If Book.Contains("Ö") Then
+            Book = Book.Replace("Ö","O")
+        End If
+         If Book.Contains("İ") Then
+            Book = Book.Replace("İ","I")
+        End If
+        'END ConvertCharacters
+        Dim xtime As String = dashboard.pdate.Value.ToString("dd-MM-yyyy") & " / " & dashboard.lTime.Text.ToString
        Dim hash As String = hasher(Book & " | " & xtime)
         If ISBN = "" Then
             ImageName = "HBR"
@@ -758,7 +853,7 @@ End Function
                 db.Open()
                 cmd.Connection = db
 
-                cmd.CommandText = "INSERT INTO books (Kapak,Kitap,Yazar,Yayıncı,Konu,ÇıkışYılı,ISBN,KayıtTarihi,Sonİşlem,SonTeslimAlan,Durum,hash) VALUES ('" & Image & "','" & Book & "','" & Author & "','" & Publisher & "','" & Subject & "','" & Release & "', '" & ISBN & "', '" & dashboard.pdate.Value.ToString("dd.MM.yyyy").ToString & "', '" & dashboard.pdate.Value.ToString("dd.MM.yyyy") & " / " & dashboard.lTime.Text.ToString & "', '" & "Yok" & "', '" & "Kütüphanede" & "', '" & hash & "')"
+                cmd.CommandText = "INSERT INTO books (Kapak,Kitap,Yazar,Yayıncı,Konu,ÇıkışYılı,ISBN,KayıtTarihi,Sonİşlem,SonTeslimAlan,Durum,hash) VALUES ('" & Image & "','" & Book & "','" & Author & "','" & Publisher & "','" & Subject & "','" & Release & "', '" & ISBN & "', '" & dashboard.pdate.Value.ToString("dd-MM-yyyy").ToString & "', '" & dashboard.pdate.Value.ToString("dd-MM-yyyy") & " / " & dashboard.lTime.Text.ToString & "', '" & "Yok" & "', '" & "Kütüphanede" & "', '" & hash & "')"
                 cmd.ExecuteNonQuery()
                 btn_clear.PerformClick()
                 Console.WriteLine("Function.AddBook: SUCCESS")
@@ -920,7 +1015,7 @@ End Function
        
     End Sub
     Public Async Function BlockLoading() as Task
-   loading_show
+        loading_show
         System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls = False
         Await Task.Run(Sub()
                          If libbo_isbn.Text.Contains(" ") Then
@@ -937,8 +1032,37 @@ End Function
            LibBo_WebDriver(data_isbn)
         End If
                     End Sub)
-   loading_hide
-        LibBoEmpty_timer.Start
+        If text_Author.Text = Nothing Or text_Author.Text = "" Then
+
+            Else
+              If text_Author.Text.Contains(",") Then
+            If text_Author.Text.Contains(" ") Then
+                text_Author.Text = text_Author.Text.Replace(" ", "")
+                 Dim AuthorFirstName As String
+            Dim AuthorLastName As String
+          AuthorFirstName = text_Author.Text.Split(",")(1)
+            AuthorLastName = text_Author.Text.Split(",")(0)
+        text_Author.Text = AuthorFirstName & " " & AuthorLastName
+                Else
+                 Dim AuthorFirstName As String
+            Dim AuthorLastName As String
+          AuthorFirstName = text_Author.Text.Split(",")(1)
+            AuthorLastName = text_Author.Text.Split(",")(0)
+        text_Author.Text = AuthorFirstName & " " & AuthorLastName
+            End If
+                 End If
+                If text_Publisher.Text.Contains(",") Then  
+                 Dim PublisherField As String
+            PublisherField = text_Author.Text.Split(",")(0)
+        text_Publisher.Text = PublisherField
+                Else
+                
+            End If          
+        End If
+       
+      
+            loading_hide
+        'LibBoEmpty_timer.Start
         
 End Function
     Private Sub welcomeSESSION_Click(sender As Object, e As EventArgs) Handles welcomeSESSION.Click

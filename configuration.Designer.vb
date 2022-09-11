@@ -24,10 +24,6 @@ Partial Class configuration
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(configuration))
-        Me.header = New HBR_Library_System.FormSkin()
-        Me.GunaAdvenceButton1 = New Guna.UI.WinForms.GunaAdvenceButton()
-        Me.GunaGradientButton2 = New Guna.UI.WinForms.GunaGradientButton()
-        Me.GunaLabel1 = New Guna.UI.WinForms.GunaLabel()
         Me.elipse_form = New Guna.UI.WinForms.GunaElipse(Me.components)
         Me.group_config_database = New Guna.UI.WinForms.GunaGroupBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -56,109 +52,16 @@ Partial Class configuration
         Me.save = New Guna.UI.WinForms.GunaAdvenceButton()
         Me.LoaderX = New Guna.UI.WinForms.GunaGroupBox()
         Me.GunaPictureBox1 = New Guna.UI.WinForms.GunaPictureBox()
-        Me.header.SuspendLayout
+        Me.header = New HBR_Library_System.FormSkin()
+        Me.GunaAdvenceButton1 = New Guna.UI.WinForms.GunaAdvenceButton()
+        Me.GunaGradientButton2 = New Guna.UI.WinForms.GunaGradientButton()
+        Me.GunaLabel1 = New Guna.UI.WinForms.GunaLabel()
         Me.group_config_database.SuspendLayout
         Me.group_config_web.SuspendLayout
         Me.LoaderX.SuspendLayout
         CType(Me.GunaPictureBox1,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.header.SuspendLayout
         Me.SuspendLayout
-        '
-        'header
-        '
-        Me.header.BackColor = System.Drawing.Color.FromArgb(CType(CType(6,Byte),Integer), CType(CType(16,Byte),Integer), CType(CType(27,Byte),Integer))
-        Me.header.BaseColor = System.Drawing.Color.FromArgb(CType(CType(6,Byte),Integer), CType(CType(16,Byte),Integer), CType(CType(27,Byte),Integer))
-        Me.header.BorderColor = System.Drawing.Color.FromArgb(CType(CType(6,Byte),Integer), CType(CType(16,Byte),Integer), CType(CType(27,Byte),Integer))
-        Me.header.Controls.Add(Me.GunaAdvenceButton1)
-        Me.header.Controls.Add(Me.GunaGradientButton2)
-        Me.header.Controls.Add(Me.GunaLabel1)
-        Me.header.Dock = System.Windows.Forms.DockStyle.Top
-        Me.header.FlatColor = System.Drawing.Color.FromArgb(CType(CType(35,Byte),Integer), CType(CType(168,Byte),Integer), CType(CType(109,Byte),Integer))
-        Me.header.Font = New System.Drawing.Font("Segoe UI", 12!)
-        Me.header.HeaderColor = System.Drawing.Color.FromArgb(CType(CType(59,Byte),Integer), CType(CType(0,Byte),Integer), CType(CType(151,Byte),Integer))
-        Me.header.HeaderMaximize = false
-        Me.header.Location = New System.Drawing.Point(0, 0)
-        Me.header.Name = "header"
-        Me.header.Size = New System.Drawing.Size(513, 61)
-        Me.header.TabIndex = 5
-        Me.header.Text = "FormSkin1"
-        '
-        'GunaAdvenceButton1
-        '
-        Me.GunaAdvenceButton1.Animated = true
-        Me.GunaAdvenceButton1.AnimationHoverSpeed = 3!
-        Me.GunaAdvenceButton1.AnimationSpeed = 3!
-        Me.GunaAdvenceButton1.BackColor = System.Drawing.Color.Transparent
-        Me.GunaAdvenceButton1.BaseColor = System.Drawing.Color.Transparent
-        Me.GunaAdvenceButton1.BorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton1.CheckedBaseColor = System.Drawing.Color.Gray
-        Me.GunaAdvenceButton1.CheckedBorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton1.CheckedForeColor = System.Drawing.Color.White
-        Me.GunaAdvenceButton1.CheckedImage = CType(resources.GetObject("GunaAdvenceButton1.CheckedImage"),System.Drawing.Image)
-        Me.GunaAdvenceButton1.CheckedLineColor = System.Drawing.Color.DimGray
-        Me.GunaAdvenceButton1.FocusedColor = System.Drawing.Color.Empty
-        Me.GunaAdvenceButton1.Font = New System.Drawing.Font("Trebuchet MS", 12!, System.Drawing.FontStyle.Bold)
-        Me.GunaAdvenceButton1.ForeColor = System.Drawing.Color.Crimson
-        Me.GunaAdvenceButton1.Image = Nothing
-        Me.GunaAdvenceButton1.ImageSize = New System.Drawing.Size(32, 32)
-        Me.GunaAdvenceButton1.LineBottom = 3
-        Me.GunaAdvenceButton1.LineColor = System.Drawing.Color.FromArgb(CType(CType(66,Byte),Integer), CType(CType(58,Byte),Integer), CType(CType(170,Byte),Integer))
-        Me.GunaAdvenceButton1.LineLeft = 3
-        Me.GunaAdvenceButton1.LineRight = 3
-        Me.GunaAdvenceButton1.LineTop = 3
-        Me.GunaAdvenceButton1.Location = New System.Drawing.Point(443, 13)
-        Me.GunaAdvenceButton1.Name = "GunaAdvenceButton1"
-        Me.GunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.Crimson
-        Me.GunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton1.OnHoverForeColor = System.Drawing.Color.White
-        Me.GunaAdvenceButton1.OnHoverImage = Nothing
-        Me.GunaAdvenceButton1.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66,Byte),Integer), CType(CType(58,Byte),Integer), CType(CType(170,Byte),Integer))
-        Me.GunaAdvenceButton1.OnPressedColor = System.Drawing.Color.Black
-        Me.GunaAdvenceButton1.Radius = 3
-        Me.GunaAdvenceButton1.Size = New System.Drawing.Size(55, 38)
-        Me.GunaAdvenceButton1.TabIndex = 90
-        Me.GunaAdvenceButton1.Text = "X"
-        Me.GunaAdvenceButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.GunaAdvenceButton1.TextOffsetX = 18
-        '
-        'GunaGradientButton2
-        '
-        Me.GunaGradientButton2.Animated = true
-        Me.GunaGradientButton2.AnimationHoverSpeed = 5!
-        Me.GunaGradientButton2.AnimationSpeed = 5!
-        Me.GunaGradientButton2.BackColor = System.Drawing.Color.Transparent
-        Me.GunaGradientButton2.BaseColor1 = System.Drawing.Color.Indigo
-        Me.GunaGradientButton2.BaseColor2 = System.Drawing.Color.MidnightBlue
-        Me.GunaGradientButton2.BorderColor = System.Drawing.Color.Black
-        Me.GunaGradientButton2.FocusedColor = System.Drawing.Color.Empty
-        Me.GunaGradientButton2.Font = New System.Drawing.Font("Segoe UI", 9!)
-        Me.GunaGradientButton2.ForeColor = System.Drawing.Color.White
-        Me.GunaGradientButton2.Image = Nothing
-        Me.GunaGradientButton2.ImageSize = New System.Drawing.Size(20, 20)
-        Me.GunaGradientButton2.Location = New System.Drawing.Point(984, 12)
-        Me.GunaGradientButton2.Name = "GunaGradientButton2"
-        Me.GunaGradientButton2.OnHoverBaseColor1 = System.Drawing.Color.Crimson
-        Me.GunaGradientButton2.OnHoverBaseColor2 = System.Drawing.Color.IndianRed
-        Me.GunaGradientButton2.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.GunaGradientButton2.OnHoverForeColor = System.Drawing.Color.White
-        Me.GunaGradientButton2.OnHoverImage = Nothing
-        Me.GunaGradientButton2.OnPressedColor = System.Drawing.Color.Black
-        Me.GunaGradientButton2.Radius = 5
-        Me.GunaGradientButton2.Size = New System.Drawing.Size(61, 39)
-        Me.GunaGradientButton2.TabIndex = 2
-        Me.GunaGradientButton2.Text = "X"
-        Me.GunaGradientButton2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'GunaLabel1
-        '
-        Me.GunaLabel1.AutoSize = true
-        Me.GunaLabel1.BackColor = System.Drawing.Color.Transparent
-        Me.GunaLabel1.Font = New System.Drawing.Font("Trebuchet MS", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(162,Byte))
-        Me.GunaLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(4,Byte),Integer), CType(CType(175,Byte),Integer), CType(CType(175,Byte),Integer))
-        Me.GunaLabel1.Location = New System.Drawing.Point(47, 11)
-        Me.GunaLabel1.Name = "GunaLabel1"
-        Me.GunaLabel1.Size = New System.Drawing.Size(378, 35)
-        Me.GunaLabel1.TabIndex = 0
-        Me.GunaLabel1.Text = "Konfigürasyon Yapılandırıcısı"
         '
         'elipse_form
         '
@@ -168,7 +71,7 @@ Partial Class configuration
         'group_config_database
         '
         Me.group_config_database.BackColor = System.Drawing.Color.Transparent
-        Me.group_config_database.BaseColor = System.Drawing.Color.FromArgb(CType(CType(9,Byte),Integer), CType(CType(9,Byte),Integer), CType(CType(9,Byte),Integer))
+        Me.group_config_database.BaseColor = System.Drawing.Color.FromArgb(CType(CType(16,Byte),Integer), CType(CType(8,Byte),Integer), CType(CType(31,Byte),Integer))
         Me.group_config_database.BorderColor = System.Drawing.Color.FromArgb(CType(CType(59,Byte),Integer), CType(CType(0,Byte),Integer), CType(CType(151,Byte),Integer))
         Me.group_config_database.BorderSize = 1
         Me.group_config_database.Controls.Add(Me.Label1)
@@ -445,7 +348,7 @@ Partial Class configuration
         Me.log.ForeColor = System.Drawing.Color.FromArgb(CType(CType(4,Byte),Integer), CType(CType(175,Byte),Integer), CType(CType(175,Byte),Integer))
         Me.log.Location = New System.Drawing.Point(518, 78)
         Me.log.Name = "log"
-        Me.log.Size = New System.Drawing.Size(270, 476)
+        Me.log.Size = New System.Drawing.Size(270, 461)
         Me.log.TabIndex = 14
         Me.log.Text = "Konfigürasyon Test Ediliyor..."
         '
@@ -470,7 +373,7 @@ Partial Class configuration
         Me.save.ImageSize = New System.Drawing.Size(32, 32)
         Me.save.LineBottom = 3
         Me.save.LineColor = System.Drawing.Color.FromArgb(CType(CType(4,Byte),Integer), CType(CType(175,Byte),Integer), CType(CType(175,Byte),Integer))
-        Me.save.Location = New System.Drawing.Point(28, 494)
+        Me.save.Location = New System.Drawing.Point(28, 479)
         Me.save.Name = "save"
         Me.save.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(224,Byte),Integer), CType(CType(224,Byte),Integer), CType(CType(224,Byte),Integer))
         Me.save.OnHoverBorderColor = System.Drawing.Color.Black
@@ -494,10 +397,10 @@ Partial Class configuration
         Me.LoaderX.LineColor = System.Drawing.Color.FromArgb(CType(CType(28,Byte),Integer), CType(CType(2,Byte),Integer), CType(CType(48,Byte),Integer))
         Me.LoaderX.LineLeft = 3
         Me.LoaderX.LineRight = 3
-        Me.LoaderX.Location = New System.Drawing.Point(12, 67)
+        Me.LoaderX.Location = New System.Drawing.Point(12, 78)
         Me.LoaderX.Name = "LoaderX"
         Me.LoaderX.Radius = 5
-        Me.LoaderX.Size = New System.Drawing.Size(489, 496)
+        Me.LoaderX.Size = New System.Drawing.Size(489, 468)
         Me.LoaderX.TabIndex = 88
         Me.LoaderX.Text = "Konfigürasyonlar Test Ediliyor..."
         Me.LoaderX.TextLocation = New System.Drawing.Point(10, 8)
@@ -507,19 +410,116 @@ Partial Class configuration
         '
         Me.GunaPictureBox1.BaseColor = System.Drawing.Color.White
         Me.GunaPictureBox1.Image = Global.HBR_Library_System.My.Resources.Resources.loader_booksFAST
-        Me.GunaPictureBox1.Location = New System.Drawing.Point(3, 32)
+        Me.GunaPictureBox1.Location = New System.Drawing.Point(3, 30)
         Me.GunaPictureBox1.Name = "GunaPictureBox1"
-        Me.GunaPictureBox1.Size = New System.Drawing.Size(482, 447)
+        Me.GunaPictureBox1.Size = New System.Drawing.Size(482, 431)
         Me.GunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.GunaPictureBox1.TabIndex = 0
         Me.GunaPictureBox1.TabStop = false
+        '
+        'header
+        '
+        Me.header.BackColor = System.Drawing.Color.FromArgb(CType(CType(6,Byte),Integer), CType(CType(16,Byte),Integer), CType(CType(27,Byte),Integer))
+        Me.header.BaseColor = System.Drawing.Color.FromArgb(CType(CType(6,Byte),Integer), CType(CType(16,Byte),Integer), CType(CType(27,Byte),Integer))
+        Me.header.BorderColor = System.Drawing.Color.FromArgb(CType(CType(6,Byte),Integer), CType(CType(16,Byte),Integer), CType(CType(27,Byte),Integer))
+        Me.header.Controls.Add(Me.GunaAdvenceButton1)
+        Me.header.Controls.Add(Me.GunaGradientButton2)
+        Me.header.Controls.Add(Me.GunaLabel1)
+        Me.header.Dock = System.Windows.Forms.DockStyle.Top
+        Me.header.FlatColor = System.Drawing.Color.FromArgb(CType(CType(35,Byte),Integer), CType(CType(168,Byte),Integer), CType(CType(109,Byte),Integer))
+        Me.header.Font = New System.Drawing.Font("Segoe UI", 12!)
+        Me.header.HeaderColor = System.Drawing.Color.FromArgb(CType(CType(59,Byte),Integer), CType(CType(0,Byte),Integer), CType(CType(151,Byte),Integer))
+        Me.header.HeaderMaximize = false
+        Me.header.Location = New System.Drawing.Point(0, 0)
+        Me.header.Name = "header"
+        Me.header.Size = New System.Drawing.Size(513, 61)
+        Me.header.TabIndex = 5
+        Me.header.Text = "FormSkin1"
+        '
+        'GunaAdvenceButton1
+        '
+        Me.GunaAdvenceButton1.Animated = true
+        Me.GunaAdvenceButton1.AnimationHoverSpeed = 3!
+        Me.GunaAdvenceButton1.AnimationSpeed = 3!
+        Me.GunaAdvenceButton1.BackColor = System.Drawing.Color.Transparent
+        Me.GunaAdvenceButton1.BaseColor = System.Drawing.Color.Transparent
+        Me.GunaAdvenceButton1.BorderColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton1.CheckedBaseColor = System.Drawing.Color.Gray
+        Me.GunaAdvenceButton1.CheckedBorderColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton1.CheckedForeColor = System.Drawing.Color.White
+        Me.GunaAdvenceButton1.CheckedImage = CType(resources.GetObject("GunaAdvenceButton1.CheckedImage"),System.Drawing.Image)
+        Me.GunaAdvenceButton1.CheckedLineColor = System.Drawing.Color.DimGray
+        Me.GunaAdvenceButton1.FocusedColor = System.Drawing.Color.Empty
+        Me.GunaAdvenceButton1.Font = New System.Drawing.Font("Trebuchet MS", 12!, System.Drawing.FontStyle.Bold)
+        Me.GunaAdvenceButton1.ForeColor = System.Drawing.Color.Crimson
+        Me.GunaAdvenceButton1.Image = Nothing
+        Me.GunaAdvenceButton1.ImageSize = New System.Drawing.Size(32, 32)
+        Me.GunaAdvenceButton1.LineBottom = 3
+        Me.GunaAdvenceButton1.LineColor = System.Drawing.Color.FromArgb(CType(CType(66,Byte),Integer), CType(CType(58,Byte),Integer), CType(CType(170,Byte),Integer))
+        Me.GunaAdvenceButton1.LineLeft = 3
+        Me.GunaAdvenceButton1.LineRight = 3
+        Me.GunaAdvenceButton1.LineTop = 3
+        Me.GunaAdvenceButton1.Location = New System.Drawing.Point(443, 13)
+        Me.GunaAdvenceButton1.Name = "GunaAdvenceButton1"
+        Me.GunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.Crimson
+        Me.GunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton1.OnHoverForeColor = System.Drawing.Color.White
+        Me.GunaAdvenceButton1.OnHoverImage = Nothing
+        Me.GunaAdvenceButton1.OnHoverLineColor = System.Drawing.Color.FromArgb(CType(CType(66,Byte),Integer), CType(CType(58,Byte),Integer), CType(CType(170,Byte),Integer))
+        Me.GunaAdvenceButton1.OnPressedColor = System.Drawing.Color.Black
+        Me.GunaAdvenceButton1.Radius = 3
+        Me.GunaAdvenceButton1.Size = New System.Drawing.Size(55, 38)
+        Me.GunaAdvenceButton1.TabIndex = 90
+        Me.GunaAdvenceButton1.Text = "X"
+        Me.GunaAdvenceButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.GunaAdvenceButton1.TextOffsetX = 18
+        '
+        'GunaGradientButton2
+        '
+        Me.GunaGradientButton2.Animated = true
+        Me.GunaGradientButton2.AnimationHoverSpeed = 5!
+        Me.GunaGradientButton2.AnimationSpeed = 5!
+        Me.GunaGradientButton2.BackColor = System.Drawing.Color.Transparent
+        Me.GunaGradientButton2.BaseColor1 = System.Drawing.Color.Indigo
+        Me.GunaGradientButton2.BaseColor2 = System.Drawing.Color.MidnightBlue
+        Me.GunaGradientButton2.BorderColor = System.Drawing.Color.Black
+        Me.GunaGradientButton2.FocusedColor = System.Drawing.Color.Empty
+        Me.GunaGradientButton2.Font = New System.Drawing.Font("Segoe UI", 9!)
+        Me.GunaGradientButton2.ForeColor = System.Drawing.Color.White
+        Me.GunaGradientButton2.Image = Nothing
+        Me.GunaGradientButton2.ImageSize = New System.Drawing.Size(20, 20)
+        Me.GunaGradientButton2.Location = New System.Drawing.Point(984, 12)
+        Me.GunaGradientButton2.Name = "GunaGradientButton2"
+        Me.GunaGradientButton2.OnHoverBaseColor1 = System.Drawing.Color.Crimson
+        Me.GunaGradientButton2.OnHoverBaseColor2 = System.Drawing.Color.IndianRed
+        Me.GunaGradientButton2.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.GunaGradientButton2.OnHoverForeColor = System.Drawing.Color.White
+        Me.GunaGradientButton2.OnHoverImage = Nothing
+        Me.GunaGradientButton2.OnPressedColor = System.Drawing.Color.Black
+        Me.GunaGradientButton2.Radius = 5
+        Me.GunaGradientButton2.Size = New System.Drawing.Size(61, 39)
+        Me.GunaGradientButton2.TabIndex = 2
+        Me.GunaGradientButton2.Text = "X"
+        Me.GunaGradientButton2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'GunaLabel1
+        '
+        Me.GunaLabel1.AutoSize = true
+        Me.GunaLabel1.BackColor = System.Drawing.Color.Transparent
+        Me.GunaLabel1.Font = New System.Drawing.Font("Trebuchet MS", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(162,Byte))
+        Me.GunaLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(4,Byte),Integer), CType(CType(175,Byte),Integer), CType(CType(175,Byte),Integer))
+        Me.GunaLabel1.Location = New System.Drawing.Point(47, 11)
+        Me.GunaLabel1.Name = "GunaLabel1"
+        Me.GunaLabel1.Size = New System.Drawing.Size(378, 35)
+        Me.GunaLabel1.TabIndex = 0
+        Me.GunaLabel1.Text = "Konfigürasyon Yapılandırıcısı"
         '
         'configuration
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(6,Byte),Integer), CType(CType(16,Byte),Integer), CType(CType(27,Byte),Integer))
-        Me.ClientSize = New System.Drawing.Size(513, 566)
+        Me.ClientSize = New System.Drawing.Size(513, 552)
         Me.Controls.Add(Me.LoaderX)
         Me.Controls.Add(Me.save)
         Me.Controls.Add(Me.log)
@@ -531,14 +531,14 @@ Partial Class configuration
         Me.Icon = CType(resources.GetObject("$this.Icon"),System.Drawing.Icon)
         Me.Name = "configuration"
         Me.Text = "Konfig Yapılandırıcısı - HBRLib"
-        Me.header.ResumeLayout(false)
-        Me.header.PerformLayout
         Me.group_config_database.ResumeLayout(false)
         Me.group_config_database.PerformLayout
         Me.group_config_web.ResumeLayout(false)
         Me.group_config_web.PerformLayout
         Me.LoaderX.ResumeLayout(false)
         CType(Me.GunaPictureBox1,System.ComponentModel.ISupportInitialize).EndInit
+        Me.header.ResumeLayout(false)
+        Me.header.PerformLayout
         Me.ResumeLayout(false)
 
 End Sub

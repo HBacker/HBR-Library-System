@@ -7,11 +7,13 @@
 
     'END Themes Strings
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+       Me.TopMost = True
+        Me.Select
         My.Settings.session = "user"
         My.Settings.Save
         Console.Write("Status: Running")
         xtime = DateAndTime.Now.ToString("HH:mm")
-        xdate = DateAndTime.Now.ToString("dd.MM.yyyy")
+        xdate = DateAndTime.Now.ToString("dd-MM-yyyy")
         lTime.Text = xtime
         vdate.Text = xdate
         DevTool.Size = New Point(1, 1)
@@ -20,6 +22,7 @@
         DevTool.Size = New Point(816, 700)
         
         pdate.Value = Date.Now.ToString
+        Me.TopMost = False
     End Sub
 
     Private Sub GunaGradientButton1_Click(sender As Object, e As EventArgs)
@@ -96,7 +99,7 @@
             Section_Add_Book.Visible = True
         ElseIf x = "listBook" Then
             BookList.Checked = True
-            Section_Book_List.getData()
+            Section_Book_List.getBooks()
             Section_Book_List.getBook_reset.PerformClick
             Section_Book_List.Visible = True
         ElseIf x = "listMembers" Then
@@ -127,7 +130,7 @@
 
     'END Themes
 
-    Private Sub GunaGradientButton1_Click_1(sender As Object, e As EventArgs) Handles info.Click
+    Private Sub GunaGradientButton1_Click_1(sender As Object, e As EventArgs) 
         dev_login_pass.Visible = True
         dev_login_button.Visible = True
         dev_login_pass.Select()
@@ -190,7 +193,7 @@
     Private Sub time_Tick(sender As Object, e As EventArgs) Handles time.Tick
         lTime.Text = xtime
         xtime = DateAndTime.Now.ToString("HH:mm")
-        xdate = DateAndTime.Now.ToString("dd.MM.yyyy")
+        xdate = DateAndTime.Now.ToString("dd-MM-yyyy")
         lTime.Text = xtime
         vdate.Text = xdate
     End Sub
@@ -236,11 +239,11 @@
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) 
        Theme_Dark("darkPurple")
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs) 
          Theme_Dark("Dark")
     End Sub
 
@@ -250,5 +253,13 @@
 
     Private Sub panel_menu_Paint(sender As Object, e As PaintEventArgs) Handles panel_menu.Paint
 
+    End Sub
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+
+    End Sub
+
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+        DevTool.Show()
     End Sub
 End Class

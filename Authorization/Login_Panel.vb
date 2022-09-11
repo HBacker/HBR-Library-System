@@ -10,7 +10,7 @@ Public Class Login_Panel
     Shared random As New Random()
     Dim version_app As String = "1.0.0"
     Dim version_ui As String = "4.0.0"
-     Dim zaman As String = System.DateTime.Now.ToString("dd.MM.yyyy")
+     Dim zaman As String = System.DateTime.Now.ToString("dd-MM-yyyy")
      Dim saat As String = System.DateTime.Now.ToString("HH:mm:ss")
     Dim nv1 As String
     Dim nv2 As String
@@ -37,6 +37,7 @@ Public Class Login_Panel
     Dim okuyucuban As MySqlDataReader
     Dim komutban As New MySqlCommand
 
+    Dim Auto_Auth As Boolean = True
     Private Sub Kullanıcı_Arayüz_Load(sender As Object, e As EventArgs) Handles MyBase.Load
        
         nVerifer()
@@ -388,8 +389,9 @@ Public Class Login_Panel
     End Sub
 
     Private Sub time_updater_Tick(sender As Object, e As EventArgs) Handles time_updater.Tick
-       zaman = System.DateTime.Now.ToString("dd.MM.yyyy")
+       zaman = System.DateTime.Now.ToString("dd-MM-yyyy")
     saat = System.DateTime.Now.ToString("HH:mm:ss")
+      
     End Sub
 
     Private Sub GunaLabel4_Click(sender As Object, e As EventArgs) Handles GunaLabel4.Click
@@ -422,5 +424,11 @@ Public Class Login_Panel
 
     Private Sub GunaAdvenceButton1_Click(sender As Object, e As EventArgs) Handles GunaAdvenceButton1.Click
         DevDEMO.Show
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles autoLogin.Tick
+        autoLogin.Stop
+        autoauthtext.Visible = True
+        login.PerformClick
     End Sub
 End Class

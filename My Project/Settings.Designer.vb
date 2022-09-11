@@ -56,7 +56,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("127.0.0.1")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
         Public Property sqlhost() As String
             Get
                 Return CType(Me("sqlhost"),String)
@@ -68,7 +68,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("root")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
         Public Property sqluser() As String
             Get
                 Return CType(Me("sqluser"),String)
@@ -92,7 +92,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("library")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
         Public Property sqldb() As String
             Get
                 Return CType(Me("sqldb"),String)
@@ -152,7 +152,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("https://api.hbacker.dev/")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
         Public Property api_url() As String
             Get
                 Return CType(Me("api_url"),String)
@@ -164,7 +164,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("878217809048")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
         Public Property code() As String
             Get
                 Return CType(Me("code"),String)
@@ -231,6 +231,42 @@ Namespace My
             End Get
             Set
                 Me("version") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property api_key() As String
+            Get
+                Return CType(Me("api_key"),String)
+            End Get
+            Set
+                Me("api_key") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property api_application_directory() As String
+            Get
+                Return CType(Me("api_application_directory"),String)
+            End Get
+            Set
+                Me("api_application_directory") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property api_ImageBook_folder() As String
+            Get
+                Return CType(Me("api_ImageBook_folder"),String)
+            End Get
+            Set
+                Me("api_ImageBook_folder") = value
             End Set
         End Property
     End Class

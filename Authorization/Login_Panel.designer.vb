@@ -67,6 +67,9 @@ Partial Class Login_Panel
         Me.GunaAdvenceButton1 = New Guna.UI.WinForms.GunaAdvenceButton()
         Me.login = New Guna.UI.WinForms.GunaAdvenceButton()
         Me.btnContact = New Guna.UI.WinForms.GunaAdvenceButton()
+        Me.autoLogin = New System.Windows.Forms.Timer(Me.components)
+        Me.autoauthtext = New Guna.UI.WinForms.GunaLabel()
+        Me.autologinText = New Guna.UI.WinForms.GunaElipse(Me.components)
         Me.gb_verify.SuspendLayout
         Me.GunaGradient2Panel3.SuspendLayout
         Me.block.SuspendLayout
@@ -348,7 +351,7 @@ Partial Class Login_Panel
         Me.block.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.block.Location = New System.Drawing.Point(-2, 53)
         Me.block.Name = "block"
-        Me.block.Size = New System.Drawing.Size(492, 388)
+        Me.block.Size = New System.Drawing.Size(492, 72)
         Me.block.TabIndex = 43
         Me.block.Visible = false
         '
@@ -724,12 +727,34 @@ Partial Class Login_Panel
         Me.btnContact.TabIndex = 50
         Me.btnContact.Text = "İletişim"
         '
+        'autoLogin
+        '
+        Me.autoLogin.Enabled = true
+        Me.autoLogin.Interval = 10
+        '
+        'autoauthtext
+        '
+        Me.autoauthtext.AutoSize = true
+        Me.autoauthtext.BackColor = System.Drawing.Color.White
+        Me.autoauthtext.Font = New System.Drawing.Font("Montserrat", 12!, System.Drawing.FontStyle.Bold)
+        Me.autoauthtext.Location = New System.Drawing.Point(36, 415)
+        Me.autoauthtext.Name = "autoauthtext"
+        Me.autoauthtext.Size = New System.Drawing.Size(410, 22)
+        Me.autoauthtext.TabIndex = 88
+        Me.autoauthtext.Text = "Auto Developer Login is Running... [Authorized]"
+        '
+        'autologinText
+        '
+        Me.autologinText.Radius = 2
+        Me.autologinText.TargetControl = Me.autoauthtext
+        '
         'Login_Panel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(24,Byte),Integer), CType(CType(27,Byte),Integer), CType(CType(33,Byte),Integer))
         Me.ClientSize = New System.Drawing.Size(490, 441)
+        Me.Controls.Add(Me.autoauthtext)
         Me.Controls.Add(Me.block)
         Me.Controls.Add(Me.GunaAdvenceButton1)
         Me.Controls.Add(Me.login)
@@ -808,4 +833,7 @@ End Sub
     Friend WithEvents time_updater As Timer
     Friend WithEvents GunaLabel4 As Guna.UI.WinForms.GunaLabel
     Friend WithEvents GunaAdvenceButton1 As Guna.UI.WinForms.GunaAdvenceButton
+    Friend WithEvents autoLogin As Timer
+    Friend WithEvents autoauthtext As Guna.UI.WinForms.GunaLabel
+    Friend WithEvents autologinText As Guna.UI.WinForms.GunaElipse
 End Class

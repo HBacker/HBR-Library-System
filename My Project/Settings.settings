@@ -3,16 +3,16 @@
   <Profiles />
   <Settings>
     <Setting Name="sqlhost" Type="System.String" Scope="User">
-      <Value Profile="(Default)">127.0.0.1</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="sqluser" Type="System.String" Scope="User">
-      <Value Profile="(Default)">root</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="sqlpwd" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="sqldb" Type="System.String" Scope="User">
-      <Value Profile="(Default)">library</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="sqlport" Type="System.String" Scope="User">
       <Value Profile="(Default)">3306</Value>
@@ -27,10 +27,10 @@
       <Value Profile="(Default)">//*[@id="search_results"]/table</Value>
     </Setting>
     <Setting Name="api_url" Type="System.String" Scope="User">
-      <Value Profile="(Default)">https://api.hbacker.dev/</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="code" Type="System.String" Scope="User">
-      <Value Profile="(Default)">878217809048</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="dialog" Type="System.String" Scope="User">
       <Value Profile="(Default)">default</Value>
@@ -46,6 +46,15 @@
     </Setting>
     <Setting Name="version" Type="System.String" Scope="User">
       <Value Profile="(Default)">1.0.0</Value>
+    </Setting>
+    <Setting Name="api_key" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="api_application_directory" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="api_ImageBook_folder" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
     </Setting>
   </Settings>
 </SettingsFile>

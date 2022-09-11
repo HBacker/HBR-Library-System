@@ -81,11 +81,13 @@ Başarıyla Yapılandırıldı!"
             btnHelp.Enabled = False
              elseIf x = "AppLoader-ConfigFileMissing" Then
             title.Text = "Uyarı"
-            message.Location = new Point(41, 94)
+            message.Location = new Point(40, 67)
             message.Text = "Konfigürasyon Dosyanız Eksik!
+veya Yanlış Yapılandırılmış
 Yeniden oluşturmak için
 Yapılandırıcıya 
 Yönlendiriliyorsunuz..."
+            AppLoader.Hide
             btnHelp.Enabled = True
             elseIf x = "BookList-search.404" Then
             title.Text = "Mesaj"
